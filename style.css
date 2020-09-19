@@ -1,0 +1,82 @@
+﻿/*
+Theme Name: Елесямба
+Theme URI: 
+Author: ASMI Studio
+Author URI: 
+Description: Елесямба
+Version: 1.0
+Tags: Елесямба
+*/
+
+
+
+html ,body{
+	margin:0px;
+	padding:0px;
+}
+
+a {
+	text-decoration:none;
+}
+
+a:hover {
+	text-decoration:underline;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {-webkit-appearance: none;
+    margin:0;}
+	
+
+label {
+	float:left;
+	width:100%;
+
+}
+
+
+input[type=password], input[type=tel], input[type=email], input[type=text] {
+}
+
+
+textarea{
+
+}
+
+table {
+}
+
+th,td{
+}
+
+th{
+	
+}
+
+td{
+	
+}
+
+.main {
+	margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.line {
+    float: left;
+    min-height: 40px;
+    width: 100%;
+}
+
+.centerInLine {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+
+
+@media screen and (max-width:350px), handheld{ 
+
+}
