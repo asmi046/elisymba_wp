@@ -1,0 +1,45 @@
+{
+  "name": "elisyamba",
+  "version": "1.0.1",
+  "description": "Elisyamba",
+  "main": "index.php",
+  "scripts": {
+    "test": "editorconfig-checker",
+    "clear_r": "ssh vaganol6_ssh@vaganol6.beget.tech \"rm  elisyamba.rf/public_html/wp-content/themes/Elesiamba/*.*\"",
+    "send_r": "scp -C *.php *.png *.css vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "mk_part_carbon": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/inc\"",
+    "send_carbon": "scp -C -r inc vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "mk_part_dir": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/template-parts\"",
+    "send_part": "scp -C -r template-parts vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "mk_part_img": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/img\"",
+    "send_img": "scp -r img vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "mk_part_js": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/js\"",
+    "send_js": "scp -r js vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "mk_part_css": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/css\"",
+    "send_css": "scp -C -r css vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "mk_part_fonts": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/fonts\"",
+    "send_fonts": "scp -C -r fonts vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "send_all": "npm run send_r & npm run send_css & npm run send_part & npm run send_img & npm run send_image & npm run send_js & npm run send_fonts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asmi046/elisymba_wp.git"
+  },
+  "keywords": [
+    "wp",
+    "WordPress"
+  ],
+  "author": "Asmi-Studio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asmi046/elisymba_wp/issues"
+  },
+  "homepage": "https://github.com/asmi046/elisymba_wp#readme",
+  "dependencies": {
+    "editorconfig-checker": "^3.1.0",
+    "group-css-media-queries": "^1.4.1",
+    "postcss-cli": "^7.1.2",
+    "postcss-csso": "^4.0.0",
+    "postcss-import": "^12.0.1"
+  }
+}
