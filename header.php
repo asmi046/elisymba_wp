@@ -592,7 +592,7 @@
 
     </div>
 
-    <? if ($_REQUEST["nh"] == 1) {?>
+    <? if ($_REQUEST["nh"] != 1) {?>
     <header class="site-header clearfix">
       
 
@@ -807,7 +807,24 @@
     </header>
 <?} else {?>
 
-  <header id="header" class="header">
+
+
+  <header id="header" class="new_head header">
+
+  <div class="newMobhead">
+        <div id="menuBtnOpen" class="newHeadElem newHeadBtn menuWraper">
+          <img src="<?php bloginfo("template_url");?>/img/menu.svg" />
+        </div>
+
+        <div class="newHeadElem logoWraper">
+          <a href="<?php bloginfo("url");?>"><img src="<?php bloginfo("template_url");?>/img/moblog.svg" /></a>
+        </div>
+
+        <div class="newHeadElem newHeadBtn phoneWraper">
+          <a href="tel:<?php echo $options[phoneLnk]; ?>"><img src="<?php bloginfo("template_url");?>/img/phone.svg" /></a>
+        </div>
+  </div>
+
   <div class="container">
     <div class="header__row">
     <!-- Обертка Всей Шапки -->
