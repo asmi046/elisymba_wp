@@ -592,6 +592,7 @@
 
     </div>
 
+    <? if ($_REQUEST["nh"] == 1) {?>
     <header class="site-header clearfix">
       
 
@@ -625,7 +626,7 @@
 				мы в любом случае Вам перезвоним
 				</span>
 			</div>
-        </div> -->
+      </div> -->
 
 
       <?php 
@@ -713,11 +714,7 @@
                 <div class="u-right-header-top-call">
                   <span class="u-right-header-top-call-btn needhelp noeffect">Заказать звонок</span>
                     <a href="https://wa.me/79308577844" target="_blank" class="whatsapp-btn">Напишите нам в WhatsApp</a>
-                  <!--
-				  <img class="zz-ng" src="http://work.xn--80ablmoh8a2h.xn--p1ai/wp-content/themes/Elesiamba/img/zz-ng.png">
-                  <img class="sng-ng sng-ng1" src="http://work.xn--80ablmoh8a2h.xn--p1ai/wp-content/themes/Elesiamba/img/sng-ng.png">
-                  <img class="sng-ng sng-ng2" src="http://work.xn--80ablmoh8a2h.xn--p1ai/wp-content/themes/Elesiamba/img/sng-ng.png">
--->                
+      
 				</div>
               </a>
             </div>
@@ -808,3 +805,71 @@
         </div>
       </nav>
     </header>
+<?} else {?>
+
+  <header id="header" class="header">
+  <div class="container">
+    <div class="header__row">
+    <!-- Обертка Всей Шапки -->
+      <div class="header-top">
+        
+        <div class="header-top__menu-contact">
+          <!-- Блок Иконок: Курск-Доставка-Акции -->
+          <div class="header-top__menu ul-clean">
+            <a href="#" class="header-top-icon header-top__map">Курск</a>
+            <a href="#" class="header-top-icon header-top__delivery">Доставка</a>
+            <a href="#" class="header-top-icon header-top__actions">Акции</a>
+          </div>
+          <!-- Телефон -->
+          <a href="tel:88005110179" class="header-phone">8 800 511-01-79</a>
+        </div>
+      
+      <!-- Блок Логотипа и Меню -->
+      <div class="header-middle">
+        <!-- Блок logo -->
+        <div class="header-block-logo">
+          <a href="#" class="header-block-logo__svg"></a>
+        </div>
+        
+        <!-- Блок Заголовка и Форма поиска -->
+        <div class="header-search">
+          <!-- Блок Заголовка -->
+          <div class="header-title">
+            <h1 class="header-title__text">Магазин развивающих игрушек №1 в России</h1>
+          </div>
+
+          <!-- Форма поиска -->
+          <form role="search" method="get" id="searchform" action="http://wp.syamba-toys.ru/">
+            <input type="text" value="" placeholder="Поиск" name="s" id="s" />
+            <!-- <input type="submit" id="searchsubmit" class="searchsubmit" value="" /> -->
+            <a href="#" class="sub-search"></a>
+          </form>
+        </div>
+        
+        <!-- Блок Кабинет Корзина -->
+        <div class="header-user">
+          <a href="#" class="header-user__btn header-user__user">Кабинет</a>
+          <a href="#" class="header-user__btn header-user__cart">Корзина</a>
+        </div>
+      </div>
+      
+        <!-- Меню Основное -->
+        <nav class="main-menu">
+          <ul class="menu ul-clean d-flex">
+            <li><a href="#">Бизиборды</a></li>
+            <li><a href="#">Авторские методики развития</a></li>
+            <li><a href="#">Мелкая моторика</a></li>
+            <li><a href="#">Магнитные конструкторы</a></li>
+            <li><a href="#">Музыкальные игрушки</a></li>
+            <li><a href="#">Книги</a></li>
+            <li><a href="#">Коврики и пазлы</a></li>
+            <li><a href="#">Блочный конструктор</a></li>
+            <li><a href="#">Все для творчества</a></li>
+            <li><a href="#">Сюжетные и ролевые игры</a></li>
+          </ul>
+        </nav>
+    </div>
+  </div>
+</header>
+
+<?}?>
