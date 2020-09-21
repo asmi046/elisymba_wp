@@ -1129,7 +1129,7 @@ get_header(); ?>
 				<div class="no-reviews__text">Отзывов о товаре пока нет. Будьте первым!</div>
 			</div>
 			<div class="reviews-board">
-				<div class="reviews-board__rating">
+				<!-- <div class="reviews-board__rating">
 					<div class="reviews-board__rating-number"><?php echo $awerage?></div>
 					<div class="review-item__header-stars">
 						<?php $stars_qty = round($awerage);
@@ -1142,8 +1142,9 @@ get_header(); ?>
 						<?php endfor;?>
 					</div>
 					<div class="reviews-board__rating-text">Пока нет отзывов</div>
-				</div>
-				<div class="reviews-board__progress">
+				</div> -->
+				
+				<!-- <div class="reviews-board__progress">
 					<div class="reviews-board__progress-item">
 						<div class="progress-number">5</div>
 						<div class="progress-line">
@@ -1179,7 +1180,7 @@ get_header(); ?>
 						</div>
 						<div class="progress-percent"><?php echo round($percent);?>%</div>
 					</div>
-				</div>
+				</div> -->
 				 <div class="btn-wrap">
 					 <a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
 				 </div>
