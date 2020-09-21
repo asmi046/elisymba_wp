@@ -873,7 +873,12 @@
         <!-- Меню Основное -->
         <nav class="main-menu">
           <ul class="menu ul-clean d-flex">
-            <li><a href="#">Бизиборды</a></li>
+            <li>
+            <a href="#">Бизиборды</a>
+            <ul class="sub-menu">
+              <li><a href="#">Смотреть все бизиборды</a></li>
+            </ul>
+            </li>
             <li><a href="#">Авторские методики развития</a></li>
             <li><a href="#">Мелкая моторика</a></li>
             <li><a href="#">Магнитные конструкторы</a></li>
