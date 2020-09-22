@@ -871,6 +871,7 @@
       </div>
       
         <!-- Меню Основное -->
+<<<<<<< HEAD
         <nav class="main-menu">
           <ul class="menu ul-clean d-flex">
             <li>
@@ -1055,6 +1056,9 @@
             <li><a href="#">Сюжетные и ролевые игры</a></li>
           </ul>
         </nav>
+=======
+        <? get_template_part( 'template-parts/main-menu' ); ?>
+>>>>>>> fb421f165900b54ee1f263929d20d69c5cb47517
     </div>
   </div>
 </header>

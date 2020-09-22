@@ -224,7 +224,7 @@
 
 <!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/yii.js"></script>-->
 <!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/plugins.js"></script>-->
-<script src="<?php  echo get_template_directory_uri(); ?>/js/main.js?ver=1.0.25"></script>
+<script src="<?php  echo get_template_directory_uri(); ?>/js/main.js?ver=1.0.28"></script>
 
 <!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/yii.activeForm.js"></script>-->
 <!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/yii.validation.js"></script>-->
