@@ -16500,11 +16500,11 @@ border-color: #ffffff transparent transparent transparent;
   }
   
   .menu {
-      position: relative;
+
   }
 
   .menu li {
-      /* position: relative; */
+      position: relative; 
   }
   .menu > li:hover .sub-menu {
     display: flex;
@@ -16522,12 +16522,13 @@ border-color: #ffffff transparent transparent transparent;
       /* top: 100%; */
       left: 0;
       width: 34%;
+      min-width:600px;
       list-style: none;
       background-color: #fff;
       z-index: 1000;
       border-radius: 15px;
       box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.15);
-      padding: 15px 3%;
+      padding: 15px 10%;
   }
   
   .menu .sub-menu li {
