@@ -1124,10 +1124,10 @@ get_header(); ?>
 			 ?>
 			</div>
 		<?php else:?>
-			<div class="no-reviews__wrapper">
+			<!-- <div class="no-reviews__wrapper">
 				<div class="no-reviews__img"></div>
 				<div class="no-reviews__text">Отзывов о товаре пока нет. Будьте первым!</div>
-			</div>
+			</div> -->
 			<div class="reviews-board">
 				<!-- <div class="reviews-board__rating">
 					<div class="reviews-board__rating-number"><?php echo $awerage?></div>
