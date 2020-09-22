@@ -838,14 +838,15 @@
             <a href="#" class="header-top-icon header-top__actions">Акции</a>
           </div>
           <!-- Телефон -->
-          <a href="tel:88005110179" class="header-phone">8 800 511-01-79</a>
+          <a onclick="yaCounter48236084.reachGoal('nazaltel');" class="header-phone" href="tel:<?php echo $options[phoneLnk]; ?> "><?php echo $options[phoneViev]; ?> </a>
+          <!-- <a href="tel:88005110179" class="header-phone">8 800 511-01-79</a> -->
         </div>
       
       <!-- Блок Логотипа и Меню -->
       <div class="header-middle">
         <!-- Блок logo -->
         <div class="header-block-logo">
-          <a href="#" class="header-block-logo__svg"></a>
+          <a href="<?php echo home_url('/');?>" class="header-block-logo__svg"></a>
         </div>
         
         <!-- Блок Заголовка и Форма поиска -->
@@ -856,16 +857,16 @@
           </div>
 
           <!-- Форма поиска -->
-          <form role="search" method="get" id="searchform" action="http://wp.syamba-toys.ru/">
+          <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>">
             <input type="text" value="" placeholder="Поиск" name="s" id="s" />
-            <!-- <input type="submit" id="searchsubmit" class="searchsubmit" value="" /> -->
-            <a href="#" class="sub-search"></a>
+            <button type="submit" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
+            <!-- <a href="#" class="sub-search"></a> -->
           </form>
         </div>
         
         <!-- Блок Кабинет Корзина -->
         <div class="header-user">
-          <a href="#" class="header-user__btn header-user__user">Кабинет</a>
+          <!-- <a href="#" class="header-user__btn header-user__user">Кабинет</a> -->
           <a href="#" class="header-user__btn header-user__cart">Корзина</a>
         </div>
       </div>

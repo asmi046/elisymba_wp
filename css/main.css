@@ -16334,6 +16334,7 @@ border-color: #ffffff transparent transparent transparent;
   
   /*=== Форма поиска ===*/
   #searchform {
+      display: flex;
     position: relative;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 20px; 
@@ -16356,6 +16357,11 @@ border-color: #ffffff transparent transparent transparent;
 
   
   /*Иконка Формы Поиска*/
+  .sub-search {
+    background-color: transparent;
+    border: none
+
+  }
   .sub-search:before {
     content: "";
     position: absolute;
