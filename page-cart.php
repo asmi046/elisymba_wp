@@ -61,7 +61,7 @@ get_header();
 				}
 			});
 
-			jQuery(".form-cart select").niceSelect();
+			//jQuery(".form-cart select").niceSelect();
 			if(jQuery(window).width() > 964) {
 				var height_product_name_qty_wrap = jQuery("td.product-thumbnail").height();
 				jQuery('.product-name-price-qty__wrap').height(height_product_name_qty_wrap);
