@@ -834,8 +834,8 @@
           <!-- Блок Иконок: Курск-Доставка-Акции -->
           <div class="header-top__menu ul-clean">
             <a href="#" class="header-top-icon header-top__map">Курск</a>
-            <a href="#" class="header-top-icon header-top__delivery">Доставка</a>
-            <a href="#" class="header-top-icon header-top__actions">Акции</a>
+            <a href="<?php echo get_permalink(6)?>" class="header-top-icon header-top__delivery">Доставка</a>
+            <a href="<?php echo get_permalink(18)?>" class="header-top-icon header-top__actions">Акции</a>
           </div>
           <!-- Телефон -->
           <a onclick="yaCounter48236084.reachGoal('nazaltel');" class="header-phone" href="tel:<?php echo $options[phoneLnk]; ?> "><?php echo $options[phoneViev]; ?> </a>
@@ -867,7 +867,7 @@
         <!-- Блок Кабинет Корзина -->
         <div class="header-user">
           <!-- <a href="#" class="header-user__btn header-user__user">Кабинет</a> -->
-          <a href="#" class="header-user__btn header-user__cart">Корзина</a>
+          <a href="<?php echo get_permalink(7084);?>" class="header-user__btn header-user__cart">Корзина</a>
         </div>
       </div>
       
