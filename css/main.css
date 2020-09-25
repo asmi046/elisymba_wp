@@ -13772,6 +13772,17 @@ display: block;
             #bascetblk .order-form__coupon {
                 margin-left: 0;
             }
+            .order-form__coupon-photo {
+                width: 51%;
+            }
+            .order-form__coupon-question {
+                width: 16px;
+                height: 16px;
+                line-height: 15px;
+            }
+            .order-form__coupon-text {
+                line-height: 0.95;
+            }
 		}
 
 		@media screen and (max-width: 350px) {
