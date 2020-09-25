@@ -16481,6 +16481,11 @@ border-color: #ffffff transparent transparent transparent;
   @media screen and (max-width: 414px) {
     .main-menu {
       display: none; } }
+
+      .footer_class-konkurs {
+          position: relative;
+          top: 1060px;
+      }
   
   .d-flex {
     display: -webkit-flex;

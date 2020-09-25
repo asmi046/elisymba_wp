@@ -858,7 +858,7 @@
 
           <!-- Форма поиска -->
           <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>">
-            <input type="text" value="" placeholder="Я ищу..." name="s" id="s" />
+            <input type="text" value="" placeholder="Я ищу... " name="s" id="s" />
             <button type="submit" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
             <!-- <a href="#" class="sub-search"></a> -->
           </form>
