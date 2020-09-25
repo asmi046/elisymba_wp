@@ -13775,14 +13775,6 @@ display: block;
             .order-form__coupon-photo {
                 width: 51%;
             }
-            .order-form__coupon-question {
-                width: 16px;
-                height: 16px;
-                line-height: 15px;
-            }
-            .order-form__coupon-text {
-                line-height: 0.95;
-            }
 		}
 
 		@media screen and (max-width: 350px) {
@@ -16297,10 +16289,19 @@ border-color: #ffffff transparent transparent transparent;
       margin-left: 20px;
       margin-right: 20px; } }
   
+      @media screen and (max-width: 454px) {
+        .order-form__coupon-question {
+            width: 16px;
+            height: 16px;
+            line-height: 15px;
+        }
+        .order-form__coupon-text {
+            line-height: 0.95;
+        }
+      }
   @media screen and (max-width: 414px) {
     .header-search {
       display: none; } }
-  
   
   /*Блок Заголовка*/
   .header-title {
