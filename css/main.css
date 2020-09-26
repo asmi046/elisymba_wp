@@ -2160,6 +2160,18 @@ position: absolute;
     padding-bottom: 100px;
 }
 
+.page-content-full {
+    width:100%;
+}
+
+.page-content-full .catalog-item {
+    width:31%;
+}
+
+.page-content-full .category-item:nth-child(3n), .page-content-full .catalog-item:nth-child(3n)
+{
+    margin-right: 0;
+}
 .page-content-inmain {
 	padding-bottom: 0;
 }
@@ -16555,7 +16567,7 @@ border-color: #ffffff transparent transparent transparent;
   }
   
   /*Шрифт Меню*/
-  .menu a {
+  .new_head .menu a {
     font-family: Lato-Medium, sans-serif;
     font-size: 18px;
     font-weight: 400;
@@ -16613,9 +16625,16 @@ border-color: #ffffff transparent transparent transparent;
     }
 
   .menu .sub-menu li a span {
-      max-width: 180px;
-
+    max-width: 195px;
+    line-height: 1;
+    display: inline-block;
+    font-size: 16px;
   }
+
+  .new_head .menu li ul li a {
+        margin: 12px 22px 12px 0px;  
+  }
+
   .menu .sub-menu li a img {
       width: 60px;
       height: 60px;
@@ -16632,13 +16651,21 @@ border-color: #ffffff transparent transparent transparent;
  
   /*Отступ Пунктов Меню*/
   
-  .menu li a{
-    margin: 12px 42px 12px 0px;
-    display: block;  
-  }
+    .new_head  .menu li a {
+        margin: 12px 42px 12px 0px;
+        display: block;  
+    }
   
+    .last_top_menu_punct a span{
+        color:gray;
+    }
+
+    .last_top_menu_punct a span:hover{
+        color:#00b5f1;
+    }
+
   @media screen and (max-width: 1440px) {
-    .menu li a {
+    .new_head .menu li a {
         margin: 12px 30px 12px 0px;
     }
   }

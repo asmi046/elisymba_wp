@@ -18,21 +18,23 @@ endif;?>
 	$detect = new Mobile_Detect;
 	
 	if( !$detect->isMobile() ){
-		get_sidebar("left"); 
+		if ($_REQUEST["nh"] != 1)
+			get_sidebar("left"); 
 	}
 
 ?>                
 
-<section class="page-content">
+<section class="page-content <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
                                      
 <?php 
-	include("search-form.php");
+	if ($_REQUEST["nh"] != 1)
+		include("search-form.php");
 ?>
 
 <h2 class="page-title">Все товары</h2>
 <div id="w0" class="list-view">
 	
-	<div class="page-content page-content-inmain">
+	<div class="page-content page-content-inmain <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
 		<?php iinclude_page(31); ?>
 	</div>
 	
@@ -74,7 +76,7 @@ endif;?>
 		</div>
 	</div>
 	
-	<div class="page-content page-content-inmain">
+	<div class="page-content page-content-inmain <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
 		<?php iinclude_page(6123); ?>
 	</div>
 	
