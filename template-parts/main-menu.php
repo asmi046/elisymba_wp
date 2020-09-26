@@ -184,7 +184,7 @@
             </ul>
             </li>
             <li><a href="#">Магнитные конструкторы</a>
-            <ul class="sub-menu">
+            <ul class="sub-menu sub-menu-mini">
               <li><a href="<?php echo get_category_link('69');?>">
                 <img src="<?php echo get_template_directory_uri();?>/img/category/min-KM01.2.jpg" alt=""> 
                 <span>Все товары</span>
@@ -292,7 +292,7 @@
               </li>
             </ul></li>
             <li><a href="#">Блочный конструктор</a>
-            <ul class="sub-menu">
+            <ul class="sub-menu sub-menu-mini">
               <li><a href="<?php echo get_category_link('90');?>">
                 <img src="<?php echo get_template_directory_uri();?>/img/category/min-DK80.1.jpg" alt=""> 
                 <span>Все товары</span>
@@ -300,7 +300,7 @@
               </li>
             </ul></li>
             <li><a href="#">Сюжетные и ролевые игры</a>
-            <ul class="sub-menu">
+            <ul class="sub-menu sub-menu-mini">
               <li><a href="<?php echo get_category_link('74');?>">
                 <img src="<?php echo get_template_directory_uri();?>/img/category/min-SS05.2.webp" alt=""> 
                 <span>Все товары</span>

@@ -592,6 +592,40 @@
 
     </div>
 
+    <?php 
+				$is_bot = preg_match("~(Google|Yahoo|Rambler|Bot|Yandex|Spider|Snoopy|Crawler|Finder|Mail|curl|MSN|AbachoBOT|Accoona|MSRBOT)~i", $_SERVER['HTTP_USER_AGENT']);
+								
+        if (!$is_bot) 
+        {
+          if ((empty($_COOKIE["staitinfo"]))&&(empty($_COOKIE["cityinfo"]))) 
+          { 
+
+
+								$obj = json_decode(file_get_contents("http://api.sypexgeo.net/un5Kq/json/".$_SERVER['REMOTE_ADDR']));
+								
+								//echo "<pre>";
+								//print_r($obj); 
+								//echo "</pre>";
+								
+								if (!empty($obj->country->name_ru)) setcookie("staitinfo", $obj->country->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
+								if (!empty($obj->city->name_ru)) setcookie("cityinfo", $obj->city->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
+								if (!empty($obj->region->name_ru)) setcookie("provinceinfo", $obj->region->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
+									if (!empty($obj->city->post)) {
+										 setcookie("postcode", str_replace("x","0",$obj->city->post), 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
+									}
+					} 
+        }
+        
+        $city = (!empty($_COOKIE["cityinfo"]))?$_COOKIE["cityinfo"]:$obj->city->name_ru;
+									
+				$postcode = (!empty($_COOKIE["postcode"]))?$_COOKIE["postcode"]:str_replace("x","0",$obj->city->post);
+				
+				$GLOBALS['city'] = $city;
+				$GLOBALS['postcode'] = $postcode;
+
+			?> 
+
+
     <? if ($_REQUEST["nh"] != 1) {?>
     <header class="site-header clearfix">
       
@@ -629,29 +663,7 @@
       </div> -->
 
 
-      <?php 
-								$is_bot = preg_match("~(Google|Yahoo|Rambler|Bot|Yandex|Spider|Snoopy|Crawler|Finder|Mail|curl|MSN|AbachoBOT|Accoona|MSRBOT)~i", $_SERVER['HTTP_USER_AGENT']);
-								
-								if (!$is_bot) {
-								// if ((empty($_COOKIE["staitinfo"]))&&(empty($_COOKIE["cityinfo"]))) { ?>
 
-
-      <?php
-								$obj = json_decode(file_get_contents("http://api.sypexgeo.net/un5Kq/json/".$_SERVER['REMOTE_ADDR']));
-								
-								//echo "<pre>";
-								//print_r($obj); 
-								//echo "</pre>";
-								
-								if (!empty($obj->country->name_ru)) setcookie("staitinfo", $obj->country->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
-								if (!empty($obj->city->name_ru)) setcookie("cityinfo", $obj->city->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
-								if (!empty($obj->region->name_ru)) setcookie("provinceinfo", $obj->region->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
-									if (!empty($obj->city->post)) {
-										 setcookie("postcode", str_replace("x","0",$obj->city->post), 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
-									}
-								// } 
-								}
-			?>
 
 
 
@@ -684,14 +696,6 @@
 
 
               <div id="cityElem_top" class="new_delivery_elem_top">
-                <?php 
-									$city = (!empty($_COOKIE["cityinfo"]))?$_COOKIE["cityinfo"]:$obj->city->name_ru;
-									
-									$postcode = (!empty($_COOKIE["postcode"]))?$_COOKIE["postcode"]:str_replace("x","0",$obj->city->post);
-									
-									$GLOBALS['city'] = $city;
-									$GLOBALS['postcode'] = $postcode;
-								?>
                 Ваш город: <br /><span class="value city_sel_elem"><?php echo $city; ?></span>
                 <div class="city_vsp_vin" style="display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>">
                   <div class="qq">Ваш город <span style="city_in_win"><?php echo $city; ?></span>?</div>
@@ -834,6 +838,13 @@
           <!-- Блок Иконок: Курск-Доставка-Акции -->
           <div class="header-top__menu ul-clean">
             <a href="#" class="header-top-icon header-top__map">Курск</a>
+              <div class="city_vsp_vin" style="display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>">
+                  <div class="qq">Ваш город <span style="city_in_win"><?php echo $city; ?></span>?</div>
+                  <div class="qq_btn">
+                    <div class="yes_no_btn yes_btn btn btn-pink">Да, спасибо</div>
+                    <div class="yes_no_btn no_btn btn btn-pink">Нет, другой</div>
+                  </div>
+              </div>
             <a href="<?php echo get_permalink(6)?>" class="header-top-icon header-top__delivery">Доставка</a>
             <a href="<?php echo get_permalink(18)?>" class="header-top-icon header-top__actions">Акции</a>
           </div>
@@ -858,9 +869,11 @@
 
           <!-- Форма поиска -->
           <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>">
-            <input type="text" value="" placeholder="Я ищу..." name="s" id="s" />
-            <button type="submit" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
-            <!-- <a href="#" class="sub-search"></a> -->
+            <div class ="searchformWraper">  
+              <input type="text" value="" autocomplete="off" placeholder="Я ищу..." name="s" id="s" />
+              <button type="submit" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
+            </div>
+            <div class="preSearchWrap" style="display: none;"></div>
           </form>
         </div>
         

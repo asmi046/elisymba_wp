@@ -1438,7 +1438,9 @@ function get_delivery_data(naspunkt, state, province) {
               jqXHR.fail(function (responce) {
                 $(".preSearchWrap").hide();
               });
-        }  
+        }  else {
+            $(".preSearchWrap").hide();
+        }
 
     });
 
@@ -1502,16 +1504,20 @@ function get_delivery_data(naspunkt, state, province) {
 			$("#nsapunkts").arcticmodal("close");
 		});
 		*/
-		
-		$('.nas_tunkt_in_win').on( "click", ".city_sel_elem", function(e) {
+        
 
+
+		$('.nas_tunkt_in_win').on( "click", ".city_sel_elem", function(e) {
+            e.preventDefault();
 			get_delivery_data(jQuery(this).text(), stait, province);
 			jQuery(".new_delivery_elem").show();
 			jQuery(".not__city_finde").hide();
 			$("#nsapunkts").arcticmodal("close");
 		});
 		
-		
+        
+
+
 		$('#city_all').keydown(function() {
 			var searchStr = jQuery(this).val();
 			if (searchStr.length < 2) return;
@@ -1560,7 +1566,11 @@ function get_delivery_data(naspunkt, state, province) {
             $("#nsapunkts").arcticmodal();
 			$.cookie('cwclose', "closed", { expires: 30, path: '/' });
         });
-		
+        
+        $('.header-top__map').click(function(e) {
+            $("#nsapunkts").arcticmodal();
+		});
+
 		$('#cityElem_top .city_sel_elem').click(function(e) {
             $("#nsapunkts").arcticmodal();
         });
