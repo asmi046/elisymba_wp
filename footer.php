@@ -1,4 +1,8 @@
-	<footer class="site-footer">
+	<?php $footer_class = '';
+	if(is_page(6895)) {
+		$footer_class = 'footer_class-konkurs';
+	}?>
+	<footer class="site-footer <?php echo $footer_class;?>">
         <div class="wrapper clearfix">
             <div class="footer-copy">
 			
