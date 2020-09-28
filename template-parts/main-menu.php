@@ -5,7 +5,7 @@
         <ul class="sub-menu">
           
           <li><a href="<?php echo get_category_link('5');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/min-B541.2.jpg" alt=""> 
+            <img src="<?php echo get_template_directory_uri();?>/img/category/min-B541.2.jpg" alt="Бизидом"> 
             <span>Бизидом</span>
            </a>
           </li>
