@@ -21,7 +21,7 @@
           </li>
           <li><a href="<?php echo get_category_link('4');?>">
             <img src="<?php echo get_template_directory_uri();?>/img/category/beasts.jpg" alt=""> 
-            <span>Развивающие звери</span>
+            <span>Развивающие животные</span>
            </a>
           </li>
           <li><a href="<?php echo get_category_link('10');?>">
@@ -139,13 +139,6 @@
             <a href="<?php echo get_category_link('71');?>">
                 <img src="<?php echo get_template_directory_uri();?>/img/category/labirints.jpg" alt=""> 
                 <span>Лабиринты</span>
-            </a>
-          </li>
-              
-          <li>
-            <a href="<?php echo get_category_link('71');?>">
-              <img src="<?php echo get_template_directory_uri();?>/img/category/labirints2.jpg" alt=""> 
-              <span>Лабиринты</span>
             </a>
           </li>
               
