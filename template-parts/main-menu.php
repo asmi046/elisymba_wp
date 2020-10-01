@@ -1,7 +1,7 @@
 <nav class="main-menu">
   <ul class="menu ul-clean d-flex">
     <li>
-      <a href="#">Бизиборды</a>
+      <a href="<?php echo get_category_link('3');?>">Бизиборды</a>
         <ul class="sub-menu">
           
           <li><a href="<?php echo get_category_link('5');?>">
@@ -64,7 +64,7 @@
     </li>
     
     <li>
-      <a href="#">Авторские методики развития</a>
+      <a href="<?php echo get_category_link('84');?>">Авторские методики развития</a>
         <ul class="sub-menu">
           <li>
             <a href="<?php echo get_category_link('85');?>">
@@ -96,7 +96,7 @@
     </li>
 
     <li>
-      <a href="#">Мелкая моторика</a>
+      <a href="<?php echo get_category_link('51');?>">Мелкая моторика</a>
         <ul class="sub-menu">
           
 
@@ -180,7 +180,7 @@
     </li>
             
     <li>
-      <a href="#">Спортивное развитие</a>
+      <a href="<?php echo get_category_link('92');?>">Спортивное развитие</a>
         <ul class="sub-menu corection1330">
           <li>
             <a href="<?php echo get_category_link('93');?>">
@@ -226,7 +226,7 @@
     </li>
     
     <li>
-      <a href="#">Магнитные конструкторы</a>
+      <a href="<?php echo get_category_link('69');?>">Магнитные конструкторы</a>
         <ul class="sub-menu sub-menu-mini corection1330 corection1330no">
           <li>
             <a href="<?php echo get_category_link('98');?>">
@@ -258,7 +258,7 @@
     </li>
     
     <li>
-      <a href="#">Музыкальные игрушки</a>
+      <a href="<?php echo get_category_link('21');?>">Музыкальные игрушки</a>
         <ul class="sub-menu">
           
 
@@ -307,7 +307,7 @@
     </li>
             
     <li>
-      <a href="#">Коврики - пазлы</a>
+      <a href="<?php echo get_category_link('58');?>">Коврики - пазлы</a>
         <ul class="sub-menu sub-menu-mini">
           <li>
             <a href="<?php echo get_category_link('58');?>">
@@ -320,7 +320,7 @@
 
 
     <li>
-      <a href="#">Спорт и отдых</a>
+      <a href="<?php echo get_category_link('80');?>">Спорт и отдых</a>
         <ul class="sub-menu corection1280">
           
           <li>
@@ -353,7 +353,7 @@
     </li>
     
     <li>
-      <a href="#">Книги</a>
+      <a href="<?php echo get_category_link('60');?>">Книги</a>
       <ul class="sub-menu corection1280">      
         
         <li>
@@ -380,7 +380,7 @@
     </li>
             
     <li>
-      <a href="#">Блочный конструктор</a>
+      <a href="<?php echo get_category_link('90');?>">Блочный конструктор</a>
         <ul class="sub-menu sub-menu-mini">
           <li>
             <a href="<?php echo get_category_link('90');?>">
@@ -392,7 +392,7 @@
     </li>
 
     <li>
-      <a href="#">Сюжетные и ролевые игры</a>
+      <a href="<?php echo get_category_link('74');?>">Сюжетные и ролевые игры</a>
         <ul class="sub-menu sub-menu-mini">
           <li>
             <a href="<?php echo get_category_link('74');?>">
