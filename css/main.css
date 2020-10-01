@@ -10608,7 +10608,17 @@ position: absolute;
 			.newMenuMob::-webkit-scrollbar-corner       { /* 6 - уголок */ }
 			.newMenuMob::-webkit-resizer                { /* 7 - изменение размеров */ }
 
-		
+            .mm_overley {
+                width:100%;
+                height: 100vh;
+                left: 0;
+				top: 0;
+				position: fixed;
+                z-index: 11998;
+                display:none;
+                background-color: grey;
+                opacity: 0.8;
+            }
 			
 			.btnClodeMenu {
 				width: 150px;
@@ -10622,7 +10632,9 @@ position: absolute;
 				    z-index: 9999;
 				display:none;
 			}
-			
+            
+            
+
 			.btnClodeMenu img{ 
 				height:100%;
 				float:right;

@@ -119,6 +119,7 @@ add_action( 'wp_enqueue_scripts', 'my_assets' );
 		//wp_enqueue_script( 'carusel', get_template_directory_uri().'/js/jquery.jcarousel.min.js', array('jquery'), null, true);
 		//wp_enqueue_script( 'wow', get_template_directory_uri().'/js/wow.min.js', array('jquery'), null, true);
 
+		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), "1.0.50", true); 
 		wp_enqueue_script( 'bascet', get_template_directory_uri().'/js/bascet.js', array('jquery'), "1.0.50", true); //КОРЗИНА
 		//wp_enqueue_script( 'amodal', get_template_directory_uri().'/js/jquery.arcticmodal-0.3.min.js', array('jquery'), null, true); 
 		

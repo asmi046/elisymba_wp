@@ -412,32 +412,10 @@
     </style>
 
     <script>
-      jQuery(document).ready(function() {
-        jQuery("#menuBtnOpen").click(function() {
-          jQuery(".btnClodeMenu").show();
-          jQuery(".newMenuMob").show();
-        });
-
-        jQuery(".btnClodeMenu").click(function() {
-          jQuery(".newMenuMob").hide();
-          jQuery(".btnClodeMenu").hide();
-        });
-
-        jQuery(".mobile-menu a").click(function() {
-          jQuery(".mobile-menu a").each(function() {
-            jQuery(this).next('.sub-menu').slideUp();
-          });
-          if (jQuery(this).next('.sub-menu').is(':visible')) {
-            jQuery(this).next('.sub-menu').slideUp();
-          } else {
-            jQuery(this).next('.sub-menu').slideDown();
-          }
-
-        });
-      });
 
     </script>
     <?php $options = get_option( 'wpuniq_theme_options' ); ?>
+    <div class = "mm_overley"></div>
     <div class="btnClodeMenu">
       <img src="<?php bloginfo("template_url");?>/img/close.svg" />
     </div>

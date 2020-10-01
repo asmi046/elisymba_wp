@@ -1319,6 +1319,37 @@ function get_delivery_data(naspunkt, state, province) {
 	
 	
     jQuery(document).ready(function($) {
+      
+    $('.mm_overley').click(function(e) {
+        $('.btnClodeMenu').trigger('click');
+    });
+
+//----------МОбильное меню
+    jQuery("#menuBtnOpen").click(function() {
+        jQuery(".btnClodeMenu").show();
+        jQuery(".newMenuMob").show();
+        jQuery(".mm_overley").show();
+      });
+
+      jQuery(".btnClodeMenu").click(function() {
+        jQuery(".newMenuMob").hide();
+        jQuery(".btnClodeMenu").hide();
+        jQuery(".mm_overley").hide();
+      });
+
+      jQuery(".mobile-menu a").click(function() {
+        jQuery(".mobile-menu a").each(function() {
+          jQuery(this).next('.sub-menu').slideUp();
+        });
+        if (jQuery(this).next('.sub-menu').is(':visible')) {
+          jQuery(this).next('.sub-menu').slideUp();
+        } else {
+          jQuery(this).next('.sub-menu').slideDown();
+        }
+
+      });
+//------
+
 
     $('#s').focus(function(){
         if ($(".preSearchWrap").find('*').length != 0)
