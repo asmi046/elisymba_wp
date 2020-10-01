@@ -9,6 +9,7 @@
     "send_r": "scp -C *.php *.png *.css vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_ms": "scp -C *.css vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_head": "scp -C header.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "send_one": "scp -C tovar-elem.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_index": "scp -C index.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_func": "scp -C functions.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "mk_part_carbon": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/inc\"",
