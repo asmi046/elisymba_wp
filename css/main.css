@@ -2174,6 +2174,7 @@ position: absolute;
 
 .page-content-full .catalog-item {
     width:31%;
+    margin-right: 0;
 }
 
 .page-content-full .category-item:nth-child(3n), .page-content-full .catalog-item:nth-child(3n)
