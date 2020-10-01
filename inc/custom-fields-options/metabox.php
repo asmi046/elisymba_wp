@@ -94,7 +94,11 @@ Container::make('post_meta', 'tovar_custom_post', 'Поля товара')
 	));
 
 Container::make( 'theme_options', 'Settings', 'Настройки магазина' )
-  ->add_tab('Баннер', array(
+->add_tab('Контент главной страницы', array(
+    Field::make('rich_text', 'main_up_tex', 'Текст над товаром'),
+    Field::make('rich_text', 'main_down_tex', 'Текст под товаром'),
+  ))  
+->add_tab('Баннер', array(
     Field::make('text', 'banner_v', 'Версия баннера'),
   ))
   ->add_tab('Акция', array(

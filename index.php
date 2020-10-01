@@ -35,7 +35,9 @@ endif;?>
 <div id="w0" class="list-view">
 	
 	<div class="page-content page-content-inmain <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
-		<?php iinclude_page(31); ?>
+		<?php 
+			echo carbon_get_theme_option( 'main_up_tex' );
+		?>
 	</div>
 	
 	<?php include("filtrSelectElem.php"); ?>
@@ -77,7 +79,9 @@ endif;?>
 	</div>
 	
 	<div class="page-content page-content-inmain <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
-		<?php iinclude_page(6123); ?>
+		<?php 
+			echo carbon_get_theme_option( 'main_down_tex' );
+		?>
 	</div>
 	
 </div>
