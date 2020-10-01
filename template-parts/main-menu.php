@@ -181,7 +181,7 @@
             
     <li>
       <a href="#">Спортивное развитие</a>
-        <ul class="sub-menu">
+        <ul class="sub-menu corection1330">
           <li>
             <a href="<?php echo get_category_link('93');?>">
               <img src="<?php echo get_template_directory_uri();?>/img/category/sport-complecs.jpg" alt=""> 
@@ -227,7 +227,7 @@
     
     <li>
       <a href="#">Магнитные конструкторы</a>
-        <ul class="sub-menu sub-menu-mini">
+        <ul class="sub-menu sub-menu-mini corection1330 corection1330no">
           <li>
             <a href="<?php echo get_category_link('98');?>">
               <img src="<?php echo get_template_directory_uri();?>/img/category/magforms.jpg" alt=""> 
@@ -321,7 +321,7 @@
 
     <li>
       <a href="#">Спорт и отдых</a>
-        <ul class="sub-menu">
+        <ul class="sub-menu corection1280">
           
           <li>
             <a href="<?php echo get_category_link('87');?>">
@@ -354,7 +354,7 @@
     
     <li>
       <a href="#">Книги</a>
-      <ul class="sub-menu">      
+      <ul class="sub-menu corection1280">      
         
         <li>
           <a href="<?php echo get_category_link('79');?>">

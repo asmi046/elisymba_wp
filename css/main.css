@@ -16595,6 +16595,8 @@ border-color: #ffffff transparent transparent transparent;
     } 
   }
   
+
+  
   /*Шрифт Меню*/
   .new_head .menu a {
     font-family: Lato-Medium, sans-serif;
@@ -16705,6 +16707,14 @@ border-color: #ffffff transparent transparent transparent;
     }
   }
   
+  @media screen and (max-width: 1390px) {
+    .menu .corection1330 {
+        left:unset;
+        right:0;
+    }
+  }
+
+
   @media screen and (max-width: 1366px) {
     .menu a {
       font-size: 16px;
@@ -16717,13 +16727,15 @@ border-color: #ffffff transparent transparent transparent;
   }
   
   @media screen and (max-width: 1290px) {
-    .menu .sub-menu {
-        min-width: 500px;
-    } 
-    
-    .menu .sub-menu-mini {
-        min-width: 250px;
-    } 
+    .menu .corection1280 {
+        left:unset;
+        right:0;
+    }
+
+    .menu .corection1330no {
+        left:0;
+        right:unset;
+    }
   }
   
   @media screen and (max-width: 680px) {
@@ -16737,4 +16749,7 @@ border-color: #ffffff transparent transparent transparent;
     color: #00b5f1; 
     text-decoration: none;
   }
+
+
+
   /*=== Cтили Шапки End ===============================================*/
