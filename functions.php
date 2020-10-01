@@ -94,7 +94,7 @@ add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
 		//wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), null, 'all');
 		wp_enqueue_style("style-frontend",get_template_directory_uri()."/style.css", array(), '1.0.49', 'all');
-		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), "1.0.83", "all");
+		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), "1.0.90", "all");
 		//wp_enqueue_style("style-carusel",get_template_directory_uri()."/css/jcarousel.responsive.css");
 		//wp_enqueue_style("style-fa",get_template_directory_uri()."/fonts/fa/web-fonts-with-css/css/fontawesome-all.min.css");
 		//wp_enqueue_style("style-modal",get_template_directory_uri()."/css/jquery.arcticmodal-0.3.css");
