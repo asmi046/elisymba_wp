@@ -1356,7 +1356,7 @@ function get_delivery_data(naspunkt, state, province) {
         $(".preSearchWrap").show();
     });
 
-    $('.search-widget, .searchformWraper').mouseleave(function(){
+    $('.search-widget, #searchform').mouseleave(function(){
         $(".preSearchWrap").hide();
     });
         
