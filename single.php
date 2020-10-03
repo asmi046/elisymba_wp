@@ -9,13 +9,21 @@ get_header(); ?>
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <div class="wrapper">
         <?php include ("baner-timer.php"); ?>
-        <?php include ("show-960.php"); ?>
             
 		<div class="clearfix d-flex-main">
             
-			<?php get_sidebar("left"); ?>                
+		<?php 
+			require_once 'Mobile_Detect.php';
+			$detect = new Mobile_Detect;
+			
+			if( !$detect->isMobile() ){
+				if ($_REQUEST["nh"] != 1)
+					get_sidebar("left"); 
+			}
 
-	<section id = "tovar" class="page-content">
+		?>            
+
+	<section id = "tovar" class="page-content <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
 	<!-- Отключение последней хлебной крошки -->
 	<style>
 		.breadcrumb_last {
@@ -29,9 +37,11 @@ get_header(); ?>
 		}
 	</style>
 	
-			<?php 
-				include("search-form.php");
-			?>
+		<?php 
+			if( !$detect->isMobile() )
+				if ($_REQUEST["nh"] != 1)
+					include("search-form.php");
+		?>
 	
 	<div class="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 	
