@@ -2,31 +2,31 @@
 
 <main>
     <div class="wrapper">
-        <?php include ("baner-timer.php"); ?>
-        <?php include ("show-960.php"); ?>
-            
+		<?php include ("baner-timer.php"); ?>
+		
 		<div class="clearfix d-flex-main">
             
-			<?php get_sidebar("left"); ?>                
+			<?php 
+				require_once 'Mobile_Detect.php';
+				$detect = new Mobile_Detect;
+				
+				if( !$detect->isMobile() ){
+					if ($_REQUEST["nh"] != 1)
+						get_sidebar("left"); 
+				}
 
-			<section class="page-content">
+			?>              
+
+			<section class="page-content <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
 				
 			<?php 
-				include("search-form.php");
-			?>	
+				if( !$detect->isMobile() )
+					if ($_REQUEST["nh"] != 1)
+						include("search-form.php");
+			?>
 				
 				<?php 
-				/*
-				$args = array(
-					'meta_key'       => 'orderCat',
-					'orderby'        => 'meta_value_num',     
-					'post_type'      => 'post',
-					'order'          => 'ASC', 
-				 );
-		 
-				query_posts( $args );
-				*/
-				
+
 				
 				include("sortBlk.php");
 				
@@ -58,10 +58,8 @@
 					<?php include("filtrSelectElem.php"); ?>
 					
 					
-					<div class="bg-gray-pagination bg-gray-pagination-top">
-						<div class="pink-pagination">
-							<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
-						</div>
+					<div class="page_navi_top bg-gray-pagination bg-gray-pagination-top">
+						<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
 					</div>
 					
 					
@@ -70,25 +68,15 @@
 							<?php  while ( have_posts() ) : the_post(); ?>
 								<?php get_template_part( 'tovar', 'elem' );?>
 							<?php endwhile;?>
-							
-							<!--
-							<div class="next">
-								<a  class = 'aloadet' href="<?php echo get_template_directory_uri();?>/jscroll.php?start=6&count=12&cat=<?php echo get_query_var('cat');?>">next</a>
-							</div>
-							-->
-							
-						</div>
-						
-						
+					
+						</div>	
 					</div>
 					
 					
 					
 					
-					<div class="bg-gray-pagination">
-						<div class="pink-pagination">
-							<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
-						</div>
+					<div class="page_navi_bottom bg-gray-pagination">
+						<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
 					</div>
 					
 					
@@ -107,19 +95,7 @@
 			</section>
 			
 <script>
-/*
-	jQuery(window).scroll(function () {
-		if (jQuery(window).width() >= '1280')	
-		   if (jQuery(this).scrollTop() > 1400) { //1700
-				jQuery(".main-sidebar").hide();
-				jQuery(".page-content").addClass("pc100");
-				
-			} else {
-			    jQuery(".main-sidebar").show();
-				jQuery(".page-content").removeClass("pc100");
-			}
-    });
-*/
+
 
 </script>
 
@@ -155,9 +131,5 @@
         </div>
     </div>
 </main>
-		<script>
-//jQuery(window).on('beforeunload', function() {
-//    jQuery(window).scrollTop(0);
-//});
-	</script>
+
 <?php get_footer(); ?>

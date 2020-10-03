@@ -103,7 +103,21 @@
 		
 	</div>
 	
-	<div class="item-title"><a href="<?php echo $linc;?>"><?php echo $post->post_title;?> <?php //echo "(".get_post_meta(get_the_ID(), "size", true).")";?></a></div>
+	<!-- <div class = "informersTm"> -->
+		<div class = "informerElem">
+
+			<?php get_template_part('template-parts/reviews-stars');?>
+			
+		</div>
+		
+		
+	<!-- </div> -->
+
+	<div class="item-title">
+		<a href="<?php echo $linc;?>">
+			<?php echo $post->post_title;?> 
+		</a>
+	</div>
 	
 	<div class="price">
 		<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
@@ -115,58 +129,7 @@
 	
 	</div>
 	
-	<div class = "informersTm">
-		<div class = "informerElem">
-			<?php
-			// $rating_total = 0;
-			// $arr_reviews = carbon_get_the_post_meta('complex_reviews');
-			// foreach($arr_reviews as $review):
-			// 	if($review['complex_reviews_is_show']):
-			// 		$rating_total += $review['complex_reviews_stars'];
-			// 		$inc++;
-			// 	endif;
-			// endforeach;
-			// $awerage = (float)$rating_total / (float)$inc;
-			// $awerage = round($awerage, 1);
-				
-			// if($inc > 0):
-				
-			?>
-			<!-- <div class="review-item__header-stars">
-				<?php $stars_qty = round($awerage);
-				for ($i=0; $i < 5; $i++): ?>
-					<?php if($stars_qty <= $i):?>
-					<div class="star_review star_review-gray"></div>
-					<?php else:?>
-					<div class="star_review"></div>
-					<?php endif;?>
-				<?php endfor;?>
-				<div class="round-awerage"><?php echo $inc;?></div>
-			</div> -->
-			<?php if(carbon_get_the_post_meta('complex_reviews')):
-        
-	        get_template_part('template-parts/reviews-stars');?>
-			<?php else:?>
-				 <strong>Возраст: </strong><span class = "vozrostBlk"><?php echo get_post_meta(get_the_ID(), "vozrost", true);?></span>
-			<?php endif;?>
-		</div>
-		
-		<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
-			<div class = "informerElem">
-				Выгода: <span class = "vigodaBlk"><?php echo (float)$pricr_old - (float)$pricr_cur;?> руб.</span>
-			</div>
-		<?php endif;?>
-	</div>
-	
-	<!--
-	<div class="action_count" style="font-size: 18px; font-weight: bold;">
-		<?php //if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
-			<p>Осталось по акции: <?php //echo rand(1,3); ?> </p> 
-		<?php //else:?>
-			<p>&nbsp;</p>
-		<?php //endif;?>
-	</div>
-	-->
+
 	
 	<div class="item-actions clearfix">
 		<a class="more" href="<?php echo $linc;?>">Подробнее</a>

@@ -2741,10 +2741,20 @@ margin: 5px 10px;
     text-align: center;
 }
 
+
 .wp-pagenavi {
 	text-align: center;
     width: 100%;
     display: inline-block;
+}
+
+.page_navi_top .wp-pagenavi {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.page_navi_bottom .wp-pagenavi {
+    margin-bottom: 40px;
 }
 
 .vigodaBlk {
@@ -4114,12 +4124,12 @@ hr.dotted {
 .informersTm {
 	width:100%;
 	float:left;
-	font-size:10px;
-	margin-bottom:10px;
+    font-size:10px;
+    height: 20px;
 }
 
 .informersTm .informerElem {
-	width:50%;
+	width:100%;
 	float:left;
 	text-align:center;
 }
@@ -15218,12 +15228,16 @@ label.loadFileElem {
 .progress-percent {
 	width: 30px;
 }
+
+.informerElem {
+    height: 20px;
+}
+
 .informerElem .review-item__header-stars {
     justify-content: center;
-	padding-left: 20px;
 	margin-bottom: 0;
 	margin-top: 0;
-	height: 14px;
+	height: 20px;
 }
 .round-awerage {
 	position: relative;
