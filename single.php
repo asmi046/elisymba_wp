@@ -671,9 +671,7 @@ get_header(); ?>
 				</div>
 				-->
 			
-				<a href = "https://xn--80ablmoh8a2h.xn--p1ai/category/kubiki-po-skidke/?nsale=500">
-					<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/page-action-one.jpg);"></div>
-				</a>
+				
 				
         	<?php else:?>
 				<!--
@@ -683,9 +681,7 @@ get_header(); ?>
 				</div>
 				-->
 				
-				<a href = "https://xn--80ablmoh8a2h.xn--p1ai/category/kubiki-po-skidke/?nsale=500">
-					<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/page-action-one.jpg);"></div>
-				</a>
+
 				
 			<?php endif;?>
 				
@@ -1277,6 +1273,11 @@ get_header(); ?>
 
     </div>
 	-->
+
+	<a href = "https://xn--80ablmoh8a2h.xn--p1ai/category/kubiki-po-skidke/?nsale=500">
+		<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/page-action-one.jpg);"></div>
+	</a>
+
     <div class="bg-pink" style="margin-bottom: 30px">
         <div class="dotted-border">
             <div class="clearfix">

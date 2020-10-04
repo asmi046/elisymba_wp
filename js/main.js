@@ -166,27 +166,6 @@ function get_gift_index(index) {
 	
 	
 	return prizmass[priz];
-
-/*
-	var priz = getRandomInt(10000);
-	
-	priz = getRandomInt(10000);
-	priz = getRandomInt(10000);
-	
-	console.log(priz);
-	
-	
-	if ((priz > 0)&&(priz < 10)) return 10;
-	if ((priz > 10)&&(priz < 35)) return 11;
-	if ((priz > 35)&&(priz < 135)) return 9;
-	if (priz == 136) return 8;
-	if (priz == 137) return 7;
-	if (priz == 138) return 5;
-	if ((priz > 138)&&(priz <= 3438)) return 2;
-	if ((priz > 3438)&&(priz <= 6738)) return 1;
-	if (priz > 6738) return 0;
-*/
-
 }
 
 get_gift_index(0);
@@ -1320,6 +1299,13 @@ function get_delivery_data(naspunkt, state, province) {
 	
     jQuery(document).ready(function($) {
       
+    $('.sub-clear').click(function(e) {
+        e.preventDefault();
+        $('#s').val('');
+        $(".preSearchWrap").hide();
+        $(this).hide();
+    });
+
     $('.mm_overley').click(function(e) {
         $('.btnClodeMenu').trigger('click');
     });
@@ -1397,6 +1383,7 @@ function get_delivery_data(naspunkt, state, province) {
 
                   $(".preSearchWrap").html(reaStr);
                   $(".preSearchWrap").show();
+                  $('.sub-clear').show();
               });
                       
               jqXHR.fail(function (responce) {
