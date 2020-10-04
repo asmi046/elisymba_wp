@@ -20,7 +20,7 @@
 			<section class="page-content page-content-full>
 				
 			<?php 
-				if( !$detect->isMobile() )
+				if( $detect->isMobile() )
 					//if ($_REQUEST["nh"] != 1)
 						include("search-form.php");
 			?>
