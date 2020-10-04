@@ -38,8 +38,7 @@ get_header(); ?>
 	</style>
 	
 		<?php 
-			if( !$detect->isMobile() )
-				if ($_REQUEST["nh"] != 1)
+			if( $detect->isMobile() )
 					include("search-form.php");
 		?>
 	

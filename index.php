@@ -66,7 +66,7 @@ endif;?>
 		<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
 	</div>
 	
-	<div class="page-content page-content-inmain page-content-full>
+	<div class="page-content page-content-inmain page-content-full">
 		<?php 
 			echo carbon_get_theme_option( 'main_down_tex' );
 		?>

@@ -1545,7 +1545,7 @@ position: absolute;
 /*---новая карусель товаров--*/
 
 		.product-page .product-image .discount {
-			z-index:1000;
+			z-index:100;
 		}
 		
 		.owl-theme iframe{
@@ -1610,7 +1610,8 @@ position: absolute;
 		}
 		
 		.owl-theme .owl-dots{
-			margin-top:10px;
+			margin-top:20px;
+			margin-bottom:20px;
 		}
 
 /*---------------------------*/
@@ -2594,7 +2595,7 @@ margin: 5px 10px;
 
 .catalog-item .item-image {
     margin-bottom: 11px;
-    height: 334px;
+    height: 290px;
     overflow: hidden;
 }
 
@@ -3397,7 +3398,8 @@ hr.dotted {
 }
 
 .product-image {
-	width:580px;
+    width:740px;
+    margin-right: 40px;
 }
 
 .product-image img{
@@ -3451,7 +3453,7 @@ hr.dotted {
 
 .product-desc {
     float: left;
-    width: 300px;
+    width: 340px;
 	padding-left:25px;
 }
 

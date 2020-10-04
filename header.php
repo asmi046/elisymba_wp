@@ -604,7 +604,7 @@
 			?> 
 
 
-    <? if ($_REQUEST["nh"] != 1) {?>
+    <? if ($_REQUEST["nh"] == 1) {?>
     <header class="site-header clearfix">
       
 
@@ -623,28 +623,6 @@
           <a href="tel:<?php echo $options[phoneLnk]; ?>"><img src="<?php bloginfo("template_url");?>/img/phone.svg" /></a>
         </div>
       </div>
-
-		<!-- <div class = "workInPrWraper" id = "workInPrWraperMob">
-			<div class = "workInPr">
-				Режим работы в празднечные дни
-			</div>
-			
-			<div class = "grafWin">
-					выходные дни: <span style = "color:red;">1,2,3,7</span>	<br/>
-						короткие дни: <span style = "color:blue;">4,5,6</span> с 12:00 до 19:00<br/>
-				<br/>
-				<span class = "prizivV">
-				Оставляйте заявку на сайте<br/>
-				мы в любом случае Вам перезвоним
-				</span>
-			</div>
-      </div> -->
-
-
-
-
-
-
 
       <div class="u-wrapper clearfix">
         <?php 

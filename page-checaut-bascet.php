@@ -11,13 +11,11 @@ Template Name: Страница оформления заказа - корзин
 	
 	<div class="wrapper">
         <?php include ("baner-timer.php"); ?>
-        <?php include ("show-960.php"); ?>
             
 		<div class="clearfix d-flex-main">
-            
-			<?php get_sidebar("left"); ?>                
+                     
 
-			<section class="page-content">
+			<section class="page-content page-content-full">
 
 					<p style = 'color:green;font-size:3em'>Ваш заказ принят. Мы свяжемся с Вами в ближайшее время.</p>
 					

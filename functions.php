@@ -90,46 +90,25 @@ function my_assets_admin(){
 		) );
 }
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
+
+$allVersion = "1.0.101";
+
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
-		//wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css', array(), null, 'all');
-		wp_enqueue_style("style-frontend",get_template_directory_uri()."/style.css", array(), '1.0.49', 'all');
-		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), "1.0.90", "all");
-		//wp_enqueue_style("style-carusel",get_template_directory_uri()."/css/jcarousel.responsive.css");
-		//wp_enqueue_style("style-fa",get_template_directory_uri()."/fonts/fa/web-fonts-with-css/css/fontawesome-all.min.css");
-		//wp_enqueue_style("style-modal",get_template_directory_uri()."/css/jquery.arcticmodal-0.3.css");
-		
-		//wp_enqueue_style("style-owl",get_template_directory_uri()."/js/owl/assets/owl.carousel.min.css");
-		//wp_enqueue_style("style-owl-d",get_template_directory_uri()."/js/owl/assets/owl.theme.default.min.css");
+		wp_enqueue_style("style-frontend",get_template_directory_uri()."/style.css", array(), $allVersion, 'all');
+		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), $allVersion, "all");
 		
 		wp_enqueue_script( 'jquery', "", array(), null, true);
 
-		//wp_enqueue_script( 'plugi', get_template_directory_uri().'/js/plugins.js', array('jquery'), null, true);
 		
-		//wp_enqueue_script( 'cookie', get_template_directory_uri().'/js/jquery.cookie.js', array('jquery'), null, true);
-		//wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js');
-		//wp_enqueue_script( 'masced', get_template_directory_uri().'/js/jquery.maskedinput.js');
-		//wp_enqueue_script( 'lload', get_template_directory_uri().'/js/jquery.lazy.min.js', array('jquery'), null, true);
-		//wp_enqueue_script( 'readmore', get_template_directory_uri().'/js/readmore.js', array('jquery'), null, true);
+		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), $allVersion, true); 
+		wp_enqueue_script( 'bascet', get_template_directory_uri().'/js/bascet.js', array('jquery'), $allVersion, true); //КОРЗИНА
 		
-		//wp_enqueue_script( 'fapi5', get_template_directory_uri().'/js/fapi5.js', array('jquery'), null, true);
-		
-		//wp_enqueue_script( 'odnkl_script', get_template_directory_uri().'/js/odnkl_script.js', array('jquery'), null, true);
-		
-		//wp_enqueue_script( 'carusel', get_template_directory_uri().'/js/jquery.jcarousel.min.js', array('jquery'), null, true);
-		//wp_enqueue_script( 'wow', get_template_directory_uri().'/js/wow.min.js', array('jquery'), null, true);
-
-		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), "1.0.50", true); 
-		wp_enqueue_script( 'bascet', get_template_directory_uri().'/js/bascet.js', array('jquery'), "1.0.50", true); //КОРЗИНА
-		//wp_enqueue_script( 'amodal', get_template_directory_uri().'/js/jquery.arcticmodal-0.3.min.js', array('jquery'), null, true); 
-		
-		//wp_enqueue_script( 'jscroll', get_template_directory_uri().'/js/jquery.jscroll.min.js', array('jquery'), null, true); //jscroll
 		
 		if(is_page_template('page-cart.php')) {
 			wp_enqueue_script('nice-select', get_template_directory_uri() . '/js/jquery.nice-select.min.js', array(), null, true);
 		}
 		
-		//wp_enqueue_script( 'owl', get_template_directory_uri().'/js/owl/owl.carousel.min.js', array(), null, true); 
 		
 		wp_localize_script( 'jquery', 'allAjax', array(
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),

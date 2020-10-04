@@ -9,7 +9,7 @@
             <span>Бизидом</span>
            </a>
           </li>
-          <li><a href="<?php echo get_category_link('5');?>">
+          <li><a href="<?php echo get_category_link('6');?>">
             <img src="<?php echo get_template_directory_uri();?>/img/category/bizicub.jpg" alt=""> 
             <span>Бизикуб</span>
            </a>
@@ -39,11 +39,14 @@
             <span>Для детских садов и доу</span>
            </a>
           </li>
-          <li><a href="<?php echo get_category_link('48');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/babies.jpg" alt=""> 
-            <span>Бизиборды малютки</span>
-           </a>
-          </li>
+          
+          <!-- <li>
+            <a href="<?php //echo get_category_link('48');?>">
+              <img src="<?php //echo get_template_directory_uri();?>/img/category/babies.jpg" alt=""> 
+              <span>Бизиборды малютки</span>
+            </a>
+          </li> -->
+          
           <li><a href="<?php echo get_category_link('72');?>">
             <img src="<?php echo get_template_directory_uri();?>/img/category/boys.jpg" alt=""> 
             <span>Для мальчиков</span>

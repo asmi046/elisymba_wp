@@ -17,7 +17,7 @@
 
 			?>              
 
-			<section class="page-content page-content-full>
+			<section class="page-content page-content-full">
 				
 			<?php 
 				if( $detect->isMobile() )
