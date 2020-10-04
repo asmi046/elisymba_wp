@@ -3,25 +3,21 @@
 <main>
     <div class="wrapper">
         <?php include ("baner-timer.php"); ?>
-        <?php include ("show-960.php"); ?>
-            
-		
 
-		
 		<div class="clearfix d-flex-main">
             
 		<?php 
 			require_once 'Mobile_Detect.php';
 			$detect = new Mobile_Detect;
 			
-			if( !$detect->isMobile() ){
-				if ($_REQUEST["nh"] != 1)
-					get_sidebar("left"); 
-			}
+			// if( !$detect->isMobile() ){
+			// 	if ($_REQUEST["nh"] != 1)
+			// 		get_sidebar("left"); 
+			// }
 
 		?>                   
 
-			<section class="page-content page-content-arial <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
+			<section class="page-content page-content-arial page-content-full">
 				<?php if ( have_posts() ) : ?>
 					<h1><?php single_cat_title();?></h1>
 					

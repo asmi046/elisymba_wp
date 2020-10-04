@@ -58,14 +58,14 @@ Template Name: Страница конкурса
 			require_once 'Mobile_Detect.php';
 			$detect = new Mobile_Detect;
 			
-			if( !$detect->isMobile() ){
-				if ($_REQUEST["nh"] != 1)
-					get_sidebar("left"); 
-			}
+			// if( !$detect->isMobile() ){
+			// 	if ($_REQUEST["nh"] != 1)
+			// 		get_sidebar("left"); 
+			// }
 
 		?>                 
 
-			<section class="page-content konkurs-page <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
+			<section class="page-content konkurs-page page-content-full">
 				<h1><?php the_title();?></h1>
 				<?php the_content();?>
 				<div class="konkurs-page__bg"></div>

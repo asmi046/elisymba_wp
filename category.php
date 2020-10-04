@@ -10,18 +10,18 @@
 				require_once 'Mobile_Detect.php';
 				$detect = new Mobile_Detect;
 				
-				if( !$detect->isMobile() ){
-					if ($_REQUEST["nh"] != 1)
-						get_sidebar("left"); 
-				}
+				// if( !$detect->isMobile() ){
+				// 	if ($_REQUEST["nh"] != 1)
+				// 		get_sidebar("left"); 
+				// }
 
 			?>              
 
-			<section class="page-content <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
+			<section class="page-content page-content-full>
 				
 			<?php 
 				if( !$detect->isMobile() )
-					if ($_REQUEST["nh"] != 1)
+					//if ($_REQUEST["nh"] != 1)
 						include("search-form.php");
 			?>
 				

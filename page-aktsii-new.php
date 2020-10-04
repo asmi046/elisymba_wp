@@ -15,14 +15,14 @@ Template Name: Акции (NEW)
 				require_once 'Mobile_Detect.php';
 				$detect = new Mobile_Detect;
 				
-				if( !$detect->isMobile() ){
-					if ($_REQUEST["nh"] != 1)
-						get_sidebar("left"); 
-				}
+				// if( !$detect->isMobile() ){
+				// 	if ($_REQUEST["nh"] != 1)
+				// 		get_sidebar("left"); 
+				// }
 
 			?>               
 
-			<section class="page-content howto-page page-content-arial <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
+			<section class="page-content howto-page page-content-arial page-content-full>
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<?php the_content();?>

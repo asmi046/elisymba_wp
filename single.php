@@ -16,14 +16,14 @@ get_header(); ?>
 			require_once 'Mobile_Detect.php';
 			$detect = new Mobile_Detect;
 			
-			if( !$detect->isMobile() ){
-				if ($_REQUEST["nh"] != 1)
-					get_sidebar("left"); 
-			}
+			// if( !$detect->isMobile() ){
+			// 	if ($_REQUEST["nh"] != 1)
+			// 		get_sidebar("left"); 
+			// }
 
 		?>            
 
-	<section id = "tovar" class="page-content <? if ($_REQUEST["nh"] == 1) echo "page-content-full"?>">
+	<section id = "tovar" class="page-content page-content-full">
 	<!-- Отключение последней хлебной крошки -->
 	<style>
 		.breadcrumb_last {
