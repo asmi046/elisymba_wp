@@ -91,18 +91,18 @@ function my_assets_admin(){
 }
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 
-$allVersion = "1.0.101";
+define("ALLVERSION", "1.0.102");
 
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
-		wp_enqueue_style("style-frontend",get_template_directory_uri()."/style.css", array(), $allVersion, 'all');
-		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), $allVersion, "all");
+		wp_enqueue_style("style-frontend",get_template_directory_uri()."/style.css", array(), ALLVERSION, 'all');
+		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), ALLVERSION, "all");
 		
 		wp_enqueue_script( 'jquery', "", array(), null, true);
 
 		
-		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), $allVersion, true); 
-		wp_enqueue_script( 'bascet', get_template_directory_uri().'/js/bascet.js', array('jquery'), $allVersion, true); //КОРЗИНА
+		wp_enqueue_script( 'main', get_template_directory_uri().'/js/main.js', array(), ALLVERSION, true); 
+		wp_enqueue_script( 'bascet', get_template_directory_uri().'/js/bascet.js', array('jquery'), ALLVERSION, true); //КОРЗИНА
 		
 		
 		if(is_page_template('page-cart.php')) {
