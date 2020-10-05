@@ -826,8 +826,8 @@
           <!-- Форма поиска -->
           <form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>">
             <div class ="searchformWraper">  
-              <input type="text" tabindex = "1" value="" autocomplete="off" placeholder="Я ищу..." name="s" id="s" />
-              <button type="submit" tabindex = "3"  id="searchsubmit" class="searchsubmit sub-clear" value=""></button>
+              <input type="text" tabindex = "1" autocomplete="off" value = "<? echo $_REQUEST["s"];?>" placeholder="Я ищу..." name="s" id="s" />
+              <button type="button" tabindex = "3"  id="searchsubmit" class="searchsubmit sub-clear" value=""></button>
               <button type="submit" tabindex = "2" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
             </div>
             <div class="preSearchWrap" style="display: none;"></div>
