@@ -16064,7 +16064,7 @@ border-color: #ffffff transparent transparent transparent;
     src: url('../fonts/Lato-Medium/Lato-Medium.eot');
     src: local('Lato Medium'), local('Lato-Medium'),
         url('../fonts/Lato-Medium/Lato-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Lato-Medium/Lato-Medium.woff') format('woff'),
+        
         url('../fonts/Lato-Medium/Lato-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;

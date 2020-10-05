@@ -22,24 +22,14 @@ Template Name: Акции (NEW)
 
 			?>               
 
-			<section class="page-content howto-page page-content-arial page-content-full>
+			<section class="page-content howto-page page-content-arial page-content-full">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<?php the_content();?>
 					
 					<?php $options = get_option( 'wpuniq_theme_options' ); ?>
 					
-				<!--
-				<div class="action-item">
-						
-					<h2 class="action-item__title"> Световой планшет "Рисую светом" размером А4 в подарок!</h2>
-						<div class="action-item__img-wrapper">
-							<img width = "493" src="https://xn--80ablmoh8a2h.xn--p1ai/wp-content/uploads/2019/10/kkww.png" alt="">
-						</div>
-						<div class="action-item__text">
-							<p> Мы дарим крутой световой планшет при заказе от 5000 руб.  </p>
-						</div>
-					-->
+				
 					<div class="action-item">
 						<h2 class="action-item__title"> К каждому заказу подарки</h2>
 						<div class="action-item__img-wrapper">

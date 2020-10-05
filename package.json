@@ -9,7 +9,7 @@
     "send_r": "scp -C *.php *.png *.css vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_ms": "scp -C *.css vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_head": "scp -C header.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
-    "send_one": "scp -C search.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
+    "send_one": "scp -C page-aktsii-new.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_cat": "scp -C category.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_singl": "scp -C single.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "send_index": "scp -C index.php vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
