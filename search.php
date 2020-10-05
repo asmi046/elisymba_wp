@@ -3,16 +3,18 @@
 <main>
     <div class="wrapper">
         <?php include ("baner-timer.php"); ?>
-        <?php include ("show-960.php"); ?>
             
 		<div class="clearfix d-flex-main">
-            
-			<?php get_sidebar("left"); ?>                
+                          
 
-			<section class="page-content">
+			<section class="page-content page-content-full">
 			
 			<?php 
-				include("search-form.php");
+				require_once 'Mobile_Detect.php';
+				$detect = new Mobile_Detect;
+				
+				if( $detect->isMobile() )
+					//include("search-form.php");
 			?>
 			
 				<?php if ( have_posts() ) : ?>
