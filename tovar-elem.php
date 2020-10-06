@@ -125,7 +125,7 @@
 		<?php endif;?>
 		<span class="price-cur"><?php echo $pricr_cur; ?> <span>руб.</span></span>
 		
-		<span onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzina-katalog-new');" class = "tobascetInCatWrap tobascetInCat tobascet" style = "display:inline-block;" title = "Добавить в корзину" data-postid = "<?php echo get_the_ID();?>" data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket fa-lg "  ></i></span>
+		<span onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzina-katalog-new');" class = "tobascetInCatWrap tobascetInCat tobascet" style = "display:inline-block;" title = "Добавить в корзину" data-postid = "<?php echo get_the_ID();?>" data-nsale = "<?php echo $main_sales;?>">В корзину</span>
 	
 	</div>
 	
