@@ -5,7 +5,7 @@
         <ul class="sub-menu">
           
           <li><a href="<?php echo get_category_link('5');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/bizidom.jpg" alt="Бизидом"> 
+            <img src="<?php echo get_template_directory_uri();?>/img/category/bhouse.jpg" alt="Бизидом"> 
             <span>Бизидом</span>
            </a>
           </li>
@@ -15,17 +15,17 @@
            </a>
           </li>
           <li><a href="<?php echo get_category_link('9');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/boards.jpg" alt=""> 
+            <img src="<?php echo get_template_directory_uri();?>/img/category/sky.jpg" alt=""> 
             <span>Развивающие доски</span>
            </a>
           </li>
           <li><a href="<?php echo get_category_link('4');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/beasts.jpg" alt=""> 
-            <span>Развивающие животные</span>
+            <img src="<?php echo get_template_directory_uri();?>/img/category/bizi-animal.jpg" alt=""> 
+            <span>Бизиборды животные</span>
            </a>
           </li>
           <li><a href="<?php echo get_category_link('10');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/toy-cars.jpg" alt=""> 
+            <img src="<?php echo get_template_directory_uri();?>/img/category/bcar.jpg" alt=""> 
             <span>Машинки</span>
            </a>
           </li>
@@ -48,7 +48,7 @@
           </li> -->
           
           <li><a href="<?php echo get_category_link('72');?>">
-            <img src="<?php echo get_template_directory_uri();?>/img/category/boys.jpg" alt=""> 
+            <img src="<?php echo get_template_directory_uri();?>/img/category/bboys.jpg" alt=""> 
             <span>Для мальчиков</span>
            </a>
           </li>
