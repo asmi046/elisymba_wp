@@ -106,6 +106,7 @@ Container::make( 'theme_options', 'Settings', 'Настройки магазин
     Field::make('text', 'roz_data', 'Дата очередного розыгрыша'),
   ))->add_tab('Участники акции', array(
 	Field::make('text', 'konkurs_number', 'Номер конкурса')->set_width(100),
+    Field::make('text', 'uh1', 'Участник №1')->set_width(33),
     Field::make('text', 'uh2', 'Участник №2')->set_width(33),
     Field::make('text', 'uh3', 'Участник №3')->set_width(33),
     Field::make('text', 'uh4', 'Участник №4')->set_width(33),

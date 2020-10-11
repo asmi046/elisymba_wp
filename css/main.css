@@ -2622,7 +2622,7 @@ margin: 5px 10px;
 .catalog-item .item-title {
     overflow: hidden;
     text-overflow: ellipsis;
-    min-height: 38px;
+    min-height: 25px;
 }
 
 .catalog-item .item-title a {
@@ -16164,7 +16164,8 @@ border-color: #ffffff transparent transparent transparent;
   
   /*Шрифт Иконок*/
   .header-top__menu a {
-    font-family: 'Lato-Medium', sans-serif;
+    /* font-family: 'Lato-Medium', sans-serif; */
+    /font-family: sans-serif; */
     font-weight: 400; }
   
   
@@ -16499,7 +16500,8 @@ border-color: #ffffff transparent transparent transparent;
     padding-left: 13px;
     padding-right: 45px;
     font-size: 17.6px;
-    font-family: 'Lato-Medium', sans-serif;
+    /* font-family: 'Lato-Medium', sans-serif; */
+    font-family: sans-serif; 
     font-weight: 400; 
   }
   
@@ -16664,8 +16666,9 @@ border-color: #ffffff transparent transparent transparent;
   
   /*Шрифт Меню*/
   .new_head .menu a {
-    font-family: Lato-Medium, sans-serif;
-    font-size: 18px;
+    /* font-family: Lato-Medium, sans-serif; */
+    font-family: sans-serif;
+    font-size: 17px;
     font-weight: 400;
     text-transform: uppercase; 
   }
@@ -16748,7 +16751,7 @@ border-color: #ffffff transparent transparent transparent;
   /*Отступ Пунктов Меню*/
   
     .new_head  .menu li a {
-        margin: 12px 42px 12px 0px;
+        margin: 12px 48px 12px 0px;
         display: block;  
     }
   
@@ -16768,7 +16771,7 @@ border-color: #ffffff transparent transparent transparent;
 
   @media screen and (max-width: 1440px) {
     .new_head .menu li a {
-        margin: 12px 30px 12px 0px;
+        margin: 12px 38px 12px 0px;
     }
   }
   
