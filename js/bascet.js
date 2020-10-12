@@ -132,9 +132,34 @@ function toBascetFnk (elem) {
 					jQuery(".bascetWriper .bCorcle .countInCart").html(rezm[0]);
 					jQuery("#bascetblk .bascetsod").html(rezm[1]);
 					
-					
-					jQuery('#bascetblk').arcticmodal();
-					
+					if (Number(rezm[0]) <= 1 ) {
+						jQuery('#bascetblk').arcticmodal();
+					} else {
+						var that = jQuery(elem).parents().siblings(".item-image").find("img");
+						console.log(that);
+						if (that.length == 0) 
+						{
+							that = jQuery(".owl-carousel").find(".active").find("img");
+							console.log(that);
+						}
+
+						var bascket = jQuery(".bCorcle");
+						var w = that.width(that);
+						
+						   that.clone()
+							   .css({'width' : w,
+							'position' : 'absolute',
+							'z-index' : '9999',
+							top: that.offset().top,
+							left:that.offset().left})
+							   .appendTo("body")
+							   .animate({opacity: 0.05,
+								   left: bascket.offset()['left'],
+								   top: bascket.offset()['top'],
+								   width: 20}, 1000, function() {	
+									jQuery(this).remove();
+								});
+					}
 				});
 				
 				jqXHR.fail(function (responce) {

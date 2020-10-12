@@ -91,12 +91,12 @@ function my_assets_admin(){
 }
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 
-define("ALLVERSION", "1.0.108");
+define("ALLVERSION", "1.0.109");
 
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
 		wp_enqueue_style("style-frontend",get_template_directory_uri()."/style.css", array(), ALLVERSION, 'all');
-		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/main.css", array(), ALLVERSION, "all");
+		wp_enqueue_style("style-pink",get_template_directory_uri()."/css/g_main.css", array(), ALLVERSION, "all");
 		
 		wp_enqueue_script( 'jquery', "", array(), null, true);
 

@@ -83,16 +83,9 @@ get_header(); ?>
 					autoHeight: true,
 				});
 				
-				/*
-				if (jQuery(window).width() >= '620') {
-					 //$('html, body').animate({ scrollTop: $(scroll_el).offset().top }, 500);
-					 //jQuery('html, body').scrollTop(jQuery(".baner-new").offset().top-10);
-				}
-				*/
 				
 				if (jQuery(window).width() <= '620') {
-					jQuery('.mobH1Container').append( jQuery('.mobRotated') );
-
+				
 				}
 				
 			});
@@ -115,7 +108,7 @@ get_header(); ?>
 											<source srcset="<? echo $adr ?>" type="image/webp"> 
 									<?}?>
 								
-									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
+									<img class = "flight-first" id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
 								</picture>
 							</a>
 							
@@ -259,7 +252,7 @@ get_header(); ?>
 										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "SKU", true).".1.webp")) { ?>
 												<source srcset="<? echo $adr ?>" type="image/webp"> 
 										<?}?>
-									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
+									<img class = "flight-first" id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
 								</picture>
 							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "SKU", true).".2.jpg")):?>
 									<picture>
@@ -380,27 +373,10 @@ get_header(); ?>
 				
 				</div>
 				
-				<div class = "new_delivery_blk">
-					<div id = "cityElem" class = "new_delivery_elem">
-						Ваш город: <br/><span class = "value city_sel_elem"><?php echo (!empty($_COOKIE["cityinfo"]))?$_COOKIE["cityinfo"]:$obj->city->name_ru; ?></span>
-					</div>
-					
-					<div id = "deliveryDeyElem" class = "new_delivery_elem">
-						Доставим за: <br/><span class = "value"></span>
-					</div>
-					
-					<div id = "deliveryPriceElem" class = "new_delivery_elem">
-						Цена: <br/><span class = "value"></span>
-					</div>
-					
-					<span style = "display:none;" class = "not__city_finde">
-						Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
-					</span>
-				</div>
 				
 				
-				<span class = "viev_map">Показать пункты выдачи</span>	
-				<div id = "map_pvt"></div>
+				
+				
 				
 		
 			
@@ -489,17 +465,7 @@ get_header(); ?>
 						?>
 					</span>
                 </div>
-            <div class = "podWidget">
-				<h2>К этому товару мы дарим:</h2>
-				<!-- <div class = "posWline">
-					<div class = "imWriper">
-						<img src = "<?php bloginfo("template_url")?>/img/1podarka.png">
-					</div>
-					<div class = "txtWriper">
-						Раскраски на выбор
-					</div>
-				</div> -->
-			</div>	
+            
 			<!--    
             <div class = "podWidget">
 				<h2>К этому товару мы дарим:</h2>	
@@ -607,7 +573,22 @@ get_header(); ?>
             </div>
         </div>
 		
-			
+		<div class = "new_delivery_blk">
+					<div id = "deliveryDeyElem" class = "new_delivery_elem">
+						Доставим за: <br/><span class = "value"></span>
+					</div>
+					
+					<div id = "deliveryPriceElem" class = "new_delivery_elem">
+						Цена: <br/><span class = "value"></span>
+					</div>
+					
+					<span class = "viev_map">Показать пункты выдачи</span>	
+				<div id = "map_pvt"></div>
+
+					<span style = "display:none;" class = "not__city_finde">
+						Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
+					</span>
+				</div>	
 		
 		    <div class="additional-disc">
 			

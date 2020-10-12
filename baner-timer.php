@@ -27,41 +27,14 @@
 		}
 	});
 	</script>
-	<!--
-	<section class="baner-new">
-		<div class="baner-new__content">
-			<div class="baner-new__content">
-				<div class="baner-new__title"></div>
-				<div class="baner-new__offer">Сделай заказ</div>
-				<div class="baner-new__presents-wrap">
-					<div class="baner-new__presents baner-new__presents-1">
-						<div class="baner-new__presents-title tt1">Получи <br/>до 2-х гарантированных подарков</div>
-						<div class="baner-new__presents-1-1"></div>
-						<div class="baner-new__presents-1-2"></div>
-					</div>
-					<div class="baner-new__presents baner-new__presents-2 ">
-						<div class="baner-new__presents-title tt2">Выиграй <br/>магнитный конструктор <br/>"Комета" МК-30</div>
-						<a href="<?php echo get_the_permalink(6895);?>" class=" btn btn-dark-pink">Подробнее</a>
-						<div class="baner-new__presents-2-bg"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="baner-new__bg-left"></div>
-		<div class="baner-new__bg-center"></div>
-		<div class="baner-new__bg-right"></div>
-	</section>
-	-->
+
 
 					
 	<section class="baner-new-img dt-z ">
 			<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/elisymba-a-1.jpg?v=1.0.16" />
 			<a href="#" class="baner-new__link baner-new__link-more bg-blue">Подробнее<div class="order-form__coupon-note">Сделайте заказ сегодня и примите участие в Мега розыгрыше с гарантированными призами! Вас ждет 30 000 подарок!</div></a>
 			<a href="<?php echo get_permalink(12597);?>" class="baner-new__link">Смотреть все призы</a>
-		<!--<a href = "<?php echo get_the_permalink(18);?>">-->
-			<!--<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/athum-bn1.jpg?v=1.0.11" />-->
-			<!--<div class = "banner_Btn present-modal">ИГРАТЬ</div>-->
-		<!--</a>-->
+
 		
 	</section>
 
@@ -71,10 +44,6 @@
 				<a href="#" class="baner-new__link baner-new__link-more bg-blue">Подробнее<div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div></a>
 				<a href="<?php echo get_permalink(12597);?>" class="baner-new__link">Все призы</a>
 			</div>
-		<!--<a href = "<?php echo get_the_permalink(18);?>">-->
-			<!--<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/athum-bn-mob1.jpg?v=1.0.11" />-->
-		<!--</a>-->
-		
 	</section>
 	
 	<?php endif;?>

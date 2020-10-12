@@ -1245,12 +1245,7 @@ function get_delivery_data(naspunkt, state, province) {
             }, 5000);
         }
 
-/*
-        $('#u-promo-timer').countdown('2020/10/10', function (event) {
-            $(this).html(event.strftime('<span class="countdown-h">%H</span><span class="countdown-m">%M</span><span class="countdown-s">%S</span>'));
-        });
-*/
-        		$(".ooft").fancybox({
+  		$(".ooft").fancybox({
 			maxWidth	: 1200,
 			maxHeight	: 1000,
 			fitToView	: false,
@@ -1266,37 +1261,6 @@ function get_delivery_data(naspunkt, state, province) {
         console.log('APP END');
     });
 
-    
-    // jQuery(document).ready(function() {
-    //     var showText = 300;
-    //     var moretext = 'Показать полностью...';
-
-    //     jQuery('.bp_text p').each(function() {
-    //         var text = jQuery(this).html();
-
-    //         if(text.length > showText) {
-    //             var c = text.substr(0, showText);
-
-    //             var h = text.substr(showText, text.length - showText);
-    //             var html = c + '<span class="morecontent"><span>' + h +
-    //              '</span><a href="" class="morelink-review">' + moretext + '</a></span>';
-    //             jQuery(this).html(html);
-    //         }
-    //     });
-    //     jQuery('.morelink-review').click(function(e) {
-    //         e.preventDefault(false);
-    //         jQuery(this).prev().fadeIn();
-    //         // jQuery(this).prev().children('.morecontent').fadeIn();
-    //         jQuery(this).hide();
-    //         return false;
-    //     });
-    // });
-	
-	
-	
-
-	
-	
     jQuery(document).ready(function($) {
       
     $('.sub-clear').click(function(e) {

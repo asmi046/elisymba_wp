@@ -449,7 +449,7 @@ get_header();
 			
 			<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 				
-				<div class = "new_delivery_blk new_delivery_blk_incart checkout-form__block">
+				<!-- <div class = "new_delivery_blk new_delivery_blk_incart checkout-form__block">
 					<div id = "cityElem" class = "new_delivery_elem">
 						Ваш город: <br/><span class = "value city_sel_elem"><?php echo (!empty($_COOKIE["cityinfo"]))?$_COOKIE["cityinfo"]:$obj->city->name_ru; ?></span>
 					</div>
@@ -465,12 +465,13 @@ get_header();
 					<span style = "display:none;" class = "not__city_finde">
 						Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
 					</span>
-				</div>
+				</div> 
 				
 				
 				<span class = "viev_map checkout-form__block">Пункты выдачи</span>		
 				<div id = "map_pvt" class = "map_pvt_incart checkout-form__block"></div>
-			<!--
+			-->
+				<!--
 			<div class="checkout-form__block about-delivery">
 				<p class = "odostavke">
 					После оформления заказа наш менеджер рассчитает доставку всеми возможными способами. Затем свяжется с Вами и предложит самые оптимальные варианты по срокам и цене
