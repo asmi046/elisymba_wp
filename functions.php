@@ -365,7 +365,7 @@ function bascetinputDopFormatIncart($pe) {
 				$actioncolor = "style = 'color:#c00'";
 			}
 			$rezstr .= '<div class="cart-recommend__item-price">Цена:'. $old_price .' <strong '.$actioncolor.'>'.get_post_meta($pe->ID, "_price", true).' руб.</strong></div>';
-			$rezstr .= '<div onclick="toBascetFnk (this);" class="add-to-cart-link-recommend" data-postid = "'.$pe->ID.'"></div>';
+			$rezstr .= '<div onclick="toBascetFnk (this);" class="tobascetInCatWrap" data-postid = "'.$pe->ID.'">В корзину</div>';
 		$rezstr .= '</div>';
 		
 	$rezstr .= '</div>';

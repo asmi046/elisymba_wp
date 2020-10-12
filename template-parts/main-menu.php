@@ -312,9 +312,23 @@
     <li>
       <a href="<?php echo get_category_link('58');?>">Коврики - пазлы</a>
         <ul class="sub-menu sub-menu-mini">
+          
           <li>
-            <a href="<?php echo get_category_link('58');?>">
+            <a href="<?php echo get_category_link('106');?>">
                 <img src="<?php echo get_template_directory_uri();?>/img/category/kovri.jpg" alt=""> 
+                <span>Ортопедические коврики</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('107');?>">
+                <img src="<?php echo get_template_directory_uri();?>/img/category/kovriki-igr.jpg" alt=""> 
+                <span>Игровые коврики</span>
+            </a>
+          </li>
+
+          <li class = "last_top_menu_punct">
+            <a href="<?php echo get_category_link('58');?>">
                 <span>Смотреть все коврики</span>
             </a>
           </li>
@@ -398,8 +412,49 @@
       <a href="<?php echo get_category_link('74');?>">Сюжетные и ролевые игры</a>
         <ul class="sub-menu sub-menu-mini">
           <li>
-            <a href="<?php echo get_category_link('74');?>">
+            <a href="<?php echo get_category_link('100');?>">
               <img src="<?php echo get_template_directory_uri();?>/img/category/rol-game.jpg" alt=""> 
+              <span>Детские наборы инструментов</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('101');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/doctor.jpg" alt=""> 
+              <span>Играем в доктора</span>
+            </a>
+          </li>
+          
+          <li>
+            <a href="<?php echo get_category_link('105');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/kithen.jpg" alt=""> 
+              <span>Детские кухни</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('104');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/magazin.jpg" alt=""> 
+              <span>Играем в магазин</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('102');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/girl.jpg" alt=""> 
+              <span>Игры для девочек</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('103');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/boy-nab.jpg" alt=""> 
+              <span>Игры для мальчиков</span>
+            </a>
+          </li>
+
+          <li class = "last_top_menu_punct">
+            <a href="<?php echo get_category_link('74');?>">
               <span>Все товары</span>
             </a>
           </li>

@@ -2845,7 +2845,6 @@ div.mejs-speed-button {
   margin: 0 0 35px 0;
   line-height: 30px;
   font-weight: bold;
-  text-transform: lowercase;
 }
 
 .page-content h1:first-letter,
@@ -13242,6 +13241,7 @@ a.present-modal {
   font-size: 18.6px;
   font-weight: 400;
   margin-top: 20px;
+  margin-left: 35px;
 }
 
 .header-user a:hover {
@@ -17158,9 +17158,6 @@ a.present-modal {
     margin-left: 0;
   }
 
-  .order-form__coupon-photo {
-    width: 15%;
-  }
 }
 
 @media screen and (max-width: 454px) {

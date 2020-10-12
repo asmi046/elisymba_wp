@@ -222,15 +222,16 @@ ga('set', 'dimension1', getRetailCrmCookie('_ga'));
 						<div class="continue-shopping_link" onclick="yaCounter48236084.reachGoal('prod_pokupki_okno');" >Продолжить покупки</div>
 						<a href="<?php echo get_the_permalink(7084); ?>" class="cart-checkout__link cart-buttons__top-link-order" onclick="yaCounter48236084.reachGoal('oform_okno');">Оформить заказ</a>
 					</div>
+					<!-- 					
 					<div class="cart-recommend__wrap">
 						<h3 class="cart-product__title">Рекомендуем:</h3>
 						<div class="owl-carousel cart-recommend__slider" id = "bascetCarusel">
-							<?php echo bascetinputDop(0); ?>
+							<?php //echo bascetinputDop(0); ?>
 							
 							
 						</div>
 					</div>
-					
+					 -->
 					
 				</div>
 				<div class = "bascetAllWriperMsg">	

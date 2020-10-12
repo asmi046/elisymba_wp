@@ -325,14 +325,15 @@
             <div class="continue-shopping_link" onclick="yaCounter48236084.reachGoal('prod_pokupki_okno');">Продолжить покупки</div>
             <a href="<?php echo get_the_permalink(7084); ?>" class="cart-checkout__link cart-buttons__top-link-order" onclick="yaCounter48236084.reachGoal('oform_okno');">Оформить заказ</a>
           </div>
-          <div class="cart-recommend__wrap">
+          
+          <!-- <div class="cart-recommend__wrap">
             <h3 class="cart-product__title">Рекомендуем:</h3>
             <div class="owl-carousel cart-recommend__slider" id="bascetCarusel">
               <?php echo bascetinputDop(0); ?>
 
 
             </div>
-          </div>
+          </div> -->
 
 
         </div>
@@ -836,6 +837,7 @@
         
         <!-- Блок Кабинет Корзина -->
         <div class="header-user">
+          <a target = "_blanck" href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=73582/path=dynamic.88x31/*https://market.yandex.ru/shop--elisiamba/475987/reviews"> <img src="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=73581/path=dynamic.88x31/*https://grade.market.yandex.ru/?id=475987&action=image&size=0" border="0" alt="Читайте отзывы покупателей и оценивайте качество магазина ЕлиСямба на Яндекс.Маркете" /> </a>
           <!-- <a href="#" class="header-user__btn header-user__user">Кабинет</a> -->
           <a href="<?php echo get_permalink(7084);?>" class="header-user__btn header-user__cart">Корзина</a>
         </div>
