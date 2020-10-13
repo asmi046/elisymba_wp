@@ -17,6 +17,20 @@ $metaquery = array(
 		'compare' => '>',
 		'type'    => 'NUMERIC',
 	),
+
+	'predzak' => array (
+		'key'     => '_sclad_count',
+		'value' => '0',
+		'compare' => '>',
+		'type'    => 'NUMERIC',
+	),
+
+	// 'predzak' => array (
+	// 	'key'     => '_tovar_sklad_drop',
+	// 	'value' => 'yes',
+	// 	'compare' => '=',
+	// 	'type'    => 'CHAR',
+	// ),
 );
 
 //$metavalue = empty($_REQUEST["hp"])?"":$_REQUEST["hp"];  
@@ -29,17 +43,17 @@ $order = empty($_REQUEST["ordn"])?"ASC":$_REQUEST["ordn"];
 	
 	
 
-if (!empty($_REQUEST["hp"]))
-{
+// if (!empty($_REQUEST["hp"]))
+// {
 
 
-$args['meta_key'] = $_REQUEST["hp"];
+// $args['meta_key'] = $_REQUEST["hp"];
 
 
-$orderby = 'meta_value_num';  
-$order = "DESC";  
+// $orderby = 'meta_value_num';  
+// $order = "DESC";  
 
-}
+// }
 
 if (is_archive()||is_home()){
 	$pageNum = 1; 
@@ -47,7 +61,6 @@ if (is_archive()||is_home()){
 		$pageNum = $cur_page;
 	}
 	
-	//$args['posts_per_archive_page'] = $pageNum*20;
 }
 
 	$args['meta_query'] = $metaquery;

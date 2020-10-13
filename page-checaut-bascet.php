@@ -46,10 +46,34 @@ Template Name: Страница оформления заказа - корзин
 											if ($category[0]->term_id == 22) $catsSerch = "3, 20, 25, 21, -22";
 												
 											
+											$metaqueryInPage = array(
+												'relation' => 'AND',
+												'orderCatM' => array (
+													'key'     => '_tovar_order',
+													'compare' => 'EXIST',
+													'type'    => 'NUMERIC',
+												),
+												
+												'priceM' => array (
+													'key'     => 'price',
+													'value' => '0',
+													'compare' => '>',
+													'type'    => 'NUMERIC',
+												),
+											
+												'predzak' => array (
+													'key'     => '_sclad_count',
+													'value' => '0',
+													'compare' => '>',
+													'type'    => 'NUMERIC',
+												),
+											);
+
 											$args = array(
 														'numberposts' => 30,
 														'category'    => $catsSerch,
-														'orderby' => 'rand'
+														'orderby' => 'rand',
+														'meta_query' => $metaqueryInPage
 														);
 											
 											$rev = get_posts($args);

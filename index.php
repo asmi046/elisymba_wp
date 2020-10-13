@@ -43,9 +43,9 @@ endif;?>
 	<?php include("filtrSelectElem.php"); ?>
 	
 
-	<div class="page_navi_top bg-gray-pagination bg-gray-pagination-top">
-		<?php if ( function_exists( 'wp_pagenavi' ) ) wp_pagenavi(); ?>
-	</div>
+	<!-- <div class="page_navi_top bg-gray-pagination bg-gray-pagination-top">
+		<?php // if ( function_exists( 'wp_pagenavi' ) )  wp_pagenavi(); ?>
+	</div> -->
 
 	
 	<div id = "contentjscroll" class="catalog-items clearfix contentjscroll">

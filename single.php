@@ -1359,10 +1359,34 @@ get_header(); ?>
 			<?php
 							
 							$category = get_the_category();						
+							$metaqueryInPage = array(
+								'relation' => 'AND',
+								'orderCatM' => array (
+									'key'     => '_tovar_order',
+									'compare' => 'EXIST',
+									'type'    => 'NUMERIC',
+								),
+								
+								'priceM' => array (
+									'key'     => 'price',
+									'value' => '0',
+									'compare' => '>',
+									'type'    => 'NUMERIC',
+								),
+							
+								'predzak' => array (
+									'key'     => '_sclad_count',
+									'value' => '0',
+									'compare' => '>',
+									'type'    => 'NUMERIC',
+								),
+							);
+							
 							$args = array(
 										'numberposts' => 10,
 										'category'    => $category[count($category)-1]->cat_ID,
-										'orderby' => 'rand'
+										'orderby' => 'rand',
+										'meta_query' => $metaqueryInPage
 										);
 							
 							$rev = get_posts($args);
