@@ -64,7 +64,10 @@
 
   <?php wp_head();?>
 </head>
-
+<?
+					require_once 'Mobile_Detect.php';
+					$detect = new Mobile_Detect;
+?>
 <body data-variant="v0">
 
   <script>
@@ -482,24 +485,8 @@
             <?php wp_list_categories( array('hide_empty' => 0, 'child_of' => 58, 'title_li' => "", 'orderby' => 'term_order', 'show_option_none' => "", 'use_desc_for_title' => false) ); ?>
           </ul>
         </li>
-        <!--
-			<li id="menu-kostruktori">
-				<a href="#">Конструкторы</a>
-				<ul class="sub-menu">
-					<li class="cat-item cat-item-zz"><a href="<?php //echo get_category_link(22);?>">Смотреть все товары</a></li> 
-					<?php //wp_list_categories( array('hide_empty' => 0, 'child_of' => 22, 'title_li' => "", 'orderby' => 'term_order', 'show_option_none' => "", 'use_desc_for_title' => false) ); ?>
-				</ul>
-			</li>
-			-->
-        <!--
-			<li id="menu-kubiki">
-				<a href="#">Деревянные кубики</a>
-				<ul class="sub-menu">
-					<li class="cat-item cat-item-zz"><a href="<?php //echo get_category_link(25);?>">Смотреть все товары</a></li>
-					<?php //wp_list_categories( array('hide_empty' => 0, 'child_of' => 25, 'title_li' => "", 'orderby' => 'term_order', 'show_option_none' => "", 'use_desc_for_title' => false) ); ?>
-				</ul>
-			</li>
-			-->
+
+
 
         <li id="menu-sport">
           <a href="#">Спорт и отдых</a>
@@ -508,15 +495,7 @@
             <?php wp_list_categories( array('hide_empty' => 0, 'child_of' => 80, 'title_li' => "", 'orderby' => 'term_order', 'show_option_none' => "", 'use_desc_for_title' => false) ); ?>
           </ul>
         </li>
-        <!--
-			<li id="menu-plastilin">
-				<a href="#">Пластилин</a>
-				<ul class="sub-menu">
-					<li class="cat-item cat-item-zz"><a href="<?php echo get_category_link(33);?>">Кинетический plush</a></li>
-					<?php //wp_list_categories( array('hide_empty' => 0, 'child_of' => 33, 'title_li' => "", 'orderby' => 'term_order', 'show_option_none' => "", 'use_desc_for_title' => false) ); ?>
-				</ul>
-			</li>
-			-->
+
         <li id="menu-knigi">
           <a href="#">Книги</a>
           <ul class="sub-menu">
@@ -534,13 +513,7 @@
         </li>
 
 
-       <!-- <li id="menu-pesok">
-          <a href="#">Все для творчества</a>
-          <ul class="sub-menu">
-            <li class="cat-item cat-item-zz"><a href="<?php echo get_category_link(32);?>">Смотреть все товары</a></li>
-            <?php //wp_list_categories( array('hide_empty' => 0, 'child_of' => 32, 'title_li' => "", 'orderby' => 'term_order', 'show_option_none' => "", 'use_desc_for_title' => false) ); ?>
-          </ul>
-        </li> -->
+
 
         <li id="menu-rol">
           <a href="#">Сюжетно-Ролевые игры</a>

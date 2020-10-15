@@ -1,4 +1,8 @@
 <?php
+
+require_once 'Mobile_Detect.php';
+$detect = new Mobile_Detect;
+
 // ini_set("display_errors",1);
 // error_reporting(E_ALL);
 

@@ -1,9 +1,12 @@
-            <div id = "cityElem_top" class = "new_delivery_elem_top new_delivery_elem_top_mob">
+<?
+					
+?>
+			<div id = "cityElem_top" class = "new_delivery_elem_top new_delivery_elem_top_mob">
 								<?php 
 									$city = $GLOBALS['city'];
 								?>
 								Ваш город: <br/><span class = "value city_sel_elem"><?php echo $city; ?></span>
-								<div class = "city_vsp_vin" style = "display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>">
+								<div class = "city_vsp_vin" style = "display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>; <? echo ($detect->isMobile())?"display:none":"display:block";?>">
 									<div class = "qq">Ваш город <span style = "city_in_win"><?php echo $city; ?></span>?</div>
 									<div class = "qq_btn">
 										<div class = "yes_no_btn yes_btn btn btn-pink" >Да, спасибо</div> <div class = "yes_no_btn no_btn btn btn-pink">Нет, другой</div>

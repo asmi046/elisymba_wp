@@ -563,7 +563,7 @@ jQuery(document).ready(function($) {
 		<div class="header-top__menu ul-clean">
 		  <a href="#" class="header-top-icon header-top__map">Курск</a>
 			<div class="city_vsp_vin" style="display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>">
-				<div class="qq">Ваш город <span style="city_in_win"><?php echo $city; ?></span>?</div>
+				<div class="qq">Ваш город <span style="city_in_win"><?php echo $city; ?></span>?-</div>
 				<div class="qq_btn">
 				  <div class="yes_no_btn yes_btn btn btn-pink">Да, спасибо</div>
 				  <div class="yes_no_btn no_btn btn btn-pink">Нет, другой</div>
