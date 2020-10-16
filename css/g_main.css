@@ -9908,6 +9908,17 @@ div.about-slider a img {
   box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.51);
 }
 
+.baner-new__link_phone_a {
+  margin-left: auto;
+}
+
+.baner-new__link_phone {
+  margin-bottom: 0;
+  font-size: 15px;
+  
+  cursor: pointer;
+}
+
 .baner-new-img-m-block {
   display: -webkit-flex;
   display: -moz-flex;

@@ -1,6 +1,4 @@
-<?
-					
-?>
+
 			<div id = "cityElem_top" class = "new_delivery_elem_top new_delivery_elem_top_mob">
 								<?php 
 									$city = $GLOBALS['city'];

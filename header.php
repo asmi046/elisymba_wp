@@ -779,6 +779,9 @@
             <a href="<?php echo get_permalink(18)?>" class="header-top-icon header-top__actions">Акции</a>
           </div>
           <!-- Телефон -->
+          <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#callback-form" class="fancybox-callback noeffect baner-new__link_phone_a">
+            <div class = "baner-new__link baner-new__link_phone noeffect">Заказать звонок</div>
+          </a>
           <a onclick="yaCounter48236084.reachGoal('nazaltel');" class="header-phone" href="tel:<?php echo $options[phoneLnk]; ?> "><?php echo $options[phoneViev]; ?> </a>
           <!-- <a href="tel:88005110179" class="header-phone">8 800 511-01-79</a> -->
         </div>
