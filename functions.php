@@ -6,9 +6,6 @@ $detect = new Mobile_Detect;
 // ini_set("display_errors",1);
 // error_reporting(E_ALL);
 
-//setcookie("Test1", "1111", 0, "/", "елисямба.рф");
-//setcookie("Test2", "2222", 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
-
 
 include_once('options_page.php');
 

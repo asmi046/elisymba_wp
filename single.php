@@ -424,11 +424,7 @@ get_header(); ?>
 						<?php endif;?>
 					</div>
                     
-					<!--
-					<div class="rating">
-                        <p>Рейтинг товара: <img alt="Рейтинг" style="position: relative; top: -3px; width: 100px;" src="/assets/pink/img/rating/plusstar5.0.png"> (5.0)</p>
-                    </div>
-                    -->
+
 					
 					<div class="price" style = "position:relative;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                         <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
@@ -466,72 +462,18 @@ get_header(); ?>
 					</span>
                 </div>
             
-			<!--    
-            <div class = "podWidget">
-				<h2>К этому товару мы дарим:</h2>	
-				<?php
-					$pricr_cur = get_post_meta(get_the_ID(), "_price", true); 
-					
-					
-				?>
-				
-				<?php
-					if (get_the_ID() != 'abc') {
-				?>
-				<div class = "posWline">
-					<div class = "imWriper">
-						<img src = "<?php bloginfo("template_url")?>/img/1podarka.png">
-					</div>
-					<div class = "txtWriper">
-						Раскраски на выбор
-					</div>
-				</div>
-				
-				<?php
-					//||(get_the_ID() == 10330)
-					if (($pricr_cur > 5000)):
-				?>
-					<div class = "posWline">
-						<div class = "imWriper">
-							<img src = "<?php bloginfo("template_url")?>/img/2podarka-2.png">
-						</div>
-						<div class = "txtWriper">
-							Мягкий пазл
-						</div>
-					</div>
-				<?php endif; ?>
-				<?php } else {?>
-					<div class = "posWline">
-						<div class = "imWriper">
-							<img src = "<?php bloginfo("template_url")?>/img/1podarka-new.png">
-						</div>
-						<div class = "txtWriper">
-							Раскраска
-						</div>
-					</div>
-					
-				
-					<div class = "posWline">
-						<div class = "imWriper">
-							<img src = "<?php bloginfo("template_url")?>/img/2podarka-2-.png">
-						</div>
-						<div class = "txtWriper">
-							Мягкие пазлы
-						</div>
-					</div>
-				<?php }?>
-			</div>       
-				-->
+		
 			<div class="order-form__coupon order-form__coupon-1 center-mobile">
 	               <div class="order-form__coupon-photo"></div>
 	               <div class="order-form__coupon-text">Золотой<br> розыгрыш</div>
 	               <div class="order-form__coupon-question">?</div>
 	               <div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div>
 	        </div>
+			<img style = "visibility: hidden; height:0;" id = "flightImg"  width="100" height="100" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
+
 			
 			<div class="order-button-wrapper">
                    
-					
 					
 							 <a onclick="yaCounter48236084.reachGoal('knopka');" class="btn btn-pink inSingleBtn tobascetInCat fancybox-order <?php echo $pre_order_link;?>" style = "display:inline-bloc;" href="#order-form" 
 							data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" 
@@ -555,13 +497,11 @@ get_header(); ?>
 
 				</div>
                 
-				<?php
-				//global $post;  // Add this line and you're golden
-					//if ($post->ID == 3503):
-				?>
+				
 				<!--КОРЗИНА-->
 				<div class="order-button-wrapper">
-				
+				 
+							
 					<span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');"
 						data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
 				
@@ -673,36 +613,7 @@ get_header(); ?>
 		
     </div>
    
- <!-- 
-	<div class="item-page-row clearfix">
-        <div class="block-border fl">
-            <div class="clearfix">
-                <div class="img" style = "width: 95px;" >
-                    <img class = "cbImg" src="<?php bloginfo("template_url")?>/img/onlineMain.png" alt="Картинка">
-                </div>
-                <div class="text">
-                    <div class="h5">Получите 300 рублей скидка на заказ</div>
-                    <p>Помогите нам сделать магазин еще лучше. Если Вы найдете ошибку на сайте или неработающий блок, напишите пожалуйста на почту <a href = "mailto:info@elisyamba.ru">info@elisyamba.ru</a> или в группе в вк. Мы отблагодарим Вас скидкой в 300 рублей на Ваш заказ.</p>
-                </div>
-            </div>
-        </div>
-		
-		
-		<div class="block-border fl">
-            <div class="clearfix">
-                <div class="img">
-                    <img src="<?php //bloginfo("template_url");?>/img/item-page-mp3.png" alt="Картинка">
-                </div>
-                <div class="text">
-                    <div class="h5">Стильный mp3-плеер <br>в подарок к каждому <br>заказу!</div>
-                    <p>Спешите, количество подарков<br>ограничено!</p>
-                </div>
-            </div>
-        </div>
-		
-    </div>
 
--->
 <div class="single-tabs">
 <div class="tabs">
 	<div class="tab">
@@ -1110,66 +1021,10 @@ get_header(); ?>
 			 ?>
 			</div>
 		<?php else:?>
-			<!-- <div class="no-reviews__wrapper">
-				<div class="no-reviews__img"></div>
-				<div class="no-reviews__text">Отзывов о товаре пока нет. Будьте первым!</div>
-			</div> -->
 			<div class="reviews-board">
-				<!-- <div class="reviews-board__rating">
-					<div class="reviews-board__rating-number"><?php echo $awerage?></div>
-					<div class="review-item__header-stars">
-						<?php $stars_qty = round($awerage);
-						for ($i=0; $i < 5; $i++): ?>
-							<?php if($stars_qty <= $i):?>
-							<div class="star_review star_review-gray"></div>
-							<?php else:?>
-							<div class="star_review"></div>
-							<?php endif;?>
-						<?php endfor;?>
-					</div>
-					<div class="reviews-board__rating-text">Пока нет отзывов</div>
-				</div> -->
-				
-				<!-- <div class="reviews-board__progress">
-					<div class="reviews-board__progress-item">
-						<div class="progress-number">5</div>
-						<div class="progress-line">
-							<div class="progress-full" style="width: <?php $percent = 100 * $five_awerage / $inc; echo $percent;?>%"></div>
-						</div>
-						<div class="progress-percent"><?php echo round($percent);?>%</div>
-					</div>
-					<div class="reviews-board__progress-item">
-						<div class="progress-number">4</div>
-						<div class="progress-line">
-							<div class="progress-full" style="width: <?php $percent = 100 * $four_awerage / $inc; echo $percent;?>%"></div>
-						</div>
-						<div class="progress-percent"><?php echo round($percent);?>%</div>
-					</div>
-					<div class="reviews-board__progress-item">
-						<div class="progress-number">3</div>
-						<div class="progress-line">
-							<div class="progress-full" style="width: <?php $percent = 100 * $three_awerage / $inc; echo $percent;?>%"></div>
-						</div>
-						<div class="progress-percent"><?php echo round($percent);?>%</div>
-					</div>
-					<div class="reviews-board__progress-item">
-						<div class="progress-number">2</div>
-						<div class="progress-line">
-							<div class="progress-full" style="width: <?php $percent = 100 * $two_awerage / $inc; echo $percent;?>%"></div>
-						</div>
-						<div class="progress-percent"><?php echo round($percent);?>%</div>
-					</div>
-					<div class="reviews-board__progress-item">
-						<div class="progress-number">1</div>
-						<div class="progress-line">
-							<div class="progress-full" style="width: <?php $percent = 100 * $one_awerage / $inc; echo $percent;?>%"></div>
-						</div>
-						<div class="progress-percent"><?php echo round($percent);?>%</div>
-					</div>
-				</div> -->
-				 <div class="btn-wrap">
-					 <a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
-				 </div>
+				<div class="btn-wrap">
+					<a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
+				</div>
 			</div>
 		<?php endif;?>
 
@@ -1194,65 +1049,7 @@ get_header(); ?>
 		</div>
 	<?php } ?>
 			
-   <!-- <p class="page-desc tac">Что вы получаете при покупке картины у нас</p>-->
-    <!--
-		<div class="clearfix clearfixCener">
-        
-		<div class="fully-prepared">
-             <?php 
-				$blk1 = explode("|", get_post_meta(get_the_ID(), "informer1", true));
-			?>
-			<div class="img">
-				<?php if (($blk1[0] === "Китайское производство")||($blk1[0] === "Производство Китай")): ?>
-					<img src="<?php bloginfo("template_url")?>/img/mc.png" alt="Сделано в Китае">
-				<?php endif; ?>	
-				
-				<?php if (($blk1[0] === "Российское производство")||($blk1[0] === "Российская ТМ")): ?>
-					<img src="<?php bloginfo("template_url")?>/img/mr.png" alt="Сделано в России">
-				<?php endif; ?>
-				
-				<?php if ($blk1[0] === "Производство Тайвань"): ?>
-					<img src="<?php bloginfo("template_url")?>/img/tai.png" alt="Производство Тайвань">
-				<?php endif; ?>
-				
-				<?php if ($blk1[0] === "Производство Гонконг"): ?>
-					<img src="<?php bloginfo("template_url")?>/img/gon.png" alt="Производство Гонконг">
-				<?php endif; ?>
-				
-				<?php if ($blk1[0] === "Производство Беларусь"): ?>
-					<img src="<?php bloginfo("template_url")?>/img/bel.png" alt="Производство Беларусь">
-				<?php endif; ?>
-				
-				<?php if (($blk1[0] === "Японское производство")||($blk1[0] === "Японская ТМ")): ?>
-					<img src="<?php bloginfo("template_url")?>/img/jpn.png" alt="Японская ТМ">
-				<?php endif; ?>
-				
-			</div>
-          
-			<h5><?php echo empty($blk1[0])?"Российское производство":$blk1[0]; ?></h5>
-            <p><?php echo empty($blk1[1])?"Товар произведен в России с соблюдением всех норм":$blk1[1]; ?></p>
-        </div>
-        
-		<div class="fully-prepared">
-            <div class="img"><img src="<?php bloginfo("template_url")?>/img/03.png" alt="рекомендовано детям от 0 до 3 лет"></div>
-            <?php 
-				$blk2 = explode("|", get_post_meta(get_the_ID(), "informer2", true));
-			?>
-			<h5><?php echo empty($blk2[0])?"Рекомендуемый возраст от 0,5 до 6 лет":$blk2[0]; ?></h5>
-            <p><?php echo empty($blk2[1])?"Этот товар рекомендуется детям данной возрастной категории":$blk2[1]; ?></p>
-        </div>
-        
-		<div class="fully-prepared">
-            <div class="img"><img src="<?php bloginfo("template_url")?>/img/razv.png" alt="Способствует развитию ребенка"></div>
-            <?php 
-				$blk3 = explode("|", get_post_meta(get_the_ID(), "informer3", true));
-			?>
-			<h5><?php echo empty($blk2[0])?"Развитие":$blk3[0]; ?></h5>
-            <p><?php echo empty($blk2[1])?"Данный товар направлен на развитие вашего ребенка":$blk3[1]; ?></p>
-        </div>
-
-    </div>
-	-->
+  
 
 	<a href = "https://xn--80ablmoh8a2h.xn--p1ai/category/kubiki-po-skidke/?nsale=500">
 		<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/page-action-one.jpg);"></div>
@@ -1319,6 +1116,7 @@ get_header(); ?>
 				
 					
 					<div class="order-button-wrapper">
+									
 						<span class = "btn tobascetInCat  btn-pink tobascet grnbtn " style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-niz-new');"
 							data-postid = "<?php echo get_the_ID();?>" 
 						 data-nsale = "<?php echo $main_sales;?>" ><i class="fas fa-shopping-basket"></i> В корзину</span>
@@ -1383,7 +1181,7 @@ get_header(); ?>
 							);
 							
 							$args = array(
-										'numberposts' => 10,
+										'numberposts' => 9,
 										'category'    => $category[count($category)-1]->cat_ID,
 										'orderby' => 'rand',
 										'meta_query' => $metaqueryInPage

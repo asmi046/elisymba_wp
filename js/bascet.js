@@ -139,8 +139,10 @@ function toBascetFnk (elem) {
 						console.log(that);
 						if (that.length == 0) 
 						{
-							that = jQuery(".owl-carousel").find(".active").find("img");
-							console.log(that);
+							that = jQuery("#flightImg");
+							
+						
+				
 						}
 
 						var bascket = jQuery(".bCorcle");
@@ -150,6 +152,8 @@ function toBascetFnk (elem) {
 							   .css({'width' : w,
 							'position' : 'absolute',
 							'z-index' : '9999',
+							"visibility" : "visible",
+							"height" : "50px",
 							top: that.offset().top,
 							left:that.offset().left})
 							   .appendTo("body")
