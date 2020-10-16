@@ -354,7 +354,7 @@
 		
 			<div class="search-widget search-widget-modal search-widget-in-content city_all_search">
 			  <form action="<?php echo home_url( '/' ) ?>">
-				<input name="city_all" id = "city_all" placeholder="Введите населенного пункта" value = "">
+				<input name="city_all" id = "city_all" placeholder="Введите название населенного пункта" value = "">
 			  </form>
 			</div> 
 	
