@@ -92,7 +92,7 @@ function my_assets_admin(){
 }
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 
-define("ALLVERSION", "1.0.111");
+define("ALLVERSION", "1.0.112");
 
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
@@ -1489,5 +1489,45 @@ function pre_serch() {
 		}
 }
 
+add_action( 'wp_ajax_send_recall', 'send_recall' );
+add_action( 'wp_ajax_nopriv_send_recall', 'send_recall' );
+
+function send_recall() {
+		if ( empty( $_REQUEST['nonce'] ) ) {
+			wp_die( '0' );
+		}
+		
+		if ( check_ajax_referer( 'NEHERTUTLAZIT', 'nonce', false ) ) {
+			$s = curl_init();
+							
+			$data = array ("apiKey" => "ILn5g3dW5BgWC0352W1d0dWIRtto5m7u",
+				"order" => json_encode (array(
+					"firstName" => $_REQUEST["name"],
+					"phone" => $_REQUEST["phone"],
+					"customerComment" => "перезвоните мне",
+					"orderMethod" => "	obratnii-zvonok",
+					"call" => 1,
+					'items' => array(
+						array(
+							
+							"initialPrice" => "1", 
+							"productName" => "", 
+							"quantity" => 1, 
+							)
+					),
+				))
+			);
+
+			curl_setopt($s, CURLOPT_URL, 'https://elisyamba.retailcrm.ru/api/v5/orders/create'); 
+			curl_setopt($s,CURLOPT_POST,true); 
+			curl_setopt($s, CURLOPT_RETURNTRANSFER, true); 
+			curl_setopt($s, CURLOPT_POSTFIELDS, $data);
+			$zz = curl_exec($s);
+		
+	
+		} else {
+			wp_die( 'НО-НО-НО!', '', 403 );
+		}
+}
 
 ?>

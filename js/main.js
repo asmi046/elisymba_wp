@@ -1982,6 +1982,41 @@ jQuery('input[type=file]').change(function(){
         });
     });
 	
+	$(".baner-new__link_phone_a").click(function(e) {
+        e.preventDefault();
+        $("#recalWin").arcticmodal();
+    });
+
+    
+
+    $(".sendRecall").click(function(e) {
+        e.preventDefault();
+        let phone = $("#call-client_tel").val();
+        if ((phone=="")||(phone.indexOf("_")>=0)) {
+            console.log(phone);
+            $(".field-call-client_tel .control-label").css("color","red");
+            return;
+        }
+        var  jqXHR = jQuery.post(
+            allAjax.ajaxurl,
+            {
+              action: 'send_recall',    
+              nonce: allAjax.nonce,
+              name: $("#call-client_name").val(),
+              phone: phone
+            }
+            
+          );
+          jqXHR.done(function (responce) {
+              console.log(1);
+            $(".sendetMsgForm").hide();
+            $(".msgSendet").show();
+          });        
+          jqXHR.fail(function (responce) {
+            alert("Произошла ошибка попробуйте позднее!");
+          });
+    });
+
 	$(".viev_map").click(function(e) {
         $("#map_pvt").toggle();
     });

@@ -143,6 +143,39 @@
   <div class="main-wrapper">
 
     <div style="display: none;">
+      <div class="box-modal" id="recalWin">
+        <div class="box-modal_close arcticmodal-close arcticmodal-close-btn"></div>
+          
+          
+          <form id="callback_form" class = "sendetMsgForm" action="#" method="post">
+            <div class="title" style="text-align: center">Мы вам позвоним</div>
+            <p style='font: 14px/22px "Trebuchet MS",Helvetica,sans-serif; color: #111;'>Оставьте свой телефон и мы позвоним вам в ближайшие несколько минут</p>
+
+            <input type="hidden" name="_csrf-kartina-rus" value="Wlg4RDRHNTIRPlQGcnNhVxFvbAxdEgB0GB16FmAeBnAwMEsocy1aZA==">    <input type="hidden" id="call-client_time" name="Call[client_time]">    
+            <div class="form-group field-call-client_name">
+              <label class="control-label" for="call-client_name">Ваше имя:</label>
+              <input type="text" id="call-client_name" class="form-control" name="Call[client_name]">
+              <p class="help-block help-block-error"></p>
+            </div>    
+            
+            <div class="form-group field-call-client_tel required">
+              <label class="control-label" for="call-client_tel">Номер телефона:</label>
+              <input type="text" id="call-client_tel" class="form-control" name="Call[client_tel]" data-plugin-inputmask="inputmask_96e76a5f">
+              <p class="help-block help-block-error"></p>
+            </div>    
+
+            <div style="text-align: center;">
+              <button  onclick="yaCounter48236084.reachGoal('zvonokpodtverd');" type="submit" name = "sendmailcall" class="btn btn-pink sendRecall" style="height: 58px; margin: 20px auto; font-size: 25px; line-height: 20px;">Позвоните мне</button>    
+            </div>
+          </form>
+
+          <div style = "display:none" class = "msgSendet">
+              <h2>Мы перезвоним Вам в течение 5 минут!</h2>
+          </div>
+      </div>
+    </div>
+
+    <div style="display: none;">
       <div class="box-modal" id="present-modal">
         <div class="box-modal_close arcticmodal-close">закрыть</div>
         <div class="modalline" id="lineIcon">
@@ -251,6 +284,7 @@
         </div>
       </div>
     </div>
+
     <div style="display: none;">
       <div class="box-modal" id="review-modal">
         <div class="arcticmodal-close arcticmodal-close-btn"></div>
@@ -644,7 +678,7 @@
               </div>
             </div>
             <div class="u-right-header-top-item hide-1200">
-              <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#callback-form" class="fancybox-callback noeffect">
+              <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#" class=" noeffect">
                 <div class="u-right-header-top-call">
                   <span class="u-right-header-top-call-btn needhelp noeffect">Заказать звонок</span>
                     <a href="https://wa.me/79308577844" target="_blank" class="whatsapp-btn">Напишите нам в WhatsApp</a>
@@ -779,8 +813,8 @@
             <a href="<?php echo get_permalink(18)?>" class="header-top-icon header-top__actions">Акции</a>
           </div>
           <!-- Телефон -->
-          <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#callback-form" class="fancybox-callback noeffect baner-new__link_phone_a">
-            <div class = "baner-new__link baner-new__link_phone noeffect">Заказать звонок</div>
+          <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#" class=" noeffect baner-new__link_phone_a">
+            <div class = "baner-new__link baner-new__link_phone noeffect btn-pink">Заказать звонок</div>
           </a>
           <a onclick="yaCounter48236084.reachGoal('nazaltel');" class="header-phone" href="tel:<?php echo $options[phoneLnk]; ?> "><?php echo $options[phoneViev]; ?> </a>
           <!-- <a href="tel:88005110179" class="header-phone">8 800 511-01-79</a> -->

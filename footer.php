@@ -127,28 +127,7 @@
     </div>
 </div>
 
-<div id="callback-form" class="order-form call-back">
-    <div class="title" style="text-align: center">Мы вам позвоним</div>
-    <p style='font: 14px/22px "Trebuchet MS",Helvetica,sans-serif; color: #111;'>Оставьте свой телефон и мы позвоним вам
-        в ближайшие несколько минут</p>
-    <form id="callback_form" action="#" method="post">
-		<input type="hidden" name="_csrf-kartina-rus" value="Wlg4RDRHNTIRPlQGcnNhVxFvbAxdEgB0GB16FmAeBnAwMEsocy1aZA==">    <input type="hidden" id="call-client_time" name="Call[client_time]">    
-		<div class="form-group field-call-client_name">
-			<label class="control-label" for="call-client_name">Ваше имя:</label>
-			<input type="text" id="call-client_name" class="form-control" name="Call[client_name]">
-			<p class="help-block help-block-error"></p>
-		</div>    
-		<div class="form-group field-call-client_tel required">
-			<label class="control-label" for="call-client_tel">Номер телефона:</label>
-			<input type="text" id="call-client_tel" class="form-control" name="Call[client_tel]" data-plugin-inputmask="inputmask_96e76a5f">
-			<p class="help-block help-block-error"></p>
-		</div>    
 
-		<div style="text-align: center;">
-			<button onclick="yaCounter48236084.reachGoal('zvonokpodtverd');" type="submit" name = "sendmailcall" class="btn btn-pink" style="height: 58px; margin: 20px auto; font-size: 25px; line-height: 20px;">Позвоните мне</button>    
-		</div>
-    </form>
-</div>
     <div id="order-popup2" class="order-form designer">
         <div class="title" style="text-align: center">БЕСПЛАТНАЯ ПОМОЩЬ ПРОФЕССИОНАЛЬНОГО <br> ДИЗАЙНЕРА</div>
         <form id="designer_order" action="/order/designer/" method="post" enctype="multipart/form-data">
@@ -226,35 +205,16 @@
 </script>
 
 
-<!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/yii.js"></script>-->
-<!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/plugins.js"></script>-->
-<!-- <script src="<?php  //echo get_template_directory_uri(); ?>/js/main.js?ver=1.0.28"></script> -->
-
-<!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/yii.activeForm.js"></script>-->
-<!--<script src="<?php  //echo get_template_directory_uri(); ?>/js/yii.validation.js"></script>-->
-
-<!--
-<script src="<?php  //echo get_template_directory_uri(); ?>/js/jquery.inputmask.bundle.js"></script>-->
-
 <script type="text/javascript">
 
 	jQuery(document).ready(function () {
 
 
-	//jQuery('#w1').yiiActiveForm([], []);
 	var inputmask_96e76a5f = {"mask":"+7(999)9999999"};
 	jQuery("#order-client_tel").inputmask(inputmask_96e76a5f);
 	jQuery("#bascetphone, .mascedphoneclass").inputmask(inputmask_96e76a5f);
 	
 	jQuery("#call-client_tel").inputmask(inputmask_96e76a5f);
-	/*
-	jQuery('#order_form').yiiActiveForm([{"id":"order-client_name","name":"client_name","container":".field-order-client_name","input":"#order-client_name","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Имя клиента» должно быть строкой.","skipOnEmpty":1});}},{"id":"order-client_tel","name":"client_tel","container":".field-order-client_tel","input":"#order-client_tel","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Телефон клиента» должно быть строкой.","skipOnEmpty":1});yii.validation.required(value, messages, {"message":"Пожалуйста, введите телефон корректно..."});yii.validation.regularExpression(value, messages, {"pattern":/\+\d\(\d\d\d\)\d\d\d\d\d\d\d/i,"not":false,"message":"Пожалуйста, введите телефон корректно...","skipOnEmpty":1});}},{"id":"order-client_comment","name":"client_comment","container":".field-order-client_comment","input":"#order-client_comment","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Коментарий клиента» должно быть строкой.","skipOnEmpty":1});}}], []);
-	
-	jQuery('#callback_form').yiiActiveForm([{"id":"call-client_name","name":"client_name","container":".field-call-client_name","input":"#call-client_name","error":".help-block.help-block-error","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Client Name» должно быть строкой.","max":255,"tooLong":"Значение «Client Name» должно содержать максимум 255 символа.","skipOnEmpty":1});}},{"id":"call-client_tel","name":"client_tel","container":".field-call-client_tel","input":"#call-client_tel","error":".help-block.help-block-error","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Пожалуйста, введите телефон корректно..."});yii.validation.regularExpression(value, messages, {"pattern":/\+\d\(\d\d\d\)\d\d\d\d\d\d\d/i,"not":false,"message":"Пожалуйста, введите телефон корректно...","skipOnEmpty":1});}}], []);
-	
-	jQuery("#designer-phone").inputmask(inputmask_96e76a5f);
-	jQuery('#designer_order').yiiActiveForm([{"id":"designer-email","name":"email","container":".field-designer-email","input":"#designer-email","error":".help-block.help-block-error","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «E-Mail: (на него мы пришлём варианты картин)» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"designer-phone","name":"phone","container":".field-designer-phone","input":"#designer-phone","error":".help-block.help-block-error","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Пожалуйста, введите телефон..."});yii.validation.regularExpression(value, messages, {"pattern":/\+\d\(\d\d\d\)\d\d\d\d\d\d\d/i,"not":false,"message":"Пожалуйста, введите телефон корректно...","skipOnEmpty":1});}},{"id":"designer-file","name":"file[]","container":".field-file-input","input":"#file-input","error":".help-block.help-block-error","validateOnChange":false,"validateOnBlur":false,"validate":function (attribute, value, messages, deferred, $form) {yii.validation.file(attribute, messages, {"message":"Загрузка файла не удалась.","skipOnEmpty":false,"uploadRequired":"Загрузите файл.","mimeTypes":[],"wrongMimeType":"Разрешена загрузка файлов только со следующими MIME-типами: .","extensions":["png","jpg"],"wrongExtension":"Разрешена загрузка файлов только со следующими расширениями: png, jpg.","maxFiles":5,"tooMany":"Вы не можете загружать более 5 файла."});}}], []);
-	*/
 
 	jQuery('#select-file').on('click',function(e){
 		$('#file-input').click();
@@ -320,71 +280,7 @@
 	});
 </script>
 
-    <?php if (isset($_REQUEST["sendmailcall"])):?>
-		<?php
-			$message = "<h1>обратный звонок с сайта Елисямба:</h1>";
-							$message .= "<strong>Заказ обратного звонка на номер: </strong>".$_REQUEST["Call"]["client_tel"]."<br/> <strong>Имя: </strong>".$_REQUEST["Call"]["client_name"];
-							
-						
-							add_filter('wp_mail_content_type', create_function('', 'return "text/html";'));
-							
-							$options = get_option( 'wpuniq_theme_options' );
 
-							$sendRez = wp_mail($options["mails"], 'Обратный звонок на сайте Elisyamba', $message, $headers);
-							?>
-							<?php 
-							
-							if ($sendRez):
-							
-							$s = curl_init();
-							
-							$data = array ("apiKey" => "ILn5g3dW5BgWC0352W1d0dWIRtto5m7u",
-								"order" => json_encode (array(
-									"firstName" => $_REQUEST["Call"]["client_name"],
-									"phone" => $_REQUEST["Call"]["client_tel"],
-									"customerComment" => "перезвоните мне",
-									"orderMethod" => "	obratnii-zvonok",
-									"call" => 1,
-									'items' => array(
-										array(
-											
-											"initialPrice" => "1", 
-											"productName" => "", 
-											"quantity" => 1, 
-											)
-									),
-								))
-							);
-
-							curl_setopt($s, CURLOPT_URL, 'https://elisyamba.retailcrm.ru/api/v5/orders/create'); 
-							curl_setopt($s,CURLOPT_POST,true); 
-							curl_setopt($s, CURLOPT_RETURNTRANSFER, true); 
-							curl_setopt($s, CURLOPT_POSTFIELDS, $data);
-							 $zz = curl_exec($s);
-							
-							
-							?>
-							
-								
-							
-								<script>
-									jQuery(document).ready(function () {
-										jQuery.fancybox.open({type: 'inline',  content: '<h2>Заявка принята.</h2>Мы Вам перезвоним в ближайшее время'});
-									});
-								</script>
-							<?php else: ?>
-								<script>
-									jQuery(document).ready(function () {
-										jQuery.fancybox.open({type: 'inline',  content: '<h2>Ой! Ой!</h2>Что то пошло не так! Попробуйте позднее.'});
-									});
-								</script>
-							<?php
-							endif;
-							
-		endif;
-	
-	
-	?>
 
 	<?php wp_footer(); ?>
 	
