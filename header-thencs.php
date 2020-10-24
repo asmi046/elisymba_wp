@@ -605,7 +605,7 @@ jQuery(document).ready(function($) {
 	  <!-- Блок Кабинет Корзина -->
 	  <div class="header-user">
 		<!-- <a href="#" class="header-user__btn header-user__user">Кабинет</a> -->
-		<a href="<?php echo get_permalink(7084);?>" class="header-user__btn header-user__cart">Корзина</a>
+		<a target="_blank" href="https://vk.com/topic-162994836_37858104?offset=420" class="header-user__btn header-user__cart">Отзывы в Vk</a>
 	  </div>
 	</div>
 	

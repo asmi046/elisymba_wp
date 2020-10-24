@@ -849,7 +849,7 @@
         <div class="header-user">
           <a target = "_blanck" href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=73582/path=dynamic.88x31/*https://market.yandex.ru/shop--elisiamba/475987/reviews"> <img src="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=73581/path=dynamic.88x31/*https://grade.market.yandex.ru/?id=475987&action=image&size=0" border="0" alt="Читайте отзывы покупателей и оценивайте качество магазина ЕлиСямба на Яндекс.Маркете" /> </a>
           <!-- <a href="#" class="header-user__btn header-user__user">Кабинет</a> -->
-          <a href="<?php echo get_permalink(7084);?>" class="header-user__btn header-user__cart">Корзина</a>
+          <a target="_blank" href="https://vk.com/topic-162994836_37858104?offset=420" class="header-user__btn header-user__cart">Отзывы в Vk</a>
         </div>
       </div>
       

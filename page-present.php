@@ -8,13 +8,13 @@ Template Name: Призы розыгрыша
 <main>
     <div class="wrapper">
         <?php include ("baner-timer.php"); ?>
-        <?php include ("show-960.php"); ?>
+       
             
 		<div class="clearfix d-flex-main">
             
-			<?php get_sidebar("left"); ?>                
+			           
 
-			<section class="page-content howto-page page-content-arial">
+			<section class="page-content howto-page page-content-arial page-content-full">
 				<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="present-content">
