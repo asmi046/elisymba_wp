@@ -1310,7 +1310,7 @@ function get_delivery_data(naspunkt, state, province) {
         $(".preSearchWrap").hide();
     });
         
-    $("#s").keydown(function() {
+    $("#s, #smob").keydown(function() {
         $val_current = $(this).val();
         if ($val_current.length > 3)
         {

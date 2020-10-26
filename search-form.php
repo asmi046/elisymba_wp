@@ -6,7 +6,7 @@
 
 	<form action="<?php echo home_url( '/' ) ?>">
 		<div class = "searchWraper">
-			<input name="s" id = "s" placeholder="Поиск по сайту" autocomplete="off" value = "<?php echo get_search_query() ?>">
+			<input name="s" id = "smob" placeholder="Поиск по сайту" autocomplete="off" value = "<?php echo get_search_query() ?>">
 			<div class = "preSearchWrap">
 			</div>
 		</div>
