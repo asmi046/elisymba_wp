@@ -64,21 +64,8 @@
 
   <?php wp_head();?>
 </head>
-<?
-					require_once 'Mobile_Detect.php';
-					$detect = new Mobile_Detect;
-?>
+
 <body data-variant="v0">
-
-  <script>
-    var stait = "";
-    var city = "";
-
-  </script>
-
-
-
-
 
   <script>
     stait = "<?php echo $_COOKIE["staitinfo"]; ?>";
@@ -589,10 +576,6 @@
 
 								$obj = json_decode(file_get_contents("http://api.sypexgeo.net/un5Kq/json/".$_SERVER['REMOTE_ADDR']));
 								
-								//echo "<pre>";
-								//print_r($obj); 
-								//echo "</pre>";
-								
 								if (!empty($obj->country->name_ru)) setcookie("staitinfo", $obj->country->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
 								if (!empty($obj->city->name_ru)) setcookie("cityinfo", $obj->city->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
 								if (!empty($obj->region->name_ru)) setcookie("provinceinfo", $obj->region->name_ru, 0, "/", "xn--80ablmoh8a2h.xn--p1ai");
@@ -610,171 +593,6 @@
 				$GLOBALS['postcode'] = $postcode;
 
 			?> 
-
-
-    <? if ($_REQUEST["nh"] == 1) {?>
-    <header class="site-header clearfix">
-      
-
-		
-
-      <div class="newMobhead">
-        <div id="menuBtnOpen" class="newHeadElem newHeadBtn menuWraper">
-          <img src="<?php bloginfo("template_url");?>/img/menu.svg" />
-        </div>
-
-        <div class="newHeadElem logoWraper">
-          <a href="<?php bloginfo("url");?>"><img src="<?php bloginfo("template_url");?>/img/moblog.svg" /></a>
-        </div>
-
-        <div class="newHeadElem newHeadBtn phoneWraper">
-          <a href="tel:<?php echo $options[phoneLnk]; ?>"><img src="<?php bloginfo("template_url");?>/img/phone.svg" /></a>
-        </div>
-      </div>
-
-      <div class="u-wrapper clearfix">
-        <?php 
-					require_once 'Mobile_Detect.php';
-					$detect = new Mobile_Detect;
-			
-					if( !$detect->isMobile() ){
-				?>
-        <div class="h1 u-logo">
-          <a href="/">
-            <!-- <?php  echo get_template_directory_uri(); ?> -->
-
-            <img title="магазин детских развивающих товаров Елисямба.рф" class="hide-685 lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/zayats.png?v=1.0.10" alt="магазин детских развивающих товаров Елисямба.рф">
-
-            <img class="mobLogo" src="<?php bloginfo("template_url");?>/img/moblog.svg" />
-          </a>
-        </div>
-        <?php } ?>
-
-
-
-        <div class="u-right-header">
-          <div class="u-right-header-top">
-            <div class="u-right-header-top-item city_in_top">
-
-
-
-
-              <div id="cityElem_top" class="new_delivery_elem_top">
-                Ваш город: <br /><span class="value city_sel_elem"><?php echo $city; ?></span>
-                <div class="city_vsp_vin" style="display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>">
-                  <div class="qq">Ваш город <span style="city_in_win"><?php echo $city; ?></span>?</div>
-                  <div class="qq_btn">
-                    <div class="yes_no_btn yes_btn btn btn-pink">Да, спасибо</div>
-                    <div class="yes_no_btn no_btn btn btn-pink">Нет, другой</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="u-right-header-top-item hide-1200">
-              <div class="u-right-header-top-description">
-                Звоните в любой день с 9:00 до 21:00
-                Заказывайте через сайт в любое время суток!
-              </div>
-            </div>
-            <div class="u-right-header-top-item hide-1200">
-              <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#" class=" noeffect">
-                <div class="u-right-header-top-call">
-                  <span class="u-right-header-top-call-btn needhelp noeffect">Заказать звонок</span>
-                    <a href="https://wa.me/79308577844" target="_blank" class="whatsapp-btn">Напишите нам в WhatsApp</a>
-      
-				</div>
-              </a>
-            </div>
-
-
-            <div class="u-right-header-top-item hide-685">
-              <div class="u-right-header-top-phone">
-                <a onclick="yaCounter48236084.reachGoal('nazaltel');" href="tel:<?php echo $options[phoneLnk]; ?> "><?php echo $options[phoneViev]; ?> </a>
-                <p>Бесплатный звонок по России</p>
-                
-              </div>
-            </div>
-            <div class="u-right-header-top-item">
-              <div class="u-right-header-top-call">
-                <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="tel:<?php echo $options[phoneLnk]; ?>" class="u-right-header-top-call-btn needhelp">Позвонить Вам?</a>
-              </div>
-            </div>
-          </div>
-
-          <?php 	
-					if( !$detect->isMobile() ){
-				?>
-
-          <div class="u-right-header-bottom">
-            <div class="u-right-header-bottom-block">
-              <div class="u-right-header-bottom-border">
-                <div title="Доставка по всей России от 2-х дней до вашей двери прямо в руки!">
-                  <i class="icon icon-car"></i>
-                  <p class="hide-1200">Бесконтактная доставка до <br/>Ваших дверей!</p>
-                  <p class="show-1200">Безконтактная доставка.</p>
-                </div>
-                <div title="Оплата после получения и осмотра заказа. Никаких рисков!">
-                  <i class="icon icon-money"></i>
-                  <!-- <p class="hide-1200">Оставайтесь дома! Берегите себя! Здоровья Вам и Вашим близким!</p>
-                  <p class="show-1200">Здоровья Вам и Вашим близким!</p> -->
-                  <p>Создаем Гениев вместе! <br/>Магазин развивающих игрушек №1 в России</p>
-                </div>
-                <div class="market-wrapper" title="Магазин развивающих игрушек №1 в России">
-                  <!--<i class="icon icon-quality"></i>-->
-                  <!-- <p class="hide-1200">Магазин развивающих игрушек №1 в России</p>
-                  <p class="show-1200">Магазин развивающих игрушек №1 в России</p> -->
-                  <a  target="_blank" href="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=73582/path=dynamic.88x31/*https://market.yandex.ru/shop--elisiamba/475987/reviews"> <img src="https://clck.yandex.ru/redir/dtype=stred/pid=47/cid=73581/path=dynamic.88x31/*https://grade.market.yandex.ru/?id=475987&action=image&size=0" border="0" alt="Читайте отзывы покупателей и оценивайте качество магазина ЕлиСямба на Яндекс.Маркете" /> </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <?php } ?>
-
-          
-				<div class = "workInPrWraper">
-					<div class = "workInPr">
-						Режим работы в празднечные дни
-					</div>
-					
-					<div class = "grafWin">
-						выходные дни: <span style = "color:red;">1,2,3,7</span>	<br/>
-						короткие дни: <span style = "color:blue;">4,5,6</span> с 12:00 до 19:00<br/>
-						<br/>
-						<span class = "prizivV">
-						Оставляйте заявку на сайте<br/>
-						мы в любом случае Вам перезвоним
-						</span>
-					</div>
-                </div>
-				
-
-        </div>
-      </div>
-
-
-      <div class="responsive-menu-wrapper">
-        <div class="responsive-menu">
-          <div class="menu-button">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div id="r-menu-title" class="responsive-menu-totle">Меню</div>
-
-
-          <?php wp_nav_menu( array('menu' => 'Главное меню', 'container' => false, 'menu_class' => 'r-menu', 'menu_id'  => 'r-menu' )); ?>
-        </div>
-      </div>
-      <nav class="main-menu">
-        <div class="wrapper">
-          <ul>
-            <?php wp_nav_menu( array('menu' => 'Главное меню', 'container' => false )); ?>
-        </div>
-      </nav>
-    </header>
-<?} else {?>
-
 
 
   <header id="header" class="new_head header">
@@ -811,6 +629,8 @@
               </div>
             <a href="<?php echo get_permalink(6)?>" class="header-top-icon header-top__delivery">Доставка</a>
             <a href="<?php echo get_permalink(18)?>" class="header-top-icon header-top__actions">Акции</a>
+            <a href="<?php echo get_permalink(4)?>" class="header-top-icon header-top__about">О нас</a>
+            <a href="<?php echo get_permalink(10)?>" class="header-top-icon header-top__contacts">Контакты</a>
           </div>
           <!-- Телефон -->
           <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#" class=" noeffect baner-new__link_phone_a">
@@ -858,5 +678,3 @@
     </div>
   </div>
 </header>
-
-<?}?>

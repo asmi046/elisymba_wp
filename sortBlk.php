@@ -25,12 +25,7 @@ $metaquery = array(
 		'type'    => 'NUMERIC',
 	),
 
-	// 'predzak' => array (
-	// 	'key'     => '_tovar_sklad_drop',
-	// 	'value' => 'yes',
-	// 	'compare' => '=',
-	// 	'type'    => 'CHAR',
-	// ),
+
 );
 
 //$metavalue = empty($_REQUEST["hp"])?"":$_REQUEST["hp"];  
@@ -39,21 +34,6 @@ $metakey = empty($_REQUEST["sortparam"])?"_tovar_order":$_REQUEST["sortparam"];
 $order = empty($_REQUEST["ordn"])?"ASC":$_REQUEST["ordn"];  
 
 
-	
-	
-	
-
-// if (!empty($_REQUEST["hp"]))
-// {
-
-
-// $args['meta_key'] = $_REQUEST["hp"];
-
-
-// $orderby = 'meta_value_num';  
-// $order = "DESC";  
-
-// }
 
 if (is_archive()||is_home()){
 	$pageNum = 1; 
