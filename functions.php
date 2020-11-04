@@ -212,49 +212,6 @@ function bascetinput() {
 	}
 	
 	
-	/*
-	$rezstr = "";	
-	if (!empty($_COOKIE["bascet"]))
-	{
-		$bascetsod = explode(",", $_COOKIE["bascet"]);	
-		$postInBascet = "";
-		foreach ($bascetsod as $be) {
-			$elempart = explode("|", $be);	
-			$postInBascet .= $elempart[0]." "; 
-			$elems[$elempart[0]] = $elempart[1]; 
-		}
-				
-				
-				$pinclude = get_posts( array ("include" => $postInBascet) );
-				
-				$summ = 0;
-				
-				foreach ($pinclude as $pe)				
-				{	
-				
-					$rezstr .= "<div class = 'belem'>";	
-						
-						
-						$rezstr .= "<div class = 'blineel pict'>";
-							$rezstr .= '<a target = "_blank" href = "'.get_the_permalink($pe->ID).'"><img class="cart-img__product" src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "SKU", true).'.1.jpg"></a>';
-						$rezstr .= "</div>";
-						
-						$rezstr .= "<div class = 'blineel name'>";
-							$rezstr .= '<a class="cart-product__title" target = "_blank" href = "'.get_the_permalink($pe->ID).'">'.$pe->post_title."</a>";
-							$rezstr .= "<div><span class='cart-label__price'>Цена: </span><span class='price-old'>" . get_post_meta($pe->ID, "old_price", true) . "</span><span class='cart-price'>".$elems[$pe->ID]*get_post_meta($pe->ID, "price", true)."</span> <span class='cart-price__currency'>руб.</span></div>";
-						$rezstr .= "</div>";
-						
-					$rezstr .= "</div>";
-					
-					$summ += $elems[$pe->ID]*get_post_meta($pe->ID, "price", true);
-				}
-				
-				$rezstr .= "<div class = 'bascetitog'>";
-				
-				$rezstr .= "</div>";
-	}
-	return $rezstr;
-	*/
 }
 
 function bascetinputOne($hovinput, $nsale) {
@@ -1455,7 +1412,8 @@ function pre_serch() {
 		if ( check_ajax_referer( 'NEHERTUTLAZIT', 'nonce', false ) ) {
 			
 			global $wpdb;
-			$rez = $wpdb->get_results('SELECT * FROM `el_posts` WHERE `post_title` LIKE "%'.$_REQUEST['value'].'%"  AND `post_status` = "publish"');
+			//$rez = $wpdb->get_results('SELECT * FROM `el_posts` WHERE `post_title` LIKE "%'.$_REQUEST['value'].'%"  AND `post_status` = "publish"');
+			$rez = $wpdb->get_results('SELECT `el_posts`.`ID`, `el_posts`.`post_title`,  `el_postmeta`.`meta_value` FROM `el_posts` LEFT JOIN `el_postmeta` ON (`el_postmeta`.`post_id` = `el_posts`.`ID` AND `el_postmeta`.`meta_key` = "_tovar_order" ) WHERE `post_title` LIKE "%'.$_REQUEST['value'].'%" AND `post_status` = "publish" ORDER BY CAST(`el_postmeta`.`meta_value` AS SIGNED)');
 			
 			if (empty($rez))
 				wp_die( 'Nema tovaru', '', 403 );
