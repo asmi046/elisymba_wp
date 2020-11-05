@@ -11774,6 +11774,11 @@ div.about-slider a img {
   list-style: none;
 }
 
+.contacts-page ul li:before {
+  content: "";
+  display: none;
+}
+
 /*--------Новая корзина--------*/
 
 .btn-wrap {
