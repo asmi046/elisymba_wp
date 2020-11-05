@@ -1413,7 +1413,7 @@ function pre_serch() {
 			
 			global $wpdb;
 			//$rez = $wpdb->get_results('SELECT * FROM `el_posts` WHERE `post_title` LIKE "%'.$_REQUEST['value'].'%"  AND `post_status` = "publish"');
-			$rez = $wpdb->get_results('SELECT `el_posts`.`ID`, `el_posts`.`post_title`,  `el_postmeta`.`meta_value` FROM `el_posts` LEFT JOIN `el_postmeta` ON (`el_postmeta`.`post_id` = `el_posts`.`ID` AND `el_postmeta`.`meta_key` = "_tovar_order" ) WHERE `post_title` LIKE "%'.$_REQUEST['value'].'%" AND `post_status` = "publish" ORDER BY CAST(`el_postmeta`.`meta_value` AS SIGNED)');
+			$rez = $wpdb->get_results('SELECT `el_posts`.`ID`, `el_posts`.`post_title`, `el_posts`.`guid`,  `el_postmeta`.`meta_value` FROM `el_posts` LEFT JOIN `el_postmeta` ON (`el_postmeta`.`post_id` = `el_posts`.`ID` AND `el_postmeta`.`meta_key` = "_tovar_order" ) WHERE `post_title` LIKE "%'.$_REQUEST['value'].'%" AND `post_status` = "publish" ORDER BY CAST(`el_postmeta`.`meta_value` AS SIGNED)');
 			
 			if (empty($rez))
 				wp_die( 'Nema tovaru', '', 403 );
