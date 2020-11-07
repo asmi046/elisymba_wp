@@ -1925,6 +1925,47 @@ jQuery('input[type=file]').change(function(){
     });
 });
 
+
+$(".baner-new__link_phone_a").click(function(e) {
+    e.preventDefault();
+    $("#recalWin").arcticmodal();
+});
+
+
+
+$(".sendRecall").click(function(e) {
+    e.preventDefault();
+    let phone = $("#call-client_tel").val();
+    if ((phone=="")||(phone.indexOf("_")>=0)) {
+        console.log(phone);
+        $(".field-call-client_tel .control-label").css("color","red");
+        return;
+    }
+    var  jqXHR = jQuery.post(
+        allAjax.ajaxurl,
+        {
+          action: 'send_recall',    
+          nonce: allAjax.nonce,
+          name: $("#call-client_name").val(),
+          phone: phone
+        }
+        
+      );
+      jqXHR.done(function (responce) {
+          console.log(1);
+        $(".sendetMsgForm").hide();
+        $(".msgSendet").show();
+      });        
+      jqXHR.fail(function (responce) {
+        alert("Произошла ошибка попробуйте позднее!");
+      });
+});
+
+$(".viev_map").click(function(e) {
+    $("#map_pvt").toggle();
+});
+
+
     $(".review-usefull__yes").click(function() {
         var this_elem = this;
         var review_nubmer = $(this).parent().parent().data('inc');
@@ -1982,43 +2023,35 @@ jQuery('input[type=file]').change(function(){
         });
     });
 	
-	$(".baner-new__link_phone_a").click(function(e) {
+    jQuery(".review-more").click(function(e) { 
         e.preventDefault();
-        $("#recalWin").arcticmodal();
-    });
+        let postID = jQuery(this).data("postid");
+        let revCount = jQuery(this).data("vuecount");
+        let countshop = jQuery(this).data("countshop");
+        console.log(revCount);
+        let btnElem = jQuery(this);
 
-    
-
-    $(".sendRecall").click(function(e) {
-        e.preventDefault();
-        let phone = $("#call-client_tel").val();
-        if ((phone=="")||(phone.indexOf("_")>=0)) {
-            console.log(phone);
-            $(".field-call-client_tel .control-label").css("color","red");
-            return;
-        }
         var  jqXHR = jQuery.post(
             allAjax.ajaxurl,
             {
-              action: 'send_recall',    
+              action: 'get_rev',    
               nonce: allAjax.nonce,
-              name: $("#call-client_name").val(),
-              phone: phone
+              postid: postID,
+              count: revCount,
+              countshop:countshop
             }
             
           );
           jqXHR.done(function (responce) {
-              console.log(1);
-            $(".sendetMsgForm").hide();
-            $(".msgSendet").show();
+            let rez = JSON.parse(responce);
+            jQuery(".review-item__wrapper").append(rez.elements);
+            jQuery(btnElem).data("vuecount", rez.count);
+            jQuery(btnElem).data("countshop", rez.countshop);
+            console.log(rez);
           });        
           jqXHR.fail(function (responce) {
-            alert("Произошла ошибка попробуйте позднее!");
+            
           });
-    });
-
-	$(".viev_map").click(function(e) {
-        $("#map_pvt").toggle();
     });
 	
 });

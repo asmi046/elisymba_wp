@@ -11,39 +11,13 @@ get_header(); ?>
         <?php include ("baner-timer.php"); ?>
             
 		<div class="clearfix d-flex-main">
-            
-		<?php 
-			require_once 'Mobile_Detect.php';
-			$detect = new Mobile_Detect;
-			
-			// if( !$detect->isMobile() ){
-			// 	if ($_REQUEST["nh"] != 1)
-			// 		get_sidebar("left"); 
-			// }
-
-		?>            
+                     
 
 	<section id = "tovar" class="page-content page-content-full">
-	<!-- Отключение последней хлебной крошки -->
-	<style>
-		.breadcrumb_last {
-			display:none;
-		}
 	
-		@media screen and (max-width: 515px){
-			.breadcrumbs span span span:last-child a:after {
-				content:"";
-			}
-		}
-	</style>
-	
-		<?php 
-			if( $detect->isMobile() )
-					include("search-form.php");
-		?>
+	<?php if( $detect->isMobile() ) include("search-form.php");?>
 	
 	<div class="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-	
 		<?php
 		if ( function_exists('yoast_breadcrumb') ) {
 			yoast_breadcrumb('','');
@@ -83,11 +57,6 @@ get_header(); ?>
 					autoHeight: true,
 				});
 				
-				
-				if (jQuery(window).width() <= '620') {
-				
-				}
-				
 			});
 		</script>
         <div class="product-main-info clearfix">
@@ -95,8 +64,7 @@ get_header(); ?>
                 <div class="product-image">
 					 <div class="jcarousel-wrapper">
 						<?php 
-						 			require_once 'Mobile_Detect.php';
-								$detect = new Mobile_Detect;
+						 		
 								if( !$detect->isMobile() ){
 						 ?>
 						<div id = "tkrDesctop" class="owl-carousel owl-theme">
@@ -362,25 +330,14 @@ get_header(); ?>
 							<?php endif;?>
 							
 						</div>
-	<?}?>
+		<?}?>
 					</div>
                      <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 						<p class="discount"><?php echo 100-round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span></p>
 					 <?php endif; ?>
                 </div>
 				
-				<div class = "mobH1Container">
-				
-				</div>
-				
-				
-				
-				
-				
-				
-		
-			
-				
+
             </div>
             <div class="product-desc">
                 <div class="clearfix">
@@ -410,6 +367,7 @@ get_header(); ?>
 								$awerage = round($awerage, 1);
 							endif;
 						?>
+
 						<div class="review-item__header-stars hide-480">
 							<?php $stars_qty = round($awerage);
 							for ($i=0; $i < 5; $i++): ?>
@@ -450,9 +408,8 @@ get_header(); ?>
                     
 					</div>
 					<span class = "nalichir">
-	
 						<?php
-						$pre_order_link = '';
+							$pre_order_link = '';
 							if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop")))) {
 								echo "По предзаказу";
 								$pre_order_link = 'pre-order-link-non';
@@ -463,16 +420,17 @@ get_header(); ?>
                 </div>
             
 		
-			<div class="order-form__coupon order-form__coupon-1 center-mobile">
-	               <div class="order-form__coupon-photo"></div>
-	               <div class="order-form__coupon-text">Золотой<br> розыгрыш</div>
-	               <div class="order-form__coupon-question">?</div>
-	               <div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div>
-	        </div>
-			<img style = "visibility: hidden; height:0;" id = "flightImg"  width="100" height="100" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
+				<div class="order-form__coupon order-form__coupon-1 center-mobile">
+					<div class="order-form__coupon-photo"></div>
+					<div class="order-form__coupon-text">Золотой<br> розыгрыш</div>
+					<div class="order-form__coupon-question">?</div>
+					<div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div>
+				</div>
+				
+				<img style = "visibility: hidden; height:0;" id = "flightImg"  width="100" height="100" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg">
 
 			
-			<div class="order-button-wrapper">
+				<div class="order-button-wrapper">
                    
 					
 							 <a onclick="yaCounter48236084.reachGoal('knopka');" class="btn btn-pink inSingleBtn tobascetInCat fancybox-order <?php echo $pre_order_link;?>" style = "display:inline-bloc;" href="#order-form" 
@@ -499,171 +457,54 @@ get_header(); ?>
                 
 				
 				<!--КОРЗИНА-->
-				<div class="order-button-wrapper">
-				 
-							
-					<span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');"
-						data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
 				
+				<div class="order-button-wrapper">			
+					<span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');" data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
 				</div>
-				<?php// endif; ?>
+
                 <div style="font-size: 16px; text-transform: none; color: #919191; margin-top: 10px; margin-left: 20px;    font-family: 'Trebuchet MS',Helvetica,sans-serif">
                     Данный товар купили <b><?php echo get_post_meta(get_the_ID(), "order_count", true);?></b> раз(а).
                 </div>
             </div>
         </div>
 		
+
+		<!-- Блок доставки -->
+		
 		<div class = "new_delivery_blk">
-					<div id = "deliveryDeyElem" class = "new_delivery_elem">
-						Доставим за: <br/><span class = "value"></span>
-					</div>
+			<div id = "deliveryDeyElem" class = "new_delivery_elem">
+				Доставим за: <br/><span class = "value"></span>
+			</div>
 					
-					<div id = "deliveryPriceElem" class = "new_delivery_elem">
-						Цена: <br/><span class = "value"></span>
-					</div>
+			<div id = "deliveryPriceElem" class = "new_delivery_elem">
+				Цена: <br/><span class = "value"></span>
+			</div>
 					
-					<span class = "viev_map">Показать пункты выдачи</span>	
-				<div id = "map_pvt"></div>
+			<span class = "viev_map">Показать пункты выдачи</span>	
+				
+			<div id = "map_pvt"></div>
 
-					<span style = "display:none;" class = "not__city_finde">
-						Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
-					</span>
-				</div>	
-		
-		    <div class="additional-disc">
-			
-			
-			
-			<?php if($pricr_cur > 900):?>
-        	<!-- <h3 class="additional-disc__title">Дарим к заказу 4 новогодних купона на сумму 2100 руб.</h3> -->
-        	
-			<!--
-			<?php //if (in_category(51, $post->ID)){ //мелкая матория ?>
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/vdorogu.php"); ?>
-					<? //include("upsaleblk/kpazl.php");  ?>
-				</div>
-				
-			<?php //} else if (in_category(15, $post->ID)){ //подкатегория в дорогу ?>
-			
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/motorika.php"); ?>
-					<? //include("upsaleblk/kpazl.php");  ?>
-				</div>
-			<?php //} else if (in_category(69, $post->ID)){ //магнитный конструктор ?>
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/vdorogu.php"); ?>
-					<? //include("upsaleblk/kpazl.php");  ?>
-				</div>
-			<?php //} else if (in_category(58, $post->ID)){ //коврики ?>
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/vdorogu.php"); ?>
-					<? //include("upsaleblk/mkonstruktor.php");  ?>
-				</div>
-			<?php //} else if ($pricr_cur < 2000){ ?>
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/vdorogu.php");  ?>
-					<? //include("upsaleblk/motorika.php"); ?>
-				</div>
-				<h4 class="manager-questions">Спросите менеджера о подробностях</h4>
-				
-			<?php //} else { ?>
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/motorika.php"); ?>
-					<? //include("upsaleblk/vdorogu.php");  ?>
-				</div>
-				
-				<h4 class="manager-questions">Спросите менеджера о подробностях</h4>
-				
-				<div class="additional-disc__wrapper">
-					<? //include("upsaleblk/mkonstruktor.php");  ?>
-					<? //include("upsaleblk/kpazl.php");  ?>
-				</div>
-			<?php //} ?>
-			-->
-			
-			<?php if($pricr_cur > 2700):?>	
-        	<?php if(!wp_is_mobile()):?>
-				<!--
-				<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/page-action.png);">
-						<? //include("upsaleblk/vdorogu.php");  ?>
-						<? //include("upsaleblk/kpazl.php");  ?>
-				</div>
-				-->
-			
-				
-				
-        	<?php else:?>
-				<!--
-				<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/tb_mob.png);">
-						<? //include("upsaleblk/vdorogu.php");  ?>
-						<? //include("upsaleblk/kpazl.php");  ?>
-				</div>
-				-->
-				
+			<span style = "display:none;" class = "not__city_finde">
+				Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
+			</span>
+		</div>	
 
-				
-			<?php endif;?>
-				
-			<?php endif;?>
-				
-		<?php endif;?>
-        </div>
-		
-		
     </div>
    
 
-<div class="single-tabs">
-<div class="tabs">
-	<div class="tab">
-		<div class="tab-bg" style="background-image: url(<?php echo get_template_directory_uri();?>/img/descr.png);"></div>
-		<div class="tab-bg-active" style="background-image: url(<?php echo get_template_directory_uri();?>/img/descr-1.png);"></div>
-	</div>
-	<div class="tab">
-		<div class="tab-bg" style="background-image: url(<?php echo get_template_directory_uri();?>/img/char.png);"></div>
-		<div class="tab-bg-active" style="background-image: url(<?php echo get_template_directory_uri();?>/img/char-1.png);"></div>
-	</div>
-	<div class="tab">
-		<div class="tab-bg" style="background-image: url(<?php echo get_template_directory_uri();?>/img/review.png);"></div>
-		<div class="tab-bg-active" style="background-image: url(<?php echo get_template_directory_uri();?>/img/review-1.png);"></div>
-	</div>
-	<div class="tab">
-		<div class="tab-bg" style="background-image: url(<?php echo get_template_directory_uri();?>/img/video.png);"></div>
-		<div class="tab-bg-active" style="background-image: url(<?php echo get_template_directory_uri();?>/img/video-1.png);">
-		</div>
-	</div>
-</div>
-<div class="tab_content">
-	<div class="tab_item tab_item-descr">
-
-	</div>
-	
-	<div class="tab_item tab_item-char">
-		
-	</div>
-	
-	<div class="tab_item tab_item-review">
-
-	</div>
-
-	<div class="tab_item tab_item-video">
-	
-	</div>
-</div>
-</div>
 
 <div class="h1 pink tac">Описание</div>
 
 	<?php if(carbon_get_the_post_meta('product_specifications_char') ) {?>
 	
 		<div class="product-specifications">
+			
 			<div class="product-specifications__tabs">
 				<div class="product-specifications-tab">Описание</div>		
 				<div class="product-specifications-tab">Видео о товаре</div>
-				<div class="product-specifications-tab">Отзывы</div>
-				
+				<div class="product-specifications-tab">Отзывы</div>	
 			</div>
+
 			<div class="product-specifications__tab-content">
 				
 				<div class="product-specifications__tab-item active">
@@ -685,160 +526,7 @@ get_header(); ?>
 							<?php echo apply_filters('the_content', carbon_get_the_post_meta('product_specifications_cerecter'));?>
 						</div>
 					<?php endif;?>
-					<!-- <?php if(carbon_get_the_post_meta('complex_reviews')):?>
-						<h2 id="reviews-title" class = "pink tac">Отзывы</h2>
-						<?php 
-						$awerage = 5;
-						$rating_total = 0;
-						$inc = 0;
-						$five_awerage = 0;
-						$four_awerage = 0;
-						$three_awerage = 0;
-						$two_awerage = 0;
-						$one_awerage = 0;
-						$arr_reviews = carbon_get_the_post_meta('complex_reviews');
-						foreach($arr_reviews as $review):
-							$rating_total += $review['complex_reviews_stars'];
-							$inc++;
-							if($review['complex_reviews_stars'] == 5) {
-								$five_awerage++;
-							} elseif($review['complex_reviews_stars'] == 4) {
-								$four_awerage++;
-							} elseif($review['complex_reviews_stars'] == 3) {
-								$three_awerage++;
-							} elseif($review['complex_reviews_stars'] == 2) {
-								$two_awerage++;
-							} elseif($review['complex_reviews_stars'] == 1) {
-								$one_awerage++;
-							}
-						endforeach;
-						$awerage = (float)$rating_total / (float)$inc;
-						$awerage = round($awerage, 1);?>
-						<div class="reviews-board">
-							<div class="reviews-board__rating">
-								<div class="reviews-board__rating-number"><?php echo $awerage?></div>
-								<div class="review-item__header-stars">
-									<?php $stars_qty = round($awerage);
-									for ($i=0; $i < 5; $i++): ?>
-										<?php if($stars_qty <= $i):?>
-										<div class="star_review star_review-gray"></div>
-										<?php else:?>
-										<div class="star_review"></div>
-										<?php endif;?>
-									<?php endfor;?>
-								</div>
-								<div class="reviews-board__rating-text">На основании<br> <span><?php echo $inc;?></span> отзывов</div>
-							</div>
-							<div class="reviews-board__progress">
-								<div class="reviews-board__progress-item">
-									<div class="progress-number">5</div>
-									<div class="progress-line">
-										<div class="progress-full" style="width: <?php $percent = 100 * $five_awerage / $inc; echo $percent;?>%"></div>
-									</div>
-									<div class="progress-percent"><?php echo round($percent);?>%</div>
-								</div>
-								<div class="reviews-board__progress-item">
-									<div class="progress-number">4</div>
-									<div class="progress-line">
-										<div class="progress-full" style="width: <?php $percent = 100 * $four_awerage / $inc; echo $percent;?>%"></div>
-									</div>
-									<div class="progress-percent"><?php echo round($percent);?>%</div>
-								</div>
-								<div class="reviews-board__progress-item">
-									<div class="progress-number">3</div>
-									<div class="progress-line">
-										<div class="progress-full" style="width: <?php $percent = 100 * $three_awerage / $inc; echo $percent;?>%"></div>
-									</div>
-									<div class="progress-percent"><?php echo round($percent);?>%</div>
-								</div>
-								<div class="reviews-board__progress-item">
-									<div class="progress-number">2</div>
-									<div class="progress-line">
-										<div class="progress-full" style="width: <?php $percent = 100 * $two_awerage / $inc; echo $percent;?>%"></div>
-									</div>
-									<div class="progress-percent"><?php echo round($percent);?>%</div>
-								</div>
-								<div class="reviews-board__progress-item">
-									<div class="progress-number">1</div>
-									<div class="progress-line">
-										<div class="progress-full" style="width: <?php $percent = 100 * $one_awerage / $inc; echo $percent;?>%"></div>
-									</div>
-									<div class="progress-percent"><?php echo round($percent);?>%</div>
-								</div>
-							</div>
-							 <div class="btn-wrap">
-								 <a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
-							 </div>
-						</div>
-						<?php //$arr_reviews = carbon_get_the_post_meta('complex_reviews');
-							$inc = 0;
-							foreach($arr_reviews as $review):?>
-								<?php if($review['complex_reviews_is_show']):?>
-									<div class="review-item" data-inc="<?php echo $inc?>" data-postid='<?php echo get_the_ID();?>'>
-										<div class="review-item__header">
-											<div class="review-item__header-ava" style="background-image: url(<?php echo wp_get_attachment_image_src($review['complex_reviews_ava'], 'medium')[0];?>);"></div>
-											<div class="review-item__header-content">
-												<div class="review-item__header-content-name-date">
-												<div class="review-item__header-name"><?php echo $review['complex_reviews_name']?></div>
-												<div class="review-item__header-date"><?php echo $review['complex_reviews_date']?></div>
-												</div>
-												<div class="review-item__header-stars">
-													<?php $stars_qty = $review['complex_reviews_stars'];
-													for ($i=0; $i < 5; $i++): ?>
-														<?php if($stars_qty <= $i):?>
-														<div class="star_review star_review-gray"></div>
-														<?php else:?>
-														<div class="star_review"></div>
-														<?php endif;?>
-													<?php endfor;?>
-												</div>
-											</div>
-										</div>
-										<div class="review-item__text">
-											<?php echo $review['complex_reviews_text']?>
-										</div>
-										<div class="review-item__img-wrap">
-											<?php if($review['complex_reviews_img']):?>
-												<a href="<?php echo wp_get_attachment_image_src($review['complex_reviews_img'], 'full')[0];?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-													<img src="<?php echo wp_get_attachment_image_src($review['complex_reviews_img'], 'large')[0];?>" alt="">
-												</a>
-											<?php endif;?>
-											<?php if($review['complex_reviews_img_1']):?>
-												<a href="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_1'], 'full')[0];?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-													<img src="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_1'], 'large')[0];?>" alt="">
-												</a>
-											<?php endif;?>
-											<?php if($review['complex_reviews_img_2']):?>
-												<a href="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_2'], 'full')[0];?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-													<img src="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_2'], 'large')[0];?>" alt="">
-												</a>
-											<?php endif;?>
-											<?php if($review['complex_reviews_img_3']):?>
-												<a href="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_3'], 'full')[0];?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-													<img src="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_3'], 'large')[0];?>" alt="">
-												</a>
-											<?php endif;?>
-											<?php if($review['complex_reviews_img_4']):?>
-												<a href="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_4'], 'full')[0];?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-													<img src="<?php echo wp_get_attachment_image_src($review['complex_reviews_img_4'], 'large')[0];?>" alt="">
-												</a>
-											<?php endif;?>
-										</div>
-										<div class="review-usefull">
-											<span class="review-usefull__title">Отзыв полезен?</span>
-											<?php 
-												$usefull_yes = $review['complex_reviews_is_use_yes'] ? $review['complex_reviews_is_use_yes'] : 0;
-												$usefull_no = $review['complex_reviews_is_use_no'] ? $review['complex_reviews_is_use_no'] : 0;
-												
-											?>
-											<div class="review-usefull__yes" data-qty="<?php echo $usefull_yes;?>"><?php echo $usefull_yes;?></div>
-											<div class="review-usefull__no"><?php echo $usefull_no;?></div>
-										</div>
-									</div>
-								<?php endif;?>
-							<?php $inc++; endforeach;
-						 ?>
-					<?php endif;?> -->
+
 			
 			<?php 
 			
@@ -934,9 +622,30 @@ get_header(); ?>
 				 </div>
 			</div>
 			<div class="review-item__wrapper">
-			<?php $arr_reviews = carbon_get_the_post_meta('complex_reviews');
+			<?php 
+				$arr_reviews = carbon_get_the_post_meta('complex_reviews');
+
+				for ($i = 0; $i<count($arr_reviews); $i++) {
+					for ($j = 0; $j<count($arr_reviews)-1; $j++) {
+						$time = strtotime($arr_reviews[$j]['complex_reviews_date']);
+						$time_sec = date('U', $time);
+	
+						$time2 = strtotime($arr_reviews[$j+1]['complex_reviews_date']);
+						$time_sec2 = date('U', $time2);
+						
+						if ($time_sec < $time_sec2)
+						{
+							$tmp = $arr_reviews[$j];
+							$arr_reviews[$j] = $arr_reviews[$j+1]; 
+							$arr_reviews[$j+1] = $tmp; 
+						}
+					}	
+				}
+
 				$inc = 0;
-				foreach($arr_reviews as $review):?>
+				foreach($arr_reviews as $review):
+					if ($inc > 5) break;
+				?>
 					<?php if($review['complex_reviews_is_show']):
 						$time = strtotime($review['complex_reviews_date']);
 						$time_sec = date('U', $time);
@@ -955,7 +664,8 @@ get_header(); ?>
 							  'ноябрь',
 							  'декабрь'
 						);?>
-						<div class="review-item" style="order: <?php echo $time_sec;?>" data-inc="<?php echo $inc?>" data-postid='<?php echo get_the_ID();?>'>
+						<div class="review-item" style="" data-inc="<?php echo $inc?>" data-postid='<?php echo get_the_ID();?>'>
+							
 							<div class="review-item__header">
 								<div class="review-item__header-ava" style="background-image: url(<?php echo wp_get_attachment_image_src($review['complex_reviews_ava'], 'medium')[0];?>);"></div>
 								<div class="review-item__header-content">
@@ -975,36 +685,38 @@ get_header(); ?>
 									</div>
 								</div>
 							</div>
+
 							<div class="review-item__text">
 								<?php echo $review['complex_reviews_text']?>
 							</div>
 							<div class="review-item__img-wrap">
 								<?php if($review['complex_reviews_img']):?>
 									<a href="<?php echo $review['complex_reviews_img']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-										<img class = "lazy" data-src="<?php echo $review['complex_reviews_img']?>" alt="">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img']?>" alt="">
 									</a>
 								<?php endif;?>
 								<?php if($review['complex_reviews_img_1']):?>
 									<a href="<?php echo $review['complex_reviews_img_1']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-										<img class = "lazy" data-src="<?php echo $review['complex_reviews_img_1']?>" alt="">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_1']?>" alt="">
 									</a>
 								<?php endif;?>
 								<?php if($review['complex_reviews_img_2']):?>
 									<a href="<?php echo $review['complex_reviews_img_2']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-										<img class = "lazy" data-src="<?php echo $review['complex_reviews_img_2']?>" alt="">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_2']?>" alt="">
 									</a>
 								<?php endif;?>
 								<?php if($review['complex_reviews_img_3']):?>
 									<a href="<?php echo $review['complex_reviews_img_3']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-										<img class = "lazy" data-src="<?php echo $review['complex_reviews_img_3']?>" alt="">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_3']?>" alt="">
 									</a>
 								<?php endif;?>
 								<?php if($review['complex_reviews_img_4']):?>
 									<a href="<?php echo $review['complex_reviews_img_4']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
-										<img class = "lazy" data-src="<?php echo $review['complex_reviews_img_4']?>" alt="">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_4']?>" alt="">
 									</a>
 								<?php endif;?>
 							</div>
+							
 							<div class="review-usefull">
 								<span class="review-usefull__title">Отзыв полезен?</span>
 								<?php 
@@ -1015,11 +727,18 @@ get_header(); ?>
 								<div class="review-usefull__yes" data-qty="<?php echo $usefull_yes;?>"><?php echo $usefull_yes;?></div>
 								<div class="review-usefull__no"><?php echo $usefull_no;?></div>
 							</div>
+
 						</div>
 					<?php endif;?>
 				<?php $inc++; endforeach;
 			 ?>
+
+						
 			</div>
+
+			<div class="btn-wrap">
+					<a href="#" data-vuecount = "5" data-countshop = "0" data-postid = "<?echo  get_the_ID();?>"  class="btn btn-pink review-more">Еще отзывы</a>
+			</div>		
 		<?php else:?>
 			<div class="reviews-board">
 				<div class="btn-wrap">
@@ -1028,19 +747,21 @@ get_header(); ?>
 			</div>
 		<?php endif;?>
 
-				</div>
+	</div>
 				
 					
 				<?php if(carbon_get_the_post_meta('product_specifications_video')):?>
-				<div class="product-specifications__tab-item">
-					<?php echo carbon_get_the_post_meta('product_specifications_video');?>
-				</div>
+						<div class="product-specifications__tab-item">
+							<?php echo carbon_get_the_post_meta('product_specifications_video');?>
+						</div>
 				<?php endif;?>
+				
 				<?php if(carbon_get_the_post_meta('product_specifications_video')):?>
-				<div class="product-specifications__tab-item">
-					<?php echo carbon_get_the_post_meta('product_specifications_sert');?>
-				</div>
+						<div class="product-specifications__tab-item">
+							<?php echo carbon_get_the_post_meta('product_specifications_sert');?>
+						</div>
 				<?php endif;?>
+			
 			</div>
 		</div>
 	<?php } else { ?>

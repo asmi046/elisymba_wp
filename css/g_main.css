@@ -3988,6 +3988,7 @@ hr.dotted {
   text-align: center;
   box-sizing: border-box;
   margin: 0;
+  text-indent: 0;
 }
 
 .product-page .product-image .discount span {
@@ -8982,11 +8983,6 @@ div.about-slider a img {
   margin-bottom: 12px;
 }
 
-/*@media screen and (max-width: 960px) {*/
-
-/*@media screen and (max-width: 640px) {*/
-
-/*@media screen and (max-width: 480px) {*/
 
 .timer-block {
   position: relative;
@@ -11795,11 +11791,11 @@ div.about-slider a img {
   display: -ms-flex;
   display: -o-flex;
   display: flex;
-  -webkit-flex-direction: column-reverse;
-  -moz-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  -o-flex-direction: column-reverse;
-  flex-direction: column-reverse;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  -o-flex-direction: column;
+  flex-direction: column;
 }
 
 .review-item {
@@ -13448,6 +13444,10 @@ a.present-modal {
 .menu a:hover {
   color: #00b5f1;
   text-decoration: none;
+}
+
+.breadcrumb_last {
+  display:none;
 }
 
 /*=== Cтили Шапки End ===============================================*/
@@ -16449,6 +16449,10 @@ a.present-modal {
 }
 
 @media screen and (max-width: 515px) {
+  .breadcrumbs span span span:last-child a:after {
+    content:"";
+  }
+
   .u-promo-text-middle .top {
     font-size: 11px;
   }

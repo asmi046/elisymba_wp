@@ -1,10 +1,10 @@
 <?php
+// ini_set("display_errors",1);
+// error_reporting(E_ALL);
 
 require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
-// ini_set("display_errors",1);
-// error_reporting(E_ALL);
 
 
 include_once('options_page.php');
@@ -1482,6 +1482,195 @@ function send_recall() {
 			curl_setopt($s, CURLOPT_POSTFIELDS, $data);
 			$zz = curl_exec($s);
 		
+	
+		} else {
+			wp_die( 'НО-НО-НО!', '', 403 );
+		}
+}
+
+
+add_action( 'wp_ajax_get_rev', 'get_rev' );
+add_action( 'wp_ajax_nopriv_get_rev', 'get_rev' );
+
+function get_rev() {
+		if ( empty( $_REQUEST['nonce'] ) ) {
+			wp_die( '0' );
+		}
+		
+		if ( check_ajax_referer( 'NEHERTUTLAZIT', 'nonce', false ) ) {
+			
+			$elements = carbon_get_post_meta($_REQUEST["postid"],'complex_reviews');
+			$stringEl = "";
+
+			if (count($elements)-1 <= (int)($_REQUEST["count"]))
+			{
+				$posts = get_posts(array(
+					'numberposts' => 5,
+					'category' => 23,
+					'offset' => $_REQUEST["countshop"]
+				));
+
+				
+				$addet = 0;
+				foreach( $posts as $post ){
+					
+		
+						$stringEl .= '<div class="review-item" style="" data-inc="'.$inc.'" data-postid="'. $post->ID.'">';
+							$stringEl .= '<div class="review-item__header">';
+				 			$stringEl .= '<div class="review-item__header-ava" style="background-image: url('.carbon_get_post_meta($post->ID,'review_photo').');"></div>';
+				 				$stringEl .= '<div class="review-item__header-content">';
+								$stringEl .= '<div class="review-item__header-content-name-date">';
+									$stringEl .= '<div class="review-item__header-name">'. $post->post_title .'</div>';
+									$stringEl .= '<div class="review-item__header-date">'.carbon_get_post_meta($post->ID,'review_date_time').'</div>';
+									$stringEl .= '</div>';
+									
+				 				$stringEl .= '</div>';
+				 			$stringEl .= '</div>';
+						
+
+						$stringEl .= '<div class="review-item__text">'.apply_filters('the_content',$post->post_content).'</div>';
+							$stringEl .= '<div class="review-item__img-wrap">';
+								
+								$array_photo = carbon_get_post_meta($post->ID, 'review_photos');	
+								foreach ($array_photo as $photo_item) {
+									$stringEl .= '<a href="'.$photo_item['review_photos_item'].'" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-'.$inc.'">';
+										$stringEl .= '<img loading="lazy" src="'.$photo_item['review_photos_item'].'" alt="">';
+									$stringEl .= '</a>';
+								}
+							$stringEl .= '</div>';
+									
+
+				 			$stringEl .= '</div>';
+						$stringEl .= '</div>';
+						$addet++;
+					}
+
+				
+				
+				
+
+				wp_die(json_encode(array("elements" => $stringEl, "count" => (int)$_REQUEST["count"], "countshop" => (int)$_REQUEST["countshop"]+$addet ) ));
+			}
+
+			for ($i = 0; $i<count($elements); $i++) {
+				for ($j = 0; $j<count($elements)-1; $j++) {
+					$time = strtotime($elements[$j]['complex_reviews_date']);
+					$time_sec = date('U', $time);
+
+					$time2 = strtotime($elements[$j+1]['complex_reviews_date']);
+					$time_sec2 = date('U', $time2);
+					
+					if ($time_sec < $time_sec2)
+					{
+						$tmp = $elements[$j];
+						$elements[$j] = $elements[$j+1]; 
+						$elements[$j+1] = $tmp; 
+					}
+				}	
+			}
+
+		
+			$countElem = (int)($_REQUEST["count"])+1; 
+			$addet = 0;
+			for ($i = $countElem; $i < $countElem + 5; $i++ )
+			{
+				if (count($elements)-1 < $i) break;
+					$time = strtotime($elements[$i]['complex_reviews_date']);
+						$time_sec = date('U', $time);
+						$month = date('m', $time) - 1;
+						$arr_month = array(
+							  'январь',
+							  'февраль',
+							  'март',
+							  'апрель',
+							  'май',
+							  'июнь',
+							  'июль',
+							  'август',
+							  'сентябрь',
+							  'октябрь',
+							  'ноябрь',
+							  'декабрь'
+						);
+
+				$stringEl .= '<div class="review-item" style="" data-inc="'.$inc.'" data-postid="'. get_the_ID().'">';
+					$stringEl .= '<div class="review-item__header">';
+					$stringEl .= '<div class="review-item__header-ava" style="background-image: url('.wp_get_attachment_image_src($elements[$i]['complex_reviews_ava'], 'medium')[0].');"></div>';
+						$stringEl .= '<div class="review-item__header-content">';
+						$stringEl .= '<div class="review-item__header-content-name-date">';
+							$stringEl .= '<div class="review-item__header-name">'. $elements[$i]['complex_reviews_name'].'</div>';
+							$stringEl .= '<div class="review-item__header-date">'.date('d', $time_sec).' '.$arr_month[$month].' '.date('Y', $time_sec).'</div>';
+							$stringEl .= '</div>';
+							$stringEl .= '<div class="review-item__header-stars">';
+								$stars_qty = $elements[$i]['complex_reviews_stars'];
+								
+								for ($j=0; $j < 5; $j++) { 
+									if($stars_qty <= $j){
+										$stringEl .= '<div class="star_review star_review-gray"></div>';
+									}
+									else 
+									{
+										$stringEl .= '<div class="star_review"></div>';
+									}
+								}
+							$stringEl .= '</div>';
+						$stringEl .= '</div>';
+					$stringEl .= '</div>';
+				
+
+				$stringEl .= '<div class="review-item__text">'.$elements[$i]['complex_reviews_text'].'</div>';
+					$stringEl .= '<div class="review-item__img-wrap">';
+						if($elements[$i]['complex_reviews_img']){
+							$stringEl .= '<a href="'.$elements[$i]['complex_reviews_img'].'" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-'.$inc.'">';
+								$stringEl .= '<img loading="lazy" src="'.$elements[$i]['complex_reviews_img'].'" alt="">';
+							$stringEl .= '</a>';
+						}			
+						
+						if($elements[$i]['complex_reviews_img_1']){
+							$stringEl .= '<a href="'.$elements[$i]['complex_reviews_img_1'].'" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-'.$inc.'">';
+								$stringEl .= '<img loading="lazy" src="'. $elements[$i]['complex_reviews_img_1'].'" alt="">';
+							$stringEl .= '</a>';
+						}	
+						
+						if($elements[$i]['complex_reviews_img_2']){
+							$stringEl .= '<a href="'.$elements[$i]['complex_reviews_img_2'].'" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-'.$inc.'">';
+								$stringEl .= '<img loading="lazy" src="'. $elements[$i]['complex_reviews_img_2'].'" alt="">';
+							$stringEl .= '</a>';
+						}
+						
+						if($elements[$i]['complex_reviews_img_3']){
+							$stringEl .= '<a href="'.$elements[$i]['complex_reviews_img_3'].'" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-'.$inc.'">';
+								$stringEl .= '<img loading="lazy" src="'. $elements[$i]['complex_reviews_img_2'].'" alt="">';
+							$stringEl .= '</a>';
+						}
+
+						if($elements[$i]['complex_reviews_img_4']){
+							$stringEl .= '<a href="'.$elements[$i]['complex_reviews_img_4'].'" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-'.$inc.'">';
+								$stringEl .= '<img loading="lazy" src="'. $elements[$i]['complex_reviews_img_4'].'" alt="">';
+							$stringEl .= '</a>';
+						}
+					
+									
+		
+					$stringEl .= '</div>';
+							
+						$stringEl .= '<div class="review-usefull">';
+							$stringEl .= '<span class="review-usefull__title">Отзыв полезен?</span>';
+							
+									$usefull_yes = $elements[$i]['complex_reviews_is_use_yes'] ? $elements[$i]['complex_reviews_is_use_yes'] : 0;
+									$usefull_no = $elements[$i]['complex_reviews_is_use_no'] ? $elements[$i]['complex_reviews_is_use_no'] : 0;
+									
+								
+									$stringEl .= '<div class="review-usefull__yes" data-qty="'.$usefull_yes.'">'. $usefull_yes .'</div>';
+									$stringEl .= '<div class="review-usefull__no">' . $usefull_no. '</div>';
+									$stringEl .= '</div>';
+
+					$stringEl .= '</div>';
+				$stringEl .= '</div>';
+				$addet++;
+			}
+
+			wp_die(json_encode(array("elements" => $stringEl, "count" => (int)$_REQUEST["count"]+$addet, "countshop" => 0 )));
 	
 		} else {
 			wp_die( 'НО-НО-НО!', '', 403 );
