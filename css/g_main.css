@@ -11825,6 +11825,7 @@ div.about-slider a img {
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   margin-right: 20px;
 }
 
@@ -16848,8 +16849,8 @@ a.present-modal {
     width: 70px;
     height: 70px;
     background-size: contain;
-    font-size: 2.2em;
-    line-height: 2.5;
+    font-size: 1.8em;
+    line-height: 70px;
   }
 
   .product-page .product-image .discount span {

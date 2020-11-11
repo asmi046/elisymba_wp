@@ -27,7 +27,9 @@ get_header(); ?>
 	
     <div  itemscope itemtype="http://schema.org/Product" class="product-page">
     <h1 itemprop="name" class="page-title mobRotated"><?php the_title(); ?> <span style = "    font-size: 0.5em;"><?php //echo "(".get_post_meta(get_the_ID(), "size", true).")";?></span></h1>
-
+    <div class="show-450">
+		<?php get_template_part('template-parts/reviews-stars');?>
+	</div>
     
 	<?php
 		$main_sales = $_REQUEST["nsale"];
@@ -343,11 +345,41 @@ get_header(); ?>
 						<ul class="hide-480">
 							<li>Гарантия качества (ГОСТ 25779-90)</li>
 							<li>Натуральные материалы</li>
-							<li>Доставка до двери</li>
-							<li>Оплата при получении</li>
+							<?php if(!carbon_get_the_post_meta('complex_reviews')):?>
+								<li>Доставка до двери</li>
+								<li>Оплата при получении</li>
+							<?php endif;?>
 						</ul>
-						
-						
+						<?php
+						if(carbon_get_the_post_meta('complex_reviews')):
+							$inc = carbon_get_the_post_meta('reviews_qty');
+							$awerage = carbon_get_the_post_meta('reviews_awerage_rating');
+							if(empty($inc)):
+								$rating_total = 0;
+								$arr_reviews = carbon_get_the_post_meta('complex_reviews');
+								foreach($arr_reviews as $review):
+									if($review['complex_reviews_is_show']):
+										$rating_total += $review['complex_reviews_stars'];
+										$inc++;
+									endif;
+								endforeach;
+								$awerage = (float)$rating_total / (float)$inc;
+								$awerage = round($awerage, 1);
+							endif;
+						?>
+
+						<div class="review-item__header-stars hide-480">
+							<?php $stars_qty = round($awerage);
+							for ($i=0; $i < 5; $i++): ?>
+								<?php if($stars_qty <= $i):?>
+								<div class="star_review star_review-gray"></div>
+								<?php else:?>
+								<div class="star_review"></div>
+								<?php endif;?>
+							<?php endfor;?>
+							<a href="#reviews-title" class="round-awerage"><?php echo $inc;?></a>
+						</div>
+						<?php endif;?>
 					</div>
                     
 
@@ -496,13 +528,222 @@ get_header(); ?>
 					<?php endif;?>
 
 			
+			<?php 
 			
-			<h2 id="reviews-title" class = "pink tac">Реальные отзывы из VK</h2>
+				$awerage = 5;
+				$rating_total = 0;
+				$inc = 0;
+				$five_awerage = 0;
+				$four_awerage = 0;
+				$three_awerage = 0;
+				$two_awerage = 0;
+				$one_awerage = 0;
+				$arr_reviews = carbon_get_the_post_meta('complex_reviews');
+				foreach($arr_reviews as $review):
+					if($review['complex_reviews_is_show']):
+						$rating_total += $review['complex_reviews_stars'];
+						$inc++;
+						if($review['complex_reviews_stars'] == 5) {
+							$five_awerage++;
+						} elseif($review['complex_reviews_stars'] == 4) {
+							$four_awerage++;
+						} elseif($review['complex_reviews_stars'] == 3) {
+							$three_awerage++;
+						} elseif($review['complex_reviews_stars'] == 2) {
+							$two_awerage++;
+						} elseif($review['complex_reviews_stars'] == 1) {
+							$one_awerage++;
+						}
+					endif;
+				endforeach;
 			
+				if($inc > 0):
+			
+			?>
+			<h2 id="reviews-title" class = "pink tac">Отзывы</h2>
+			<?php 
+
+			$awerage = (float)$rating_total / (float)$inc;
+			$awerage = round($awerage, 1);?>
+			<div class="reviews-board">
+				<div class="reviews-board__rating">
+					<div class="reviews-board__rating-number"><?php echo $awerage?></div>
+					<div class="review-item__header-stars">
+						<?php $stars_qty = round($awerage);
+						for ($i=0; $i < 5; $i++): ?>
+							<?php if($stars_qty <= $i):?>
+							<div class="star_review star_review-gray"></div>
+							<?php else:?>
+							<div class="star_review"></div>
+							<?php endif;?>
+						<?php endfor;?>
+					</div>
+					<div class="reviews-board__rating-text">На основании<br> <span><?php echo $inc;?></span> отзывов</div>
+				</div>
+				<div class="reviews-board__progress">
+					<div class="reviews-board__progress-item">
+						<div class="progress-number">5</div>
+						<div class="progress-line">
+							<div class="progress-full" style="width: <?php $percent = 100 * $five_awerage / $inc; echo $percent;?>%"></div>
+						</div>
+						<div class="progress-percent"><?php echo round($percent);?>%</div>
+					</div>
+					<div class="reviews-board__progress-item">
+						<div class="progress-number">4</div>
+						<div class="progress-line">
+							<div class="progress-full" style="width: <?php $percent = 100 * $four_awerage / $inc; echo $percent;?>%"></div>
+						</div>
+						<div class="progress-percent"><?php echo round($percent);?>%</div>
+					</div>
+					<div class="reviews-board__progress-item">
+						<div class="progress-number">3</div>
+						<div class="progress-line">
+							<div class="progress-full" style="width: <?php $percent = 100 * $three_awerage / $inc; echo $percent;?>%"></div>
+						</div>
+						<div class="progress-percent"><?php echo round($percent);?>%</div>
+					</div>
+					<div class="reviews-board__progress-item">
+						<div class="progress-number">2</div>
+						<div class="progress-line">
+							<div class="progress-full" style="width: <?php $percent = 100 * $two_awerage / $inc; echo $percent;?>%"></div>
+						</div>
+						<div class="progress-percent"><?php echo round($percent);?>%</div>
+					</div>
+					<div class="reviews-board__progress-item">
+						<div class="progress-number">1</div>
+						<div class="progress-line">
+							<div class="progress-full" style="width: <?php $percent = 100 * $one_awerage / $inc; echo $percent;?>%"></div>
+						</div>
+						<div class="progress-percent"><?php echo round($percent);?>%</div>
+					</div>
+				</div>
+				 <div class="btn-wrap">
+					 <a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
+				 </div>
+			</div>
+			<div class="review-item__wrapper">
+			<?php 
+				$arr_reviews = carbon_get_the_post_meta('complex_reviews');
+
+				for ($i = 0; $i<count($arr_reviews); $i++) {
+					for ($j = 0; $j<count($arr_reviews)-1; $j++) {
+						$time = strtotime($arr_reviews[$j]['complex_reviews_date']);
+						$time_sec = date('U', $time);
+	
+						$time2 = strtotime($arr_reviews[$j+1]['complex_reviews_date']);
+						$time_sec2 = date('U', $time2);
+						
+						if ($time_sec < $time_sec2)
+						{
+							$tmp = $arr_reviews[$j];
+							$arr_reviews[$j] = $arr_reviews[$j+1]; 
+							$arr_reviews[$j+1] = $tmp; 
+						}
+					}	
+				}
+
+				$inc = 0;
+				foreach($arr_reviews as $review):
+					if ($inc > 10) break;
+				?>
+					<?php if($review['complex_reviews_is_show']):
+						$time = strtotime($review['complex_reviews_date']);
+						$time_sec = date('U', $time);
+						$month = date('m', $time) - 1;
+						$arr_month = array(
+							  'январь',
+							  'февраль',
+							  'март',
+							  'апрель',
+							  'май',
+							  'июнь',
+							  'июль',
+							  'август',
+							  'сентябрь',
+							  'октябрь',
+							  'ноябрь',
+							  'декабрь'
+						);?>
+						<div class="review-item" style="" data-inc="<?php echo $inc?>" data-postid='<?php echo get_the_ID();?>'>
+							
+							<div class="review-item__header">
+								<div class="review-item__header-ava" style="background-image: url(<?php echo wp_get_attachment_image_src($review['complex_reviews_ava'], 'medium')[0];?>);"></div>
+								<div class="review-item__header-content">
+									<div class="review-item__header-content-name-date">
+									<div class="review-item__header-name"><?php echo $review['complex_reviews_name']?></div>
+									<div class="review-item__header-date"><?php echo date('d', $time_sec);?> <?php echo $arr_month[$month];?> <?php echo date('Y', $time_sec);?></div>
+									</div>
+									<div class="review-item__header-stars">
+										<?php $stars_qty = $review['complex_reviews_stars'];
+										for ($i=0; $i < 5; $i++): ?>
+											<?php if($stars_qty <= $i):?>
+											<div class="star_review star_review-gray"></div>
+											<?php else:?>
+											<div class="star_review"></div>
+											<?php endif;?>
+										<?php endfor;?>
+									</div>
+								</div>
+							</div>
+
+							<div class="review-item__text">
+								<?php echo $review['complex_reviews_text']?>
+							</div>
+							<div class="review-item__img-wrap">
+								<?php if($review['complex_reviews_img']):?>
+									<a href="<?php echo $review['complex_reviews_img']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img']?>" alt="">
+									</a>
+								<?php endif;?>
+								<?php if($review['complex_reviews_img_1']):?>
+									<a href="<?php echo $review['complex_reviews_img_1']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_1']?>" alt="">
+									</a>
+								<?php endif;?>
+								<?php if($review['complex_reviews_img_2']):?>
+									<a href="<?php echo $review['complex_reviews_img_2']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_2']?>" alt="">
+									</a>
+								<?php endif;?>
+								<?php if($review['complex_reviews_img_3']):?>
+									<a href="<?php echo $review['complex_reviews_img_3']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_3']?>" alt="">
+									</a>
+								<?php endif;?>
+								<?php if($review['complex_reviews_img_4']):?>
+									<a href="<?php echo $review['complex_reviews_img_4']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $inc?>">
+										<img loading="lazy" src="<?php echo $review['complex_reviews_img_4']?>" alt="">
+									</a>
+								<?php endif;?>
+							</div>
+							
+							<div class="review-usefull">
+								<span class="review-usefull__title">Отзыв полезен?</span>
+								<?php 
+									$usefull_yes = $review['complex_reviews_is_use_yes'] ? $review['complex_reviews_is_use_yes'] : 0;
+									$usefull_no = $review['complex_reviews_is_use_no'] ? $review['complex_reviews_is_use_no'] : 0;
+									
+								?>
+								<div class="review-usefull__yes" data-qty="<?php echo $usefull_yes;?>"><?php echo $usefull_yes;?></div>
+								<div class="review-usefull__no"><?php echo $usefull_no;?></div>
+							</div>
+
+						</div>
+					<?php endif;?>
+				<?php $inc++; endforeach;
+			 ?>
+
+						
+			</div>
+
+			<div class="btn-wrap">
+					<a href="#" data-vuecount = "10" data-countshop = "0" data-postid = "<?echo  get_the_ID();?>"  class="load-more-btn review-more">Показать еще 10...</a>
+			</div>		
+		<?php else:?>
 			<div class="review-item__wrapper">
 				<?
 					$posts = get_posts(array(
-						'numberposts' => 10,
+						'numberposts' => 5,
 						'category' => 23
 					));
 				
@@ -516,7 +757,7 @@ get_header(); ?>
 								<div class="review-item__header-ava" style="background-image: url(<?php echo carbon_get_post_meta($post->ID,'review_photo');?>);"></div>
 								<div class="review-item__header-content">
 									<div class="review-item__header-content-name-date">
-										<div class="review-item__header-name"><a target="_blank" href = "<?php echo(carbon_get_post_meta($post->ID, 'review_link'))?>"><?php echo $post->post_title?></a></div>
+										<div class="review-item__header-name"><?php echo $post->post_title?></div>
 										<div class="review-item__header-date"><?php echo carbon_get_post_meta($post->ID,'review_date_time') ?></div>
 									</div>
 									
@@ -549,7 +790,13 @@ get_header(); ?>
 			</div>
 			<div class="btn-wrap">
 					<a href="#" data-vuecount = "0" data-countshop = "10" data-postid = "<?echo  get_the_ID();?>"  class="load-more-btn review-more">Показать еще 10...</a>
-			</div>	
+				</div>	
+			<!-- <div class="reviews-board">
+				<div class="btn-wrap">
+					<a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
+				</div>
+			</div> -->
+		<?php endif;?>
 
 	</div>
 				

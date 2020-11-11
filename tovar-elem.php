@@ -103,15 +103,7 @@
 		
 	</div>
 	
-	<!-- <div class = "informersTm"> -->
-		<div class = "informerElem">
 
-			<?php get_template_part('template-parts/reviews-stars');?>
-			
-		</div>
-		
-		
-	<!-- </div> -->
 
 	<div class="item-title">
 		<a href="<?php echo $linc;?>">
