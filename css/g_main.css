@@ -11762,7 +11762,7 @@ div.about-slider a img {
   font-size: 18px;
 }
 
-.page-content-full ul li:before,
+/* .page-content-full ul li:before, */
 .product-specifications__tab-item ul li:before {
   content: "";
   width: 20px;
