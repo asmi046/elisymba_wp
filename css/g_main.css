@@ -7274,6 +7274,7 @@ a.button_gray:hover {
   margin-bottom: 10px;
 }
 
+.load-more-btn,
 .load-more {
   text-align: center;
   margin-top: 8px;
@@ -7291,6 +7292,10 @@ a.button_gray:hover {
   margin: auto;
   transition: all .3s ease;
   outline: none;
+}
+
+.btn-wrap .load-more-btn{
+    max-width: 280px;
 }
 
 .load-more:hover {

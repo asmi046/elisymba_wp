@@ -1,9 +1,8 @@
 <?php
 use Carbon_Fields\Container;
 use Carbon_Fields\Field;
-Container::make('post_meta', 'review_custom_post', 'Дополнительные поля')
-	->show_on_post_type('post')
-	->show_on_category('otzyvy')
+Container::make('post_meta', 'review_custom_post', 'Отзывы о магазине')
+	//->show_on_template(array("single-otziv.php"))
 	->add_fields(array(
 		Field::make('text', 'review_sity', 'Город')
 			->set_width(20),

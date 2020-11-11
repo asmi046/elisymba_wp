@@ -644,7 +644,7 @@ get_header(); ?>
 
 				$inc = 0;
 				foreach($arr_reviews as $review):
-					if ($inc > 5) break;
+					if ($inc > 10) break;
 				?>
 					<?php if($review['complex_reviews_is_show']):
 						$time = strtotime($review['complex_reviews_date']);
@@ -737,14 +737,65 @@ get_header(); ?>
 			</div>
 
 			<div class="btn-wrap">
-					<a href="#" data-vuecount = "5" data-countshop = "0" data-postid = "<?echo  get_the_ID();?>"  class="btn btn-pink review-more">Еще отзывы</a>
+					<a href="#" data-vuecount = "10" data-countshop = "0" data-postid = "<?echo  get_the_ID();?>"  class="load-more-btn review-more">Показать еще 10...</a>
 			</div>		
 		<?php else:?>
-			<div class="reviews-board">
+			<div class="review-item__wrapper">
+				<?
+					$posts = get_posts(array(
+						'numberposts' => 5,
+						'category' => 23
+					));
+				
+					
+		
+					foreach( $posts as $post ){	
+					?>
+						<div class="review-item" style="" data-inc="<?php echo $inc?>" data-postid='<?php echo $post->ID;?>'>
+							
+							<div class="review-item__header">
+								<div class="review-item__header-ava" style="background-image: url(<?php echo carbon_get_post_meta($post->ID,'review_photo');?>);"></div>
+								<div class="review-item__header-content">
+									<div class="review-item__header-content-name-date">
+										<div class="review-item__header-name"><?php echo $post->post_title?></div>
+										<div class="review-item__header-date"><?php echo carbon_get_post_meta($post->ID,'review_date_time') ?></div>
+									</div>
+									
+								</div>
+							</div>
+
+							<div class="review-item__text">
+								<?php echo apply_filters('the_content',$post->post_content);?>
+							</div>
+
+							<div class="review-item__img-wrap">
+								<?
+								$array_photo = carbon_get_post_meta($post->ID, 'review_photos');	
+								foreach ($array_photo as $photo_item) {
+								?>
+									<a href="<?echo $photo_item['review_photos_item']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $post->ID;?>">
+										<img loading="lazy" src="<?echo $photo_item['review_photos_item']?>" alt="">
+									</a>
+								<?}?>
+							</div>
+						</div>
+						<?
+						
+					}
+
+					
+				?>
+
+				
+			</div>
+			<div class="btn-wrap">
+					<a href="#" data-vuecount = "0" data-countshop = "10" data-postid = "<?echo  get_the_ID();?>"  class="load-more-btn review-more">Показать еще 10...</a>
+				</div>	
+			<!-- <div class="reviews-board">
 				<div class="btn-wrap">
 					<a href="#" class="btn btn-pink review-modal-link">Оставить отзыв</a>
 				</div>
-			</div>
+			</div> -->
 		<?php endif;?>
 
 	</div>

@@ -937,12 +937,12 @@ require_once( get_template_directory() . '/inc/carbon-fields/vendor/autoload.php
 \Carbon_Fields\Carbon_Fields::boot();
 }
 
-function eli_count_reviews_cat( $query ) {
-    if ( $query->is_main_query() && is_category(23) ) {
-        $query->set( 'posts_per_page', 10 );
-    }
-}
-add_action( 'pre_get_posts', 'eli_count_reviews_cat' );
+// function eli_count_reviews_cat( $query ) {
+//     if ( $query->is_main_query() && is_category(23) ) {
+//         $query->set( 'posts_per_page', 10 );
+//     }
+// }
+// add_action( 'pre_get_posts', 'eli_count_reviews_cat' );
 
 add_shortcode( 'razelem', 'razelem_f' );
 
@@ -1505,7 +1505,7 @@ function get_rev() {
 			if (count($elements)-1 <= (int)($_REQUEST["count"]))
 			{
 				$posts = get_posts(array(
-					'numberposts' => 5,
+					'numberposts' => 10,
 					'category' => 23,
 					'offset' => $_REQUEST["countshop"]
 				));
@@ -1544,11 +1544,6 @@ function get_rev() {
 						$stringEl .= '</div>';
 						$addet++;
 					}
-
-				
-				
-				
-
 				wp_die(json_encode(array("elements" => $stringEl, "count" => (int)$_REQUEST["count"], "countshop" => (int)$_REQUEST["countshop"]+$addet ) ));
 			}
 
@@ -1572,7 +1567,7 @@ function get_rev() {
 		
 			$countElem = (int)($_REQUEST["count"])+1; 
 			$addet = 0;
-			for ($i = $countElem; $i < $countElem + 5; $i++ )
+			for ($i = $countElem; $i < $countElem + 10; $i++ )
 			{
 				if (count($elements)-1 < $i) break;
 					$time = strtotime($elements[$i]['complex_reviews_date']);
