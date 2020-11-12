@@ -1520,7 +1520,7 @@ function get_rev() {
 				 			$stringEl .= '<div class="review-item__header-ava" style="background-image: url('.carbon_get_post_meta($post->ID,'review_photo').');"></div>';
 				 				$stringEl .= '<div class="review-item__header-content">';
 								$stringEl .= '<div class="review-item__header-content-name-date">';
-									$stringEl .= '<div class="review-item__header-name">'. $post->post_title .'</div>';
+									$stringEl .= '<div class="review-item__header-name"><a class = "bp_author" target="_blank" href = "'.carbon_get_post_meta($post->ID, 'review_link').'">'. $post->post_title .'</a></div>';
 									$stringEl .= '<div class="review-item__header-date">'.carbon_get_post_meta($post->ID,'review_date_time').'</div>';
 									$stringEl .= '</div>';
 									

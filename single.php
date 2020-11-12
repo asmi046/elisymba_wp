@@ -516,7 +516,7 @@ get_header(); ?>
 								<div class="review-item__header-ava" style="background-image: url(<?php echo carbon_get_post_meta($post->ID,'review_photo');?>);"></div>
 								<div class="review-item__header-content">
 									<div class="review-item__header-content-name-date">
-										<div class="review-item__header-name"><a target="_blank" href = "<?php echo(carbon_get_post_meta($post->ID, 'review_link'))?>"><?php echo $post->post_title?></a></div>
+										<div class="review-item__header-name"><a class = "bp_author" target="_blank" href = "<?php echo(carbon_get_post_meta($post->ID, 'review_link'))?>"><?php echo $post->post_title?></a></div>
 										<div class="review-item__header-date"><?php echo carbon_get_post_meta($post->ID,'review_date_time') ?></div>
 									</div>
 									

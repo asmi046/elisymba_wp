@@ -37,7 +37,7 @@
 									<div class="bp_info">
 									    <div class="bp_author_wrap">
 									      <div class="bp_actions"><a href="#" class="bp_delete_button bp_action fl_r"</a></div>
-									      <a class="bp_author" href="<?php echo carbon_get_the_post_meta('review_link')?>"><?php the_title();?></a>
+									      <a class="bp_author" target="_blank" href="<?php echo carbon_get_the_post_meta('review_link')?>"><?php the_title();?></a>
 									      <span class="bp_date" href="" dir="auto"><?php echo carbon_get_the_post_meta('review_date_time')?></span>
 									      <span class="bp_topic"></span>
 									    </div>

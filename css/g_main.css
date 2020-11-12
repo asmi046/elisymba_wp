@@ -11830,9 +11830,8 @@ div.about-slider a img {
 }
 
 .review-item__header-name {
-  border-bottom: 1px dotted #000;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .review-item__header-content {
