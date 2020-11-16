@@ -165,7 +165,7 @@ function bascetinput() {
 						$rezstr .= "</div>";
 						
 						$rezstr .= "<div class = 'blineel pict'>";
-							$rezstr .= '<a target = "_blank" href = "'.get_the_permalink($pe->ID).'"><img src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "SKU", true).'.1.jpg"></a>';
+							$rezstr .= '<a target = "_blank" href = "'.get_the_permalink($pe->ID).'"><img src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "_sku", true).'.1.jpg"></a>';
 						$rezstr .= "</div>";
 						
 						$rezstr .= "<div class = 'blineel name'>";
@@ -231,7 +231,7 @@ function bascetinputOne($hovinput, $nsale) {
 						
 						
 						$rezstr .= "<div class = 'blineel pict'>";
-							$rezstr .= '<a target = "_blank" href = "'.get_the_permalink($pe->ID).'"><img class="cart-img__product" src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "SKU", true).'.1.jpg"></a>';
+							$rezstr .= '<a target = "_blank" href = "'.get_the_permalink($pe->ID).'"><img class="cart-img__product" src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "_sku", true).'.1.jpg"></a>';
 						$rezstr .= "</div>";
 						
 						$rezstr .= "<div class = 'blineel name'>";
@@ -281,7 +281,7 @@ function bascetinputDopFormat($pe) {
 	
 	$rezstr .= '<div class="cart-recommend__item">';
 		
-		$rezstr .= '<a href="'.get_the_permalink($pe->ID).'"><div class="cart-recommend__item-img" style="background-image: url('.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "SKU", true).'.1.jpg)"></div></a>';
+		$rezstr .= '<a href="'.get_the_permalink($pe->ID).'"><div class="cart-recommend__item-img" style="background-image: url('.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "_sku", true).'.1.jpg)"></div></a>';
 		if((!empty($pricr_old)) && ($pricr_old != $pricr_cur)) {
 			$rezstr .= "<div class = 'economy'>Вы экономите ".round(($pricr_old - $pricr_cur) / ($pricr_old *0.01))."%</div>";
 		}
@@ -311,7 +311,7 @@ function bascetinputDopFormatIncart($pe) {
 	
 	$rezstr .= '<div class="cart-recommend__item  cart-recommend__item2">';
 
-		$rezstr .= '<a href="'.get_the_permalink($pe->ID).'"><div class="cart-recommend__item-img" style="background-image: url('.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "SKU", true).'.1.jpg)"></div></a>';
+		$rezstr .= '<a href="'.get_the_permalink($pe->ID).'"><div class="cart-recommend__item-img" style="background-image: url('.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "_sku", true).'.1.jpg)"></div></a>';
 		if((!empty($pricr_old)) && ((int)$pricr_old > (int)$pricr_cur)) {
 			$rezstr .= "<div class = 'economy'>Вы экономите ".round(($pricr_old - $pricr_cur) / ($pricr_old *0.01))."%</div>";
 		}
@@ -730,7 +730,7 @@ function oformit_zak() {
 				$rezstr .= "<tr>";	
 				
 					$rezstr .= "<td>";
-						$rezstr .= '<img width = "80" src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "SKU", true).'.1.jpg">';
+						$rezstr .= '<img width = "80" src = "'.get_bloginfo("url").'/galery/'.get_post_meta($pe->ID, "_sku", true).'.1.jpg">';
 					$rezstr .= "</td>";
 					
 					$rezstr .= "<td>";
@@ -749,7 +749,7 @@ function oformit_zak() {
 				
 				$itemToCrm[] = array(
 					"offer" => array(
-							"externalId" => get_post_meta($pe->ID, "SKU", true)
+							"externalId" => get_post_meta($pe->ID, "_sku", true)
 					),
 					"initialPrice" => get_post_meta($pe->ID, "_price", true), 
 					"productName" => $pe->post_title, 
@@ -1110,13 +1110,13 @@ function posts_custom_columns($column_name, $id){
 	}
 	
 	if($column_name === 'riv_post_sku'){
-		$SKU_t = get_post_meta(get_the_ID(), "SKU", true);
+		$SKU_t = get_post_meta(get_the_ID(), "_sku", true);
 		echo empty($SKU_t)?"-":$SKU_t;
 	}
 	
 	if($column_name === 'riv_post_thumbs'){
-        if (!empty(get_post_meta(get_the_ID(), "SKU", true)))
-			$img1 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "SKU", true).".1.jpg";
+        if (!empty(get_post_meta(get_the_ID(), "_sku", true)))
+			$img1 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".1.jpg";
 		else 
 			$img1 = get_bloginfo("url")."/galery/no-image.png";
 		

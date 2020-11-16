@@ -12,7 +12,7 @@ $metaquery = array(
 	),
 	
 	'priceM' => array (
-		'key'     => 'price',
+		'key'     => '_price',
 		'value' => '0',
 		'compare' => '>',
 		'type'    => 'NUMERIC',

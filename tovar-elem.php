@@ -50,27 +50,27 @@
 	<div class="item-image" >
 		<a class = "oneImg" href="<?php echo $linc;?>">
 			<?php
-				$img1 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "SKU", true).".1.jpg";
-				$img2 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "SKU", true).".1.jpg";
+				$img1 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".1.jpg";
+				$img2 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".1.jpg";
 				
-				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "SKU", true).".2.jpg")) {
-					$img2 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "SKU", true).".2.jpg";
+				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".2.jpg")) {
+					$img2 = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".2.jpg";
 				}
 				
-				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/miniature/min-".get_post_meta(get_the_ID(), "SKU", true).".1.jpg")) {
-					$img1 = get_bloginfo("url")."/galery/miniature/min-".get_post_meta(get_the_ID(), "SKU", true).".1.jpg";
+				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/miniature/min-".get_post_meta(get_the_ID(), "_sku", true).".1.jpg")) {
+					$img1 = get_bloginfo("url")."/galery/miniature/min-".get_post_meta(get_the_ID(), "_sku", true).".1.jpg";
 				}
 				
-				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/miniature/min-".get_post_meta(get_the_ID(), "SKU", true).".2.jpg")) {
-					$img2 = get_bloginfo("url")."/galery/miniature/min-".get_post_meta(get_the_ID(), "SKU", true).".2.jpg";
+				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/miniature/min-".get_post_meta(get_the_ID(), "_sku", true).".2.jpg")) {
+					$img2 = get_bloginfo("url")."/galery/miniature/min-".get_post_meta(get_the_ID(), "_sku", true).".2.jpg";
 				}
 				
-				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/webpmin/min-".get_post_meta(get_the_ID(), "SKU", true).".1.webp")) {
-					$img1_webp = get_bloginfo("url")."/galery/webpmin/min-".get_post_meta(get_the_ID(), "SKU", true).".1.webp";
+				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/webpmin/min-".get_post_meta(get_the_ID(), "_sku", true).".1.webp")) {
+					$img1_webp = get_bloginfo("url")."/galery/webpmin/min-".get_post_meta(get_the_ID(), "_sku", true).".1.webp";
 				}
 				
-				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/webpmin/min-".get_post_meta(get_the_ID(), "SKU", true).".2.webp")) {
-					$img2_webp = get_bloginfo("url")."/galery/webpmin/min-".get_post_meta(get_the_ID(), "SKU", true).".2.webp";
+				if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/webpmin/min-".get_post_meta(get_the_ID(), "_sku", true).".2.webp")) {
+					$img2_webp = get_bloginfo("url")."/galery/webpmin/min-".get_post_meta(get_the_ID(), "_sku", true).".2.webp";
 				}
 				
 			?>
@@ -125,7 +125,7 @@
 	
 	<div class="item-actions clearfix">
 		<a class="more" href="<?php echo $linc;?>">Подробнее</a>
-		<a onclick="yaCounter48236084.reachGoal('knopka');" class="order tobascetInCat fancybox-order <?php if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop")))) echo "pre-order-link";?>"  style = "display:block;" href="#order-form"  data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" data-price="<?php echo $pricr_cur;?>" data-price-old = "<?php echo $pricr_old;?>" data-size-price-s="<?php echo $pricr_cur;?>" data-size-price-old-s="<?php echo $pricr_old;?>" data-image="<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "SKU", true)?>.1.jpg" data-title="<?php the_title(); ?>" data-product = "<?php echo get_post_meta(get_the_ID(), "SKU", true)?>" data-postid = "<?php echo get_the_ID();?>">
+		<a onclick="yaCounter48236084.reachGoal('knopka');" class="order tobascetInCat fancybox-order <?php if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop")))) echo "pre-order-link";?>"  style = "display:block;" href="#order-form"  data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" data-price="<?php echo $pricr_cur;?>" data-price-old = "<?php echo $pricr_old;?>" data-size-price-s="<?php echo $pricr_cur;?>" data-size-price-old-s="<?php echo $pricr_old;?>" data-image="<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.1.jpg" data-title="<?php the_title(); ?>" data-product = "<?php echo get_post_meta(get_the_ID(), "_sku", true)?>" data-postid = "<?php echo get_the_ID();?>">
 		<?php
 			if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop"))))
 				echo "Предзаказ";

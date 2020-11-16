@@ -140,7 +140,7 @@ get_header();
 								</td>
 								<td class="product-thumbnail">
 									<a href="<?php echo get_the_permalink($pe->ID); ?>">
-										<img src="<?php bloginfo("url")?>/galery/<?php echo get_post_meta($pe->ID, "SKU", true); ?>.1.jpg" alt="">
+										<img src="<?php bloginfo("url")?>/galery/<?php echo get_post_meta($pe->ID, "_sku", true); ?>.1.jpg" alt="">
 									</a>
 								</td>
 								<td class="product-name-price-qty__wrap">
