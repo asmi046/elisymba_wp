@@ -5,6 +5,19 @@
 
 get_header(); ?>
 
+<?php
+		$main_sales = $_REQUEST["nsale"];
+		
+		$pricr_cur = get_post_meta(get_the_ID(), "_price", true);
+		$pricr_old = get_post_meta(get_the_ID(), "_old_price", true);
+		
+		if (!empty($main_sales)) {
+			$pricr_old = $pricr_cur;
+			$pricr_cur = $pricr_cur - $main_sales; 
+		}			
+		
+	?>
+
 <main>
 	<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <div class="wrapper">
@@ -17,30 +30,31 @@ get_header(); ?>
 	
 	<?php if( $detect->isMobile() ) include("search-form.php");?>
 	
-	<div class="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+	<!-- <div class="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 		<?php
-		if ( function_exists('yoast_breadcrumb') ) {
-			yoast_breadcrumb('','');
-		}
+		// if ( function_exists('yoast_breadcrumb') ) {
+		// 	//	yoast_breadcrumb('','');
+		// }
 		?>							
+	</div> -->
+
+	<div class = "backButtonWraper">
+		<a onclick="javascript:history.back(); return false;" href = "#" class = "buttonBack"> <span class = "arrowBack"></span> Назад </a>
+		<a onclick="javascript:history.back(); return false;" href = "#"  class = "mobileBackLine">
+			<div class = "arrowMob"></div>
+			<div class = "wrp">
+				<p class = "bTovarName"><?php the_title(); ?></p>	
+				<p class = "bTovarPrice"><?php echo $pricr_cur;?> руб.</p>
+			</div>	
+		</a>	
 	</div>
+
 	
     <div  itemscope itemtype="http://schema.org/Product" class="product-page">
     <h1 itemprop="name" class="page-title mobRotated"><?php the_title(); ?> <span style = "    font-size: 0.5em;"><?php //echo "(".get_post_meta(get_the_ID(), "size", true).")";?></span></h1>
 
     
-	<?php
-		$main_sales = $_REQUEST["nsale"];
-		
-		$pricr_cur = get_post_meta(get_the_ID(), "_price", true);
-		$pricr_old = get_post_meta(get_the_ID(), "_old_price", true);
-		
-		if (!empty($main_sales)) {
-			$pricr_old = $pricr_cur;
-			$pricr_cur = $pricr_cur - $main_sales; 
-		}			
-		
-	?>
+
 	
 	
 	<div class="product-content page-content-arial">
@@ -430,7 +444,7 @@ get_header(); ?>
 					<span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');" data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
 				</div>
 
-                <div style="font-size: 16px; text-transform: none; color: #919191; margin-top: 10px; margin-left: 20px;    font-family: 'Trebuchet MS',Helvetica,sans-serif">
+                <div style="font-size: 16px; text-transform: none; color: #919191; margin-top: 10px;     font-family: sans-serif">
                     Данный товар купили <b><?php echo get_post_meta(get_the_ID(), "order_count", true);?></b> раз(а).
                 </div>
             </div>
@@ -596,18 +610,18 @@ get_header(); ?>
             <div class="item-page-tovar-left fl">
                 <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 					<div class="price-shares" style="margin-top: 22px">
-						<p style="color: #888 !important; margin: 0;">Цена без акции:</p>
-						<p class="price" style="font-size: 34px;color: #888!important; margin-bottom: 10px; margin-top: 0;"> <span class = "zPrice"><?php echo $pricr_old;?></span>  <span style="font-size: 26px;"> руб.</span></p>
+						<p style="color: #888 !important; margin: 0;  text-indent: 0;">Цена без акции:</p>
+						<p class="price" style="font-size: 34px;color: #888!important; margin-bottom: 10px; margin-top: 0; text-indent: 0;"> <span class = "zPrice"><?php echo $pricr_old;?></span>  <span style="font-size: 26px;"> руб.</span></p>
 					</div>
 				<?php endif;?>
                 
 				<div class="not price-shares" style="margin-top: 15px">
                     <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
-						<p style="color:#111 !important; margin: 0;">Цена по акции:</p>
+						<p style="color:#111 !important; margin: 0;  text-indent: 0;">Цена по акции:</p>
 					<?php else: ?>
-						<p style="color:#111 !important; margin: 0;">Цена:</p>
+						<p style="color:#111 !important; margin: 0;  text-indent: 0;">Цена:</p>
 					<?php endif; ?>
-                    <p class="price price-old" style="font: bold 50px 'Roboto Slab', Arial, Helvetica, sans-serif; margin: 0;"> <?php echo $pricr_cur;?> <span style="font-size: 40px;"> руб.</span></p>
+                    <p class="price price-old" style="font: bold 50px 'Roboto Slab', Arial, Helvetica, sans-serif; margin: 0;  text-indent: 0;"> <?php echo $pricr_cur;?> <span style="font-size: 40px;"> руб.</span></p>
                 </div>
             </div>
 			
