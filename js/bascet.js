@@ -302,7 +302,9 @@ jQuery(document).ready(function() {
 			podarki = " Выигранный подарок #1: "+allTovar[podarok1].name;
 		}
 	
-		
+		jQuery("#allBascetCart").attr("disabled", true);
+		jQuery("#allBascetCart").addClass("krutilka");
+
 		var  jqXHR = jQuery.post(
 			allAjax.ajaxurl,
 			{
@@ -326,11 +328,16 @@ jQuery(document).ready(function() {
 			jQuery(".bascetAllWriperMsg").html("<h2>"+responce+"</h2>");
 			jQuery(".bascetAllWriperMsg").show();
 			
+			
+
 			localStorage.removeItem("lot1");
 			
 			yaCounter48236084.reachGoal('oform_str_korzina');
 			
 			window.location.replace("https://xn--80ablmoh8a2h.xn--p1ai/vash-zakaz-oformlen-korzina/?innerid="+JSON.parse(responce).order.number+"&summ="+JSON.parse(responce).order.totalSumm);
+			
+			// jQuery("#allBascetCart").attr("disabled", false);
+			// jQuery("#allBascetCart").removeClass("krutilka");
 		});
 		
 		jqXHR.fail(function (responce) {

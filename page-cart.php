@@ -444,7 +444,7 @@ get_header();
 			
 			<div class="checkout-form__block checkout-form__block-submit">
 				<!-- <div class="checkout-form__block-submit-total"><span>Итого <span class="checkout-form__block-submit-qty"><?php echo $bscetcount; ?></span> товар на сумму <span class="checkout-form__block-submit-summ"><?php echo $summ; ?></span> руб.</span></div> -->
-				<div class="checkout-form__block-submit-btn oformlenieZak" onclick="yaCounter48236084.reachGoal('oform_str_korzina');" >Оставить заявку</div>
+				<button id = "allBascetCart" class="checkout-form__block-submit-btn oformlenieZak" onclick="yaCounter48236084.reachGoal('oform_str_korzina');" >Оставить заявку</button>
 			</div>
 			
 			<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

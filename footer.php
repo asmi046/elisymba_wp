@@ -263,6 +263,7 @@
 	});
 	
 	jQuery(".oneImg").mouseover(function(){
+		if (window.screen.width < 568) return;
 		if (jQuery(this).siblings(".toImg").css("display") == "none") {
 			jQuery(this).hide();
 			jQuery(this).siblings(".toImg").show();
@@ -272,6 +273,7 @@
 	});
 	
 	jQuery(".toImg").mouseleave(function(){ 
+		if (window.screen.width < 568) return;	
 			jQuery(this).hide();
 			jQuery(this).siblings(".oneImg").show();
 	});

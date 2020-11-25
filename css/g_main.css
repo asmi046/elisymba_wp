@@ -2375,7 +2375,7 @@ div.mejs-speed-button {
 .wrapper {
   margin: 0 auto;
   width: 1200px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .review-body {
@@ -5565,7 +5565,6 @@ hr.dotted {
   overflow: hidden;
   margin-bottom: 10px;
   padding-left: 15px;
-  font: 13px/20px Arial, Helvetica, sans-serif;
 }
 
 .delivery-page ul li:before {
@@ -5640,7 +5639,6 @@ h5 {
   position: relative;
   border: 2px dotted  #d8dce2;
   padding: 15px;
-  font: 13px "Trebuchet MS", Helvetica, sans-serif;
 }
 
 .delivery-page .block-border > div {
@@ -5958,7 +5956,7 @@ h5 {
   margin-left: 99px;
   margin-top: 5px;
   margin-bottom: 20px;
-  font: 14px sans-serif;
+  font: sans-serif;
   list-style: none;
   padding: 0;
 }
@@ -5970,7 +5968,7 @@ h5 {
 .contacts-page .contacts-internet-block {
   margin-top: 10px;
   margin-left: 10px;
-  font: 13px sans-serif;
+  font: sans-serif;
 }
 
 .contacts-page .contacts-internet-block-online {
@@ -8981,7 +8979,7 @@ div.about-slider a img {
 }
 
 .action-item__text {
-  font-size: 14px;
+  font-size: 16px;
   color: #1e1f4f;
   
 }
@@ -11691,6 +11689,10 @@ text-indent: 0!important;
   background-image: url(../img/icons/arrow-link.svg);
 }
 
+.krutilka:after { 
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='UTF-8' standalone='no'%3F%3E%3Csvg xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.0' width='64px' height='64px' viewBox='0 0 128 128' xml:space='preserve'%3E%3Cg%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='1'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.67' transform='rotate(45,64,64)'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.42' transform='rotate(90,64,64)'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.2' transform='rotate(135,64,64)'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.12' transform='rotate(180,64,64)'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.12' transform='rotate(225,64,64)'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.12' transform='rotate(270,64,64)'/%3E%3Ccircle cx='16' cy='64' r='16' fill='%23ffffff' fill-opacity='0.12' transform='rotate(315,64,64)'/%3E%3CanimateTransform attributeName='transform' type='rotate' values='0 64 64;315 64 64;270 64 64;225 64 64;180 64 64;135 64 64;90 64 64;45 64 64' calcMode='discrete' dur='720ms' repeatCount='indefinite'%3E%3C/animateTransform%3E%3C/g%3E%3C/svg%3E");
+}
+
 .checkout-form__block-submit input[type=submit]:hover {
   background-color: #ff2974;
 }
@@ -11805,7 +11807,7 @@ text-indent: 0!important;
 .product-specifications__tab-item ul li {
   list-style: none;
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* .page-content-full ul li:before, */
@@ -16777,6 +16779,7 @@ a.present-modal {
 }
 
 @media screen and (max-width: 480px) {
+  .mobHide,
   .buttonBack {
     display: none;
   }

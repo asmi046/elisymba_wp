@@ -51,7 +51,7 @@ get_header(); ?>
 
 	
     <div  itemscope itemtype="http://schema.org/Product" class="product-page">
-    <h1 itemprop="name" class="page-title mobRotated"><?php the_title(); ?> <span style = "    font-size: 0.5em;"><?php //echo "(".get_post_meta(get_the_ID(), "size", true).")";?></span></h1>
+    <h1 itemprop="name" class="page-title mobRotated mobHide"><?php the_title(); ?> <span style = "    font-size: 0.5em;"><?php //echo "(".get_post_meta(get_the_ID(), "size", true).")";?></span></h1>
 
     
 
@@ -510,60 +510,7 @@ get_header(); ?>
 					<?php endif;?>
 
 			
-			
-			<h2 id="reviews-title" class = "pink tac">Реальные отзывы из VK</h2>
-			
-			<div class="review-item__wrapper">
-				<?
-					$posts = get_posts(array(
-						'numberposts' => 10,
-						'category' => 23
-					));
-				
-					
-		
-					foreach( $posts as $post ){	
-					?>
-						<div class="review-item" style="" data-inc="<?php echo $inc?>" data-postid='<?php echo $post->ID;?>'>
-							
-							<div class="review-item__header">
-								<div class="review-item__header-ava" style="background-image: url(<?php echo carbon_get_post_meta($post->ID,'review_photo');?>);"></div>
-								<div class="review-item__header-content">
-									<div class="review-item__header-content-name-date">
-										<div class="review-item__header-name"><a class = "bp_author" target="_blank" href = "<?php echo(carbon_get_post_meta($post->ID, 'review_link'))?>"><?php echo $post->post_title?></a></div>
-										<div class="review-item__header-date"><?php echo carbon_get_post_meta($post->ID,'review_date_time') ?></div>
-									</div>
-									
-								</div>
-							</div>
-
-							<div class="review-item__text">
-								<?php echo apply_filters('the_content',$post->post_content);?>
-							</div>
-
-							<div class="review-item__img-wrap">
-								<?
-								$array_photo = carbon_get_post_meta($post->ID, 'review_photos');	
-								foreach ($array_photo as $photo_item) {
-								?>
-									<a href="<?echo $photo_item['review_photos_item']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $post->ID;?>">
-										<img loading="lazy" src="<?echo $photo_item['review_photos_item']?>" alt="">
-									</a>
-								<?}?>
-							</div>
-						</div>
-						<?
-						
-					}
-
-					
-				?>
-
-				
-			</div>
-			<div class="btn-wrap">
-					<a href="#" data-vuecount = "0" data-countshop = "10" data-postid = "<?echo  get_the_ID();?>"  class="load-more-btn review-more">Показать еще 10...</a>
-			</div>	
+	
 
 	</div>
 				
@@ -588,7 +535,60 @@ get_header(); ?>
 		</div>
 	<?php } ?>
 			
-  
+  			
+	<h2 id="reviews-title" class = "pink tac">Реальные отзывы из VK</h2>
+			
+			<div class="review-item__wrapper">
+				<?
+					$posts = get_posts(array(
+						'numberposts' => 10,
+						'category' => 23
+					));
+				
+					
+		
+					foreach( $posts as $otz_post ){	
+					?>
+						<div class="review-item" style="" data-inc="<?php echo $inc?>" data-postid='<?php echo $otz_post->ID;?>'>
+							
+							<div class="review-item__header">
+								<div class="review-item__header-ava" style="background-image: url(<?php echo carbon_get_post_meta($otz_post->ID,'review_photo');?>);"></div>
+								<div class="review-item__header-content">
+									<div class="review-item__header-content-name-date">
+										<div class="review-item__header-name"><a class = "bp_author" target="_blank" href = "<?php echo(carbon_get_post_meta($otz_post->ID, 'review_link'))?>"><?php echo $otz_post->post_title?></a></div>
+										<div class="review-item__header-date"><?php echo carbon_get_post_meta($otz_post->ID,'review_date_time') ?></div>
+									</div>
+									
+								</div>
+							</div>
+
+							<div class="review-item__text">
+								<?php echo apply_filters('the_content',$otz_post->post_content);?>
+							</div>
+
+							<div class="review-item__img-wrap">
+								<?
+								$array_photo = carbon_get_post_meta($otz_post->ID, 'review_photos');	
+								foreach ($array_photo as $photo_item) {
+								?>
+									<a href="<?echo $photo_item['review_photos_item']?>" class="review-item__img-item fancybox" data-fancybox-group="reviews-img-<?php echo $otz_post->ID;?>">
+										<img loading="lazy" src="<?echo $photo_item['review_photos_item']?>" alt="">
+									</a>
+								<?}?>
+							</div>
+						</div>
+						<?
+						
+					}
+
+					
+				?>
+
+				
+			</div>
+			<div class="btn-wrap">
+				<a href="#" data-vuecount = "10000000" data-countshop = "10" data-postid = "<?echo  get_the_ID();?>"  class="load-more-btn review-more">Показать еще 10...</a>
+			</div>
 
 	<a href = "https://xn--80ablmoh8a2h.xn--p1ai/category/kubiki-po-skidke/?nsale=500">
 		<div class="additional-disc__wrapper" style="background-image: url(<?php bloginfo("template_url"); ?>/img/page-action-one.jpg);"></div>
@@ -629,8 +629,35 @@ get_header(); ?>
 			
 			<div class="rightbtn fr">
                 
+							
+		
+                   
+					
+				   <a onclick="yaCounter48236084.reachGoal('knopka');" class="btn btn-pink inSingleBtn tobascetInCat fancybox-order <?php echo $pre_order_link;?>" style = "display:inline-bloc;" href="#order-form" 
+				  data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" 
+				  data-price="<?php echo $pricr_cur;?>" 
+				  data-price-old = "<?php echo $pricr_old;?>" 
+				  data-size-price-s="<?php echo $pricr_cur;?>" 
+				  data-size-price-old-s="<?php echo $pricr_old;?>" 
+				  data-image="<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.1.jpg" 
+				  data-title="<?php the_title(); ?>" 
+				  data-product = "<?php echo get_post_meta(get_the_ID(), "_sku", true)?>" 
+				  data-postid = "<?php echo get_the_ID();?>"
+				  >
+					  Заказать
+				  </a>
+				  
 
-					<a onclick="yaCounter48236084.reachGoal('knopka');" class="btn btn-pink  tobascetInCat fancybox-order <?php echo $pre_order_link;?>" style = "display:inline-block;" href="#order-form" 
+	 
+	  
+	  
+	  <!--КОРЗИНА-->
+	  
+	  <div class="order-button-wrapper">			
+		  <span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');" data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
+	  </div>
+
+					<!-- <a onclick="yaCounter48236084.reachGoal('knopka');" class="btn btn-pink  tobascetInCat fancybox-order <?php echo $pre_order_link;?>" style = "display:inline-block;" href="#order-form" 
 					data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" 
 					data-price="<?php echo $pricr_cur;?>" 
 					data-price-old = "<?php echo $pricr_old;?>" 
@@ -660,7 +687,7 @@ get_header(); ?>
 							data-postid = "<?php echo get_the_ID();?>" 
 						 data-nsale = "<?php echo $main_sales;?>" ><i class="fas fa-shopping-basket"></i> В корзину</span>
 					</div>
-				
+				 -->
 			</div>
 				
 				
