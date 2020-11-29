@@ -330,7 +330,7 @@ jQuery(document).ready(function() {
 			
 			
 
-			localStorage.removeItem("lot1");
+			//localStorage.removeItem("lot1");
 			
 			yaCounter48236084.reachGoal('oform_str_korzina');
 			
