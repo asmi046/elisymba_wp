@@ -191,7 +191,7 @@ function checkInputs() {
 			var regex = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 			var email = jQuery(this).val();
 			var valid_email = regex.test(email);
-			if(valid_email || jQuery(this).val() == '') {
+			if(jQuery(this).val() != '') {
 				jQuery(this).next().show();
 				jQuery(this).siblings('.checkout-form__block-wrong').hide();
 			} else {

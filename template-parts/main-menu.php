@@ -83,12 +83,19 @@
             </a>
           </li>
 
-          <!-- <li>
+          <li>
             <a href="<?php echo get_category_link('65');?>">
               <img src="<?php echo get_template_directory_uri();?>/img/category/nikitin.jpg" alt=""> 
               <span>Игры никитина</span>
             </a>
-          </li> -->
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('108');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/fetr.jpg" alt=""> 
+              <span>Игрушки из фетра</span>
+            </a>
+          </li>
 
           <li class = "last_top_menu_punct">
             <a href="<?php echo get_category_link('84');?>">
