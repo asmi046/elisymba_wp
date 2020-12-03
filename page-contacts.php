@@ -104,8 +104,26 @@ Template Name: Контакты
 						<li><span style = "color:red;">Важно:</span> Пожалуйста позвоните нам перед тем как приехать</li>
 					</ul>
 					<div class="map">
-						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4107bacf422ef104fb507e6b94eb7201cd15d4a058fe35b3a842ea072bf26376&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A4107bacf422ef104fb507e6b94eb7201cd15d4a058fe35b3a842ea072bf26376&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
 					</div>
+					<br/>
+					<ul>	
+						<li>Адрес: 197022, Россия, Санкт-Петербург, улица Профессора Попова, дом 38</li>
+					</ul>
+
+					<div class="map">
+					<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A24a4c1068225312e281da29f3c67ec8fe4124bf353843444895a2ca8f1d10f53&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+					</div>
+					<br/>
+					<ul>	
+						<li>Адрес: 305000, Россия, Курск, улица Максима Горького, дом 70</li>
+					</ul>
+
+					<div class="map">
+						<script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A69780eb52150d228388956767f98d18e642fe279699cea98356ce32f26eccf10&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
+					
+					</div>
+
 				</section>
 				
 				<?php endwhile;?>

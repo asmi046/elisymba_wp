@@ -5952,8 +5952,9 @@ h5 {
   margin-left: 50px;
 }
 
-.contacts-page .adress .map {
+.map {
   width: 100%;
+  height: 400px;
 }
 
 .contacts-page .adress ul {
@@ -11599,16 +11600,29 @@ text-indent: 0!important;
 }
 
 .checkout-form__block input[type=checkbox] {
-  -webkit-appearance: auto!important;
+  -webkit-appearance: none!important;
 }
 
-.checkout-form__block input:focus,
+.checkout-form__block input[type=checkbox]:before {
+  content: "";
+  float: left;
+  width:12px;
+  height:12px;
+  border: 1px solid #959595;
+}
+
+.checkout-form__block input[type=checkbox]:checked:before {
+  content: "";
+  background-color: green;
+ }
+
+/* .checkout-form__block input:focus,
 .checkout-form__block select:focus,
 .checkout-form__block textarea:focus {
   -webkit-box-shadow: 1px 1px 10px rgba(101, 82, 119, 0.25);
   -moz-box-shadow: 1px 1px 10px rgba(101, 82, 119, 0.25);
   box-shadow: 1px 1px 10px rgba(101, 82, 119, 0.25);
-}
+} */
 
 .checkout-form__block input::-webkit-input-placeholder {
   color: #737373;
@@ -16972,7 +16986,9 @@ a.present-modal {
 
 @media only screen and (max-width:462px) {
 
-  #map_pvt {
+  .map, 
+  #map_pvt 
+  {
    height: 250px; 
   }
 
