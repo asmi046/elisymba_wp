@@ -11571,15 +11571,18 @@ text-indent: 0!important;
 }
 
 .checkout-form__block label {
-  width: 240px;
-  font-size: 20px;
+  
+  margin-left: 20px;
+  font-size: 16px;
 }
 
 .checkout-form__block label span {
   color: red;
 }
 
-.checkout-form__block input,
+.checkout-form__block input[type=text],
+.checkout-form__block input[type=tel],
+.checkout-form__block input[type=email],
 .checkout-form__block select,
 .checkout-form__block textarea {
   border-radius: 0;
@@ -11593,6 +11596,10 @@ text-indent: 0!important;
   flex-grow: 3;
   outline: none;
   padding-left: 4px;
+}
+
+.checkout-form__block input[type=checkbox] {
+  -webkit-appearance: auto!important;
 }
 
 .checkout-form__block input:focus,
@@ -15970,9 +15977,7 @@ a.present-modal {
     width: 80%;
   }
 
-  .checkout-form__block label {
-    display: none;
-  }
+
 
   .checkout-form__block input::-webkit-input-placeholder {
     color: #737373;

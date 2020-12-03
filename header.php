@@ -619,7 +619,7 @@
         <div class="header-top__menu-contact">
           <!-- Блок Иконок: Курск-Доставка-Акции -->
           <div class="header-top__menu ul-clean">
-            <a href="#" class="header-top-icon header-top__map">Курск</a>
+            <a href="#" class="header-top-icon header-top__map"><?php echo (empty($_COOKIE["cityinfo"]))?"Москва":$_COOKIE["cityinfo"]; ?></a>
               <div class="city_vsp_vin" style="display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>">
                   <div class="qq">Ваш город <span style="city_in_win"><?php echo $city; ?></span>?</div>
                   <div class="qq_btn">

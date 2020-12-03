@@ -186,7 +186,8 @@ function get_gift_index2(index) {
 }
 
 
-		function initr(places) {		
+		function initr(places) {	
+            	
 											var dummyMap, myPlacemark;
 											
 											if (places.Pvz.length > 0) {
@@ -254,10 +255,12 @@ function get_delivery_data(naspunkt, state, province) {
 							
 							jQuery ("#map_pvt").html("");
 							//if (JSON.parse(rezm[3]).length != 0)
-							if (rezm[2] != "По запросу")
+                            console.log(rezm[2]);
+                            console.log(rezm[3]);
+                            if (rezm[2] != "По запросу")
 							{
 								jQuery (".viev_map").show();
-								ymaps.ready(initr(JSON.parse(rezm[3])));
+								if (typeof ymaps !== 'undefined') ymaps.ready(initr(JSON.parse(rezm[3])));
 							
 							} else {
 								jQuery (".viev_map").hide();
@@ -1427,7 +1430,8 @@ function get_delivery_data(naspunkt, state, province) {
 			get_delivery_data(jQuery(this).text(), stait, province);
 			jQuery(".new_delivery_elem").show();
 			jQuery(".not__city_finde").hide();
-			$("#nsapunkts").arcticmodal("close");
+			$("#nsapunkts").arcticmodal("close"); 
+			$(".header-top__map").html(jQuery(this).text()); 
 		});
 		
         

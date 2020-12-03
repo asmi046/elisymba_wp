@@ -251,23 +251,18 @@ get_header();
 			</div>
 			
 			<div class="checkout-form__block">
-				<!-- <label for="checkout-form__address">Адрес</label> -->
 				<input type="text" placeholder="Адрес" name="address" id="checkout-form__address">
 				<div class="checkout-form__block-checked"></div>
 			</div>
 			
-			<!--
-			<div class="checkout-form__block">
-				<label for="checkout-form__delivery">Способ доставки</label>
-				<select name="delivery" id="checkout-form__delivery">
-					<option value="" selected disabled>Выберите способ доставки</option>
-					<option value="Доставка до пункта выдачи">Доставка до пункта выдачи</option>
-					<option value="Доставка курьером до дома">Доставка курьером до дома</option>
-					<option value="Самовывоз">Самовывоз</option>
-				</select>
-				<div class="checkout-form__block-checked"></div>
-			</div>
-			-->
+			<?if ($_COOKIE["cityinfo"] === "Курск") {?>
+				<div class="checkout-form__block">
+					<input type="checkbox" name="samovivoz" id="checkout-form__samov">
+					<label for = "checkout-form__samov">Самовывоз г. Курск Максима Горького д. 70</label>
+				</div>
+			<?
+				}
+			?>
 			
 			
 			<div class="checkout-form__block">
@@ -276,32 +271,7 @@ get_header();
 				<div class="checkout-form__block-checked"></div>
 			</div>
 			
-								<?php 				
-		/*
-			if (!empty($_COOKIE["bascet"]))
-			{
-				
-				$bascetsod = explode(",", $_COOKIE["bascet"]);	
-				$postInBascet = "";
-				foreach ($bascetsod as $be) {
-					$elempart = explode("|", $be);	
-					$postInBascet .= $elempart[0]." "; 
-					$elems[$elempart[0]] = $elempart[1]; 
-				}
-			
-			
-				$pinclude = get_posts( array ("include" => $postInBascet) );
-		
-				$summ = 0;
-				$bscetcount = 0;
-				foreach ($pinclude as $pe)				
-				{
-					$summ += $elems[$pe->ID]*get_post_meta($pe->ID, "price", true);
-					$bscetcount+=$elems[$pe->ID];
-				}							
-			}
-			*/
-		?>
+
 			
 			
 			
@@ -312,35 +282,6 @@ get_header();
 			
 			<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
 				
-				<!-- <div class = "new_delivery_blk new_delivery_blk_incart checkout-form__block">
-					<div id = "cityElem" class = "new_delivery_elem">
-						Ваш город: <br/><span class = "value city_sel_elem"><?php echo (!empty($_COOKIE["cityinfo"]))?$_COOKIE["cityinfo"]:$obj->city->name_ru; ?></span>
-					</div>
-					
-					<div id = "deliveryDeyElem" class = "new_delivery_elem">
-						Доставим за: <br/><span class = "value"></span>
-					</div>
-					
-					<div id = "deliveryPriceElem" class = "new_delivery_elem">
-						Цена: <br/><span class = "value"></span>
-					</div>
-					
-					<span style = "display:none;" class = "not__city_finde">
-						Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
-					</span>
-				</div> 
-				
-				
-				<span class = "viev_map checkout-form__block">Пункты выдачи</span>		
-				<div id = "map_pvt" class = "map_pvt_incart checkout-form__block"></div>
-			-->
-				<!--
-			<div class="checkout-form__block about-delivery">
-				<p class = "odostavke">
-					После оформления заказа наш менеджер рассчитает доставку всеми возможными способами. Затем свяжется с Вами и предложит самые оптимальные варианты по срокам и цене
-				</p>
-			</div>
-			-->
 			
 		</form>
 				<?php } else {?>
@@ -360,12 +301,8 @@ get_header();
 					
 			<?php }?>
 	</div>
-	<!-- <div class="wrapper">
-		<div class="cart-buttons__top">
-			<div onclick="yaCounter48236084.reachGoal('prod_pokupki_str_korzina'); history.back(1); " class="cart-buttons__top-link-continue">Продолжить покупки</div>
-			<a href="<?php echo get_the_permalink(7086); ?>/#scrollToH" class="cart-buttons__top-link-order" onclick="yaCounter48236084.reachGoal('oform_str_korzina');">Оформить заказ</a>
-		</div>
-	</div> -->
+
+
 	<div class="wrapper">
 		<h3 class="cart-product__title">Рекомендуем:</h3>
 		<div class="cart-recommend owl-carousel">
