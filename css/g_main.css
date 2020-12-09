@@ -4727,7 +4727,7 @@ hr.dotted {
   line-height: 3;
   position: absolute;
   right: 0;
-  top: 40px;
+  top: 15px;
 }
 
 /*--------------КОРЗИНА-------------*/
@@ -13531,6 +13531,42 @@ a.present-modal {
   display:none;
 }
 
+.clr_blk {
+  width:100%;
+  height: 25px;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.clr_box:hover, 
+.clr_box.active{ 
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.65);
+}
+
+.clr_box{ 
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  display: flex;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid lightgray;
+}
+
+.zag_clr {
+  margin-right: 20px;
+  line-height: 28px;
+}
+
+.clr_c {
+  width: 50%;
+}
+
+.radugaClr {
+  background-image: url(../img/raduga.jpg);
+  background-size: cover;
+}
+
 /*=== Cтили Шапки End ===============================================*/
 
 @media (min-width: 525px) {
@@ -14620,9 +14656,6 @@ a.present-modal {
     width: 100%;
   }
 
-  .informerInPage {
-    top: 50px;
-  }
 }
 
 @media screen and (max-width: 950px) {
@@ -15355,9 +15388,6 @@ a.present-modal {
     width: 100%;
   }
 
-  .informerInPage {
-    top: 50px;
-  }
 
   .hide-685 {
     display: none;
@@ -17827,6 +17857,19 @@ a.present-modal {
 
   .baner-new__presents-1-2 {
     left: 45px;
+  }
+
+  .catalog-item .price-cur { 
+    font-size: 18px;
+  }
+
+  .catalog-item .price-old span,
+  .catalog-item .price-old {
+    font-size: 14px;
+  }
+
+  .tobascetInCatWrap {
+    font-size: 14px;
   }
 }
 

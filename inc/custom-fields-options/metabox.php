@@ -74,7 +74,16 @@ Container::make('post_meta', 'product_specifications', 'Новое описан�
 Container::make('post_meta', 'tovar_custom_post', 'Поля товара')
 	->show_on_post_type('post')
 	->add_fields(array(
-		Field::make('text', 'yamarket_name', 'Наименование на маркете')->set_width(30),
+        Field::make( 'complex', 'offer_color_set', "Варианты цвета" )
+			->add_fields( array(
+				Field::make('color', 'clr_c1', 'Цвет 1')->set_width(10),
+                Field::make('color', 'clr_c2', 'Цвет 2')->set_width(10),
+                Field::make('checkbox', 'clr_raduga', 'Радужный цвет' )->set_width(10),
+                Field::make('checkbox', 'clr_active', 'Активный цвет' )->set_width(10),
+				Field::make('text', 'clr_name', 'Наименование модификации')->set_width(25),
+				Field::make('text', 'clr_lnk', 'Ссылка на страницу')->set_width(25),
+			) ),
+        Field::make('text', 'yamarket_name', 'Наименование на маркете')->set_width(30),
 		Field::make('text', 'yamarket_proizv', 'Производитель на маркете')->set_width(30),
 		Field::make('text', 'yamarket_proizv_sku', 'Артикул производителя на маркете')->set_width(30),
         Field::make('text', 'sku', 'Артикул (SKU)')->set_width(30),

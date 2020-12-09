@@ -354,11 +354,26 @@ get_header(); ?>
             <div class="product-desc">
                 <div class="clearfix">
 					<div itemprop="description">
+						<? 
+						$color_set = carbon_get_post_meta(get_the_ID(), "offer_color_set");
+						if (!empty($color_set)) {?>
+							<div class = "clr_blk">
+								<span class = "zag_clr">Цвета:</span>
+								<? foreach ($color_set as $celem) {?>
+									<a href = "<? echo $celem["clr_lnk"]; ?>" title = "<? echo $celem["clr_name"]; ?>" >
+										<div class = "clr_box <?echo (!empty($celem["clr_active"]))?"active":"";?>">
+											<div class = "clr_c" style = "background-color: <? echo $celem["clr_c1"]; ?>"></div>
+											<div class = "clr_c <?echo (!empty($celem["clr_raduga"]))?"radugaClr":"";?>" style = "background-color: <? echo $celem["clr_c2"]; ?>"></div>
+										</div>
+									</a>
+								<?}?>	
+							</div>
+						<?}?>
 						<ul class="hide-480">
 							<li>Гарантия качества (ГОСТ 25779-90)</li>
-							<li>Натуральные материалы</li>
+							<!-- <li>Натуральные материалы</li>
 							<li>Доставка до двери</li>
-							<li>Оплата при получении</li>
+							<li>Оплата при получении</li> -->
 						</ul>
 						
 						
@@ -368,7 +383,7 @@ get_header(); ?>
 					
 					<div class="price" style = "position:relative;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                         <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
-							<div class="price-current-title">Цена без акции:</div>
+							<!-- <div class="price-current-title">Цена без акции:</div> -->
 							<div class="price-current"><span class = "zPrice"><?php echo $pricr_old;?></span> <span>руб.</span></div>
                         <?php endif; ?>
 						<hr class="dotted">
@@ -384,7 +399,7 @@ get_header(); ?>
 						<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 							<div class="price-old-title">Цена по акции:</div>
 						<?php else: ?>
-							<div class="price-old-title">Цена:</div>
+							<!-- <div class="price-old-title">Цена:</div> -->
 						<?php endif; ?>
                         <div class="price-old" itemprop="price" content="<?php echo $pricr_cur;?>"><?php echo $pricr_cur;?> <span>руб.</span><meta itemprop="priceCurrency" content="RUB"></div>
                     
