@@ -14132,6 +14132,105 @@ a.present-modal {
     border-radius: 5px;
   }
 
+  .bascetWriper {
+    right: 52px;
+    top: 5px;
+    animation-name: none;
+    z-index: 11000;
+  }
+
+  .bascetWriper .bCorcle {
+    width: 35px;
+    height: 35px;
+    box-shadow: none;
+  }
+
+  .bascetWriper .bCorcle .countInCart {
+    width: 17px;
+    height: 17px;
+    line-height: 17px;
+  }
+
+  .baner-new-img {
+    height: 220px;
+  }
+
+  .page-content-full .catalog-item {
+    width: 48%;
+  }
+
+  .catalog-item .item-image {
+    height: auto;
+  }
+
+  .newMenuMob {
+    width: 40%;
+  }
+
+
+  .btnClodeMenu {
+    right: calc(100% - 48%);
+  }
+
+  .new_delivery_elem_top_mob {
+    display: flex;
+    width: 100%;
+    min-height: 30px;
+    line-height: 30px;
+    justify-content: center;
+  }
+
+  .new_delivery_elem_top_mob:before {
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 1%;
+}
+
+  #tkrMob {
+    display: inline-block;
+  }
+
+  .product-desc {
+    width: 100%;
+    padding: 0;
+  }
+
+  .mobFlex {
+    display: flex;
+    width: 100%;
+  }
+
+  .inSingleBtn {
+    width: 95%;
+  }
+
+  .pricingCount {
+    margin-top: 20px!important;
+    margin-bottom: 20px!important;
+  }
+
+  .new_delivery_blk {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+
+
+
+
+
+
+
+
+
+.product-image {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
   .new_head.header {
     width: 100%;
     height: 30px;
@@ -14496,10 +14595,10 @@ a.present-modal {
     margin-bottom: 15px;
   }
 
-  .product-desc .price {
+  /* .product-desc .price {
     float: left;
     width: 50%;
-  }
+  } */
 
   .product-image {
     width: 100%;
@@ -14527,10 +14626,10 @@ a.present-modal {
     padding: 0;
   }
 
-  .product-desc ul {
+  /* .product-desc ul {
     float: left;
     width: 50%;
-  }
+  } */
 
   .item-page-row .block-border {
     float: left;
@@ -16834,6 +16933,16 @@ a.present-modal {
 }
 
 @media screen and (max-width: 480px) {
+  
+  .newMenuMob {
+    width: 70%;
+  }
+
+
+  .btnClodeMenu {
+    right: calc(100% - 82%);
+  }
+
   .mobHide,
   .buttonBack {
     display: none;

@@ -72,7 +72,7 @@ get_header(); ?>
 			});
 		</script>
         <div class="product-main-info clearfix">
-            <div class="fl">
+            <div class="fl mobFlex">
                 <div class="product-image">
 					 <div class="jcarousel-wrapper">
 						<?php 
@@ -459,7 +459,7 @@ get_header(); ?>
 					<span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');" data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
 				</div>
 
-                <div style="font-size: 16px; text-transform: none; color: #919191; margin-top: 10px;     font-family: sans-serif">
+                <div class = "pricingCount" style="font-size: 16px; text-transform: none; color: #919191; margin-top: 10px;     font-family: sans-serif">
                     Данный товар купили <b><?php echo get_post_meta(get_the_ID(), "order_count", true);?></b> раз(а).
                 </div>
             </div>

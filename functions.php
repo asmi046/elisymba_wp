@@ -92,7 +92,7 @@ function my_assets_admin(){
 }
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 
-define("ALLVERSION", "1.0.127");
+define("ALLVERSION", "1.0.129");
 
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
@@ -1240,6 +1240,20 @@ function geo_cookie_set() {
 			}
 }
 
+function get_DPD_pvz() {
+	$MY_NUMBER 	= '';
+	$MY_KEY		= '148FAFAD92103F18B0A20D818755099A24616713';
+
+	$client = new SoapClient ("'http://ws.dpd.ru/services/geography2?wsdl");
+	$arData['auth'] = array(
+		'clientNumber' => $MY_NUMBER,
+		'clientKey' => $MY_KEY);
+	
+	$arRequest['request'] = $arData; //помещаем наш масив авторизации в масив запроса request.
+	$ret = $client->getCitiesCashPay($arRequest); 
+
+	return $ret;
+}
 
 add_action( 'wp_ajax_get_delivery_data', 'get_delivery_data' );
 add_action( 'wp_ajax_nopriv_get_delivery_data', 'get_delivery_data' );
