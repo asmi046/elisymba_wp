@@ -186,9 +186,10 @@ function get_gift_index2(index) {
 }
 
 
-		function initr(places) {	
+
+		function initr(places, places_dpd) {	
             	
-											var dummyMap, myPlacemark;
+											var dummyMap, myPlacemark, dummyMapDpd, myPlacemark_dpd;
 											
 											if (places.Pvz.length > 0) {
 												var centerContactLat = places.Pvz[0]["@attributes"].coordY;
@@ -198,7 +199,7 @@ function get_gift_index2(index) {
 												var centerContactLng = places.Pvz["@attributes"].coordX;
 											}
 											
-										
+                                        
 											
 											return function init_mm() {
 												dummyMap = new ymaps.Map('map_pvt', {center: [parseFloat(centerContactLat), parseFloat(centerContactLng)], zoom: 10});
@@ -223,9 +224,35 @@ function get_gift_index2(index) {
 														}, {
 															preset: 'islands#greenIcon'
 														});
-												}
+                                                }
+                                                
+
+                                                if (places_dpd.length > 0) {
+                                                    centerContactLat_dpd = places_dpd[0].latitude;
+                                                    centerContactLng_dpd = places_dpd[0].longitude;
+                                                } else  {
+                                                    return ; 
+                                                }
+                                        
+
+                                                dummyMapDpd = new ymaps.Map('map_pvt_dpd', {center: [parseFloat(centerContactLat_dpd), parseFloat(centerContactLng_dpd)], zoom: 10});
+
+                                                for (var i = 0; i < places_dpd.length; i++) {
+                                                    
+                                                    myPlacemark_dpd = new ymaps.Placemark([parseFloat(places_dpd[i].latitude), parseFloat(places_dpd[i].longitude)], {
+                                                        hintContent: "<strong>"+places_dpd[i].cityName+", "+places_dpd[i].streetAbbr+" "+places_dpd[i].street+" "+places_dpd[i].houseNo+"</strong>",
+                                                        balloonContent: "<strong>"+places_dpd[i].cityName+", "+places_dpd[i].streetAbbr+" "+places_dpd[i].street+" "+places_dpd[i].houseNo+"</strong>"
+                                                    }, {
+                                                        preset: 'islands#redIcon'
+                                                    });
+                                                    dummyMapDpd.geoObjects.add(myPlacemark_dpd);
+                                                }
+
 											}
 									}
+
+
+
 
 
 function get_delivery_data(naspunkt, state, province) {
@@ -254,14 +281,19 @@ function get_delivery_data(naspunkt, state, province) {
 							jQuery("#deliveryPriceElem .value").html(rezm[2]);
 							
 							jQuery ("#map_pvt").html("");
+							jQuery ("#map_pvt_dpd").html("");
 							//if (JSON.parse(rezm[3]).length != 0)
                             console.log(rezm[2]);
                             console.log(rezm[3]);
+                            console.log(JSON.parse(rezm[4]));
                             if (rezm[2] != "По запросу")
 							{
 								jQuery (".viev_map").show();
-								if (typeof ymaps !== 'undefined') ymaps.ready(initr(JSON.parse(rezm[3])));
-							
+								if (typeof ymaps !== 'undefined') {
+                                    ymaps.ready(initr(JSON.parse(rezm[3]), JSON.parse(rezm[4])));
+                                   // ymaps.ready(initrDpd(JSON.parse(rezm[4])));
+                                    
+                                }
 							} else {
 								jQuery (".viev_map").hide();
 								jQuery(".new_delivery_elem").hide();
@@ -1966,7 +1998,9 @@ $(".sendRecall").click(function(e) {
 });
 
 $(".viev_map").click(function(e) {
-    $("#map_pvt").toggle();
+    // $("#map_pvt").toggle();
+    // $("#map_pvt_dpd").toggle();
+    $(".map_pvt_all").toggle();
 });
 
 

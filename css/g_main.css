@@ -608,11 +608,44 @@ hr {
   margin-bottom: 20px;
 }
 
-#map_pvt {
+
+.delivery_logo {
+  height:  30px;
+  width: auto;
+  margin: 10px 0;
+}
+
+.pok_sber {
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.pok_sber img{
+  height: 45px;
+  width: auto;
+}
+
+.pok_sber span{
+  margin: auto 0 auto 30px;
+  color: black;
+  font-size: 24px;
+}
+
+.delivery_logo_dpd {
+  height:  40px;
+}
+
+.map_pvt_all {
+  display: none;
+  width: 100%;
+}
+#map_pvt,
+#map_pvt_dpd {
   width: 100%;
   height: 300px;
-  display: none;
   margin-top: 20px;
+  display: block;
 }
 
 .map_pvt_incart {
@@ -17126,6 +17159,7 @@ a.present-modal {
 @media only screen and (max-width:462px) {
 
   .map, 
+  #map_pvt_dpd, 
   #map_pvt 
   {
    height: 250px; 

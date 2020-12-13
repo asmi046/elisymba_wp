@@ -369,12 +369,20 @@ get_header(); ?>
 								<?}?>	
 							</div>
 						<?}?>
+						<a href = "<? echo get_the_permalink(16675);?>">
+							<div class = "pok_sber">
+								<img src = "<?bloginfo("template_url");?>/img/pokupay_logo.svg"/>	
+								<span>В кредит</span>	
+							</div>
+						</a>
+						<!--
 						<ul class="hide-480">
 							<li>Гарантия качества (ГОСТ 25779-90)</li>
-							<!-- <li>Натуральные материалы</li>
+							 <li>Натуральные материалы</li>
 							<li>Доставка до двери</li>
-							<li>Оплата при получении</li> -->
+							<li>Оплата при получении</li> 
 						</ul>
+						-->
 						
 						
 					</div>
@@ -479,8 +487,13 @@ get_header(); ?>
 					
 			<span class = "viev_map">Показать пункты выдачи</span>	
 				
-			<div id = "map_pvt"></div>
-
+			<div class = "map_pvt_all">
+				<img class = "delivery_logo delivery_logo_dpd" src = "<? bloginfo("template_url"); ?>/img/DPD.svg" alt = "Пункты выдачи DPD" title = "Пункты выдачи DPD" />
+				<div id = "map_pvt_dpd"></div>
+				<img class = "delivery_logo" src = "<? bloginfo("template_url"); ?>/img/sdek.jpg" alt = "Пункты выдачи СДЕК" title = "Пункты выдачи СДЕК" />	
+				<div id = "map_pvt"></div>
+				
+			</div>
 			<span style = "display:none;" class = "not__city_finde">
 				Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
 			</span>
