@@ -72,6 +72,20 @@ get_header();
 		});
 	</script>
 	<div class="wrapper">
+		
+	<div id = "cityElem_top" class = "new_delivery_elem_top new_delivery_elem_top_mob">
+								<?php 
+									$city = $GLOBALS['city'];
+								?>
+								Ваш город: <br/><span class = "value city_sel_elem"><?php echo $city; ?></span>
+								<div class = "city_vsp_vin" style = "display:<?php echo (!empty($_COOKIE["cwclose"]))?"none":"block";?>; <? echo ($detect->isMobile())?"display:none":"display:block";?>">
+									<div class = "qq">Ваш город <span style = "city_in_win"><?php echo $city; ?></span>?</div>
+									<div class = "qq_btn">
+										<div class = "yes_no_btn yes_btn btn btn-pink" >Да, спасибо</div> <div class = "yes_no_btn no_btn btn btn-pink">Нет, другой</div>
+									</div>
+								</div>
+			</div>
+		
 		<div class="breadcrumbs" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
         	<?php
 			if ( function_exists('yoast_breadcrumb') ) {
@@ -281,7 +295,33 @@ get_header();
 			</div>
 			
 			<script src="//api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
-				
+			
+					<!-- Блок доставки -->
+				<div class="checkout-form__block " style = "justify-content: end;">
+					<div class = "new_delivery_blk">
+						<div id = "deliveryDeyElem" class = "new_delivery_elem">
+							Доставим за: <br/><span class = "value"></span>
+						</div>
+								
+						<div id = "deliveryPriceElem" class = "new_delivery_elem">
+							Цена: <br/><span class = "value"></span>
+						</div>
+								
+						<span class = "viev_map">Показать пункты выдачи</span>	
+							
+						<div class = "map_pvt_all">
+							<img class = "delivery_logo delivery_logo_dpd" src = "<? bloginfo("template_url"); ?>/img/DPD.svg" alt = "Пункты выдачи DPD" title = "Пункты выдачи DPD" />
+							<img class = "delivery_logo delivery_logo_sdek" src = "<? bloginfo("template_url"); ?>/img/sdek.jpg" alt = "Пункты выдачи СДЕК" title = "Пункты выдачи СДЕК" />
+							
+							<div id = "map_pvt_dpd"></div>	
+							<div id = "map_pvt"></div>
+							
+						</div>
+						<span style = "display:none;" class = "not__city_finde">
+							Мы не смогли автоматически рассчитать сроки и стоимость доставки до Вас. Пожалуйста оставьте заявку, и наш менеджер сделает это в ручном режиме. <br/> С Любовью, ЕлиСямба!
+						</span>
+					</div>	
+			</div>	
 			
 		</form>
 				<?php } else {?>

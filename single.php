@@ -369,21 +369,24 @@ get_header(); ?>
 								<?}?>	
 							</div>
 						<?}?>
-						<a href = "<? echo get_the_permalink(16675);?>">
+							
+						<? if ($pricr_cur > 3000) {?>
 							<div class = "pok_sber">
-								<img src = "<?bloginfo("template_url");?>/img/pokupay_logo.svg"/>	
-								<span>В кредит</span>	
+								<img src = "<?bloginfo("template_url");?>/img/v-kredit.jpg"/>	
+								<div class="order-form__coupon-question">?</div>
+								<div class="order-form__coupon-note">Клиенты сбербанка могут приобрести данный товар в кредит. <a href = "<? echo get_the_permalink(16675);?>">Подробнее.</a></div>	
 							</div>
-						</a>
-						<!--
+						<?} else {?>
+						
 						<ul class="hide-480">
 							<li>Гарантия качества (ГОСТ 25779-90)</li>
-							 <li>Натуральные материалы</li>
+							<!-- <li>Натуральные материалы</li>
 							<li>Доставка до двери</li>
 							<li>Оплата при получении</li> 
+							-->
 						</ul>
-						-->
 						
+						<?}?>
 						
 					</div>
                     
@@ -489,8 +492,9 @@ get_header(); ?>
 				
 			<div class = "map_pvt_all">
 				<img class = "delivery_logo delivery_logo_dpd" src = "<? bloginfo("template_url"); ?>/img/DPD.svg" alt = "Пункты выдачи DPD" title = "Пункты выдачи DPD" />
-				<div id = "map_pvt_dpd"></div>
-				<img class = "delivery_logo" src = "<? bloginfo("template_url"); ?>/img/sdek.jpg" alt = "Пункты выдачи СДЕК" title = "Пункты выдачи СДЕК" />	
+				<img class = "delivery_logo delivery_logo_sdek" src = "<? bloginfo("template_url"); ?>/img/sdek.jpg" alt = "Пункты выдачи СДЕК" title = "Пункты выдачи СДЕК" />
+				
+				<div id = "map_pvt_dpd"></div>	
 				<div id = "map_pvt"></div>
 				
 			</div>

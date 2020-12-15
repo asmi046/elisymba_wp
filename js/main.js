@@ -1779,6 +1779,17 @@ function get_delivery_data(naspunkt, state, province) {
 
 })(jQuery);
 jQuery(document).ready(function ($) {
+
+    jQuery(".delivery_logo_sdek").click(function () { 
+        jQuery("#map_pvt_dpd").hide();
+        jQuery("#map_pvt").show();
+    });
+
+    jQuery(".delivery_logo_dpd").click(function () { 
+        jQuery("#map_pvt_dpd").show();
+        jQuery("#map_pvt").hide();
+    });
+
     jQuery(".delivery-maps__wrapper .tab-item").not(":first").hide();
     jQuery(".delivery-maps__wrapper .tab").click(function () {
         jQuery(".delivery-maps__wrapper .tab").removeClass("active").eq(jQuery(this).index()).addClass("active");

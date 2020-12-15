@@ -613,27 +613,40 @@ hr {
   height:  30px;
   width: auto;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .pok_sber {
   width: 100%;
   display: flex;
   margin-bottom: 20px;
+  position: relative;
 }
 
 .pok_sber img{
-  height: 45px;
+  height: 35px;
   width: auto;
 }
 
-.pok_sber span{
+.pok_sber .order-form__coupon-question{
   margin: auto 0 auto 30px;
-  color: black;
-  font-size: 24px;
+}
+
+.pok_sber .order-form__coupon-note { 
+  bottom: 100%;
+}
+
+.pok_sber .order-form__coupon-note:before { 
+  left: 60%;
+}
+
+.pok_sber:hover .order-form__coupon-note{ 
+  display: block;  
 }
 
 .delivery_logo_dpd {
   height:  40px;
+  margin-right: 20px;
 }
 
 .map_pvt_all {
@@ -646,6 +659,10 @@ hr {
   height: 300px;
   margin-top: 20px;
   display: block;
+}
+
+#map_pvt {
+  display: none;
 }
 
 .map_pvt_incart {
@@ -15253,6 +15270,11 @@ a.present-modal {
 }
 
 @media screen and (max-width: 800px) {
+  .pok_sber {
+    justify-content: center;
+  }
+
+
   .u-right-header-bottom-border div {
     text-align: center;
   }
@@ -16967,6 +16989,10 @@ a.present-modal {
 
 @media screen and (max-width: 480px) {
   
+  .wp-image-16680 {
+    display: none;
+  }
+
   .newMenuMob {
     width: 70%;
   }
