@@ -370,13 +370,7 @@ get_header(); ?>
 							</div>
 						<?}?>
 							
-						<? if ($pricr_cur > 3000) {?>
-							<div class = "pok_sber">
-								<img src = "<?bloginfo("template_url");?>/img/v-kredit.jpg"/>	
-								<div class="order-form__coupon-question">?</div>
-								<div class="order-form__coupon-note">Клиенты сбербанка могут приобрести данный товар в кредит. <a href = "<? echo get_the_permalink(16675);?>">Подробнее.</a></div>	
-							</div>
-						<?} else {?>
+						
 						
 						<ul class="hide-480">
 							<li>Гарантия качества (ГОСТ 25779-90)</li>
@@ -386,7 +380,7 @@ get_header(); ?>
 							-->
 						</ul>
 						
-						<?}?>
+					
 						
 					</div>
                     
@@ -473,6 +467,15 @@ get_header(); ?>
                 <div class = "pricingCount" style="font-size: 16px; text-transform: none; color: #919191; margin-top: 10px;     font-family: sans-serif">
                     Данный товар купили <b><?php echo get_post_meta(get_the_ID(), "order_count", true);?></b> раз(а).
                 </div>
+
+				<? if ($pricr_cur > 3000) {?>
+							<div class = "pok_sber">
+								<img src = "<?bloginfo("template_url");?>/img/v-kredit.jpg"/>	
+								<div class="order-form__coupon-question">?</div>
+								<div class="order-form__coupon-note">Клиенты сбербанка могут приобрести данный товар в кредит. <a href = "<? echo get_the_permalink(16675);?>">Подробнее.</a></div>	
+							</div>
+						<?}?>
+
             </div>
         </div>
 		
