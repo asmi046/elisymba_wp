@@ -303,9 +303,9 @@ get_header();
 							Доставим за: <br/><span class = "value"></span>
 						</div>
 								
-						<div id = "deliveryPriceElem" class = "new_delivery_elem">
+						<!-- <div id = "deliveryPriceElem" class = "new_delivery_elem">
 							Цена: <br/><span class = "value"></span>
-						</div>
+						</div> -->
 								
 						<span class = "viev_map">Показать пункты выдачи</span>	
 							
