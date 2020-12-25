@@ -3233,7 +3233,8 @@ div.mejs-speed-button {
 }
 
 .catalog-item .price-cur {
-  color: #ed479d;
+  /* color: #ed479d; */
+  color: #4d4d4d;
   font-size: 26px;
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
@@ -3819,7 +3820,7 @@ div.mejs-speed-button {
 
 .order-form .price-count {
   font-size: 40px;
-  color: #ed479d;
+  color: #4d4d4d;
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
   margin: 0;
@@ -4127,8 +4128,9 @@ hr.dotted {
 .price-old {
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
-  font-size: 50px;
-  color: #ed479d;
+  font-size: 44px;
+  /* color: #ed479d; */
+  color: #4d4d4d;
   margin-bottom: 5px;
 }
 
@@ -4149,7 +4151,7 @@ hr.dotted {
   font-family: 'Roboto Slab', serif;
   font-weight: bold;
   color: #888888;
-  font-size: 34px;
+  font-size: 30px;
 }
 
 .zPrice {
@@ -4158,7 +4160,7 @@ hr.dotted {
 
 .price-current span {
   font-weight: normal;
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .order-button-wrapper .btn {

@@ -29,7 +29,8 @@
     "mk_part_fonts": "ssh vaganol6_ssh@vaganol6.beget.tech \"mkdir -p elisyamba.rf/public_html/wp-content/themes/Elesiamba/fonts\"",
     "send_fonts": "scp -C -r fonts vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/",
     "group_media": "group-css-media-queries css/main.css css/g_main.css",
-    "send_all": "npm run send_r & npm run send_css & npm run send_part & npm run send_img & npm run send_image & npm run send_js & npm run send_fonts"
+    "send_all": "npm run send_r & npm run send_css & npm run send_part & npm run send_img & npm run send_image & npm run send_js & npm run send_fonts",
+    "send_pars": "scp -r pars vaganol6_ssh@vaganol6.beget.tech:elisyamba.rf/public_html/wp-content/themes/Elesiamba/"
   },
   "repository": {
     "type": "git",
