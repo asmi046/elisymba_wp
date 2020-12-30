@@ -3232,6 +3232,11 @@ div.mejs-speed-button {
   font-weight: 400;
 }
 
+.price-cur .price_formator{
+  font-size: 26px!important;
+  font-weight: bold!important;
+}
+
 .catalog-item .price-cur {
   /* color: #ed479d; */
   color: #4d4d4d;
@@ -9988,7 +9993,7 @@ text-indent: 0!important;
   -ms-align-items: flex-end;
   align-items: flex-end;
   justify-content: space-between;
-  height: 250px;
+  height: 315px;
   width: 100%;
   margin-bottom: 30px;
   position: relative;

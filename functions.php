@@ -92,7 +92,7 @@ function my_assets_admin(){
 }
 // Подключение стилей и nonce для Ajax и скриптов во фронтенд 
 
-define("ALLVERSION", "1.0.133");
+define("ALLVERSION", "1.0.135");
 
 add_action( 'wp_enqueue_scripts', 'my_assets' );
 	function my_assets() {
@@ -249,7 +249,7 @@ function bascetinputOne($hovinput, $nsale) {
 								$old_price = '<span class="price-old">'. $pricr_old .' </span>';
 								$actioncolor = "style = 'color:#F00'";
 							}
-							$rezstr .= "<div><span class='cart-label__price' >Цена: </span>" . $old_price . "<span class='cart-price'>".$pricr_cur."</span> <span class='cart-price__currency'>руб.</span></div>";
+							$rezstr .= "<div><span class='cart-label__price' >Цена: </span>" . $old_price . "<span class='cart-price'>".$pricr_cur."</span> <span class='cart-price__currency'>₽</span></div>";
 							
 							
 						$rezstr .= "</div>";

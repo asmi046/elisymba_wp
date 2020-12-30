@@ -749,10 +749,10 @@ function get_delivery_data(naspunkt, state, province) {
 				
 				
                 $title.html($(this.element).data('title'));
-                $price.html($(this.element).data('price') + ' <span>руб.</span>');
+                $price.html($(this.element).data('price') + ' <span>₽</span>');
 				
 				if (($(this.element).data('price') != $(this.element).data('price-old'))&&($(this.element).data('price-old') != "")) {
-					$pricet.html($(this.element).data('price-old') + ' <span>руб.</span>');
+					$pricet.html($(this.element).data('price-old') + ' <span>₽</span>');
 				} else {
 					$(".price-tomorrow").hide();
 					$(".discount").hide();
@@ -779,7 +779,7 @@ function get_delivery_data(naspunkt, state, province) {
                     $('#m').attr('data-price-old',$(this.element).data('size-price-old-m'));
 
                     var price_m = parseInt($(this.element).data('size-price-m'))-price_int;
-                    $size_price_m.html('+'+price_m+' руб.');
+                    $size_price_m.html('+'+price_m+' ₽');
                     $content.find('#m').show();
                 }
 
@@ -792,7 +792,7 @@ function get_delivery_data(naspunkt, state, province) {
                     $('#l').attr('data-price-old',$(this.element).data('size-price-old-l'));
 
                     var price_l = parseInt($(this.element).data('size-price-l'))-price_int;
-                    $size_price_l.html('+'+price_l+' руб.');
+                    $size_price_l.html('+'+price_l+' ₽');
                     $content.find('#l').show();
                 }
 
@@ -806,7 +806,7 @@ function get_delivery_data(naspunkt, state, province) {
 
                     var price_xl = parseInt($(this.element).data('size-price-xl'))-price_int;
 
-                    $size_price_xl.html('+'+price_xl+' руб.');
+                    $size_price_xl.html('+'+price_xl+' ₽');
                     $content.find('#xl').show();
                 }
 
@@ -1249,8 +1249,8 @@ function get_delivery_data(naspunkt, state, province) {
             $(".order-form .size, .order-form .size-v2").removeClass('active');
             $(this).addClass('active');
 
-            $('.order-form .price-count').html(number_format($(this).data('price'),0,'',' ')+' <span>руб.</span>');
-            $('.order-form .price-t-count').html(number_format($(this).data('price-old'),0,'',' ')+' <span>руб.</span>');
+            $('.order-form .price-count').html(number_format($(this).data('price'),0,'',' ')+' <span>₽</span>');
+            $('.order-form .price-t-count').html(number_format($(this).data('price-old'),0,'',' ')+' <span>₽</span>');
 
             //Меняем цены
         });
@@ -1371,9 +1371,7 @@ function get_delivery_data(naspunkt, state, province) {
                             reaStr += "<div class = 'img' style = 'background-image:url("+elements.sdata[i].picture+")'></div>";
                             reaStr += "<div class = 'text'><span>"+elements.sdata[i].title+"</span></div>";
                             reaStr += "<div class = 'price'>";
-                                reaStr += "<span class = 'cur'>"+elements.sdata[i].priceCur+" руб.</span>";
-                                //if (elements.sdata[i].priceOld != "")
-                                //    reaStr += "<span class = 'old'>"+elements.sdata[i].priceOld+" руб.</span>";
+                                reaStr += "<span class = 'cur'>"+elements.sdata[i].priceCur+" ₽</span>";
                                
                             reaStr += "</div>";
                         reaStr += "</div>";
@@ -1779,6 +1777,13 @@ function get_delivery_data(naspunkt, state, province) {
 
 })(jQuery);
 jQuery(document).ready(function ($) {
+
+    let elements = document.querySelectorAll('.price_formator');
+    for (let elem of elements) {
+        elem.dataset.realPrice = elem.innerHTML; 
+        elem.innerHTML = Number(elem.innerHTML).toLocaleString('ru-RU');
+    }
+    
 
     jQuery(".delivery_logo_sdek").click(function () { 
         jQuery("#map_pvt_dpd").hide();

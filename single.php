@@ -389,14 +389,14 @@ get_header(); ?>
 					<div class="price" style = "position:relative;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
                         <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 							<!-- <div class="price-current-title">Цена без акции:</div> -->
-							<div class="price-current"><span class = "zPrice"><?php echo $pricr_old;?></span> <span>руб.</span></div>
+							<div class="price-current"><span class = "zPrice"><?php echo $pricr_old;?></span> <span>₽</span></div>
                         <?php endif; ?>
 						<hr class="dotted">
 						
 						<div class = "informerInPage">
 							<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 								<div class = "informerElem">
-									Выгода: <br/><span class = "vigodaBlk"><?php echo (float)$pricr_old - (float)$pricr_cur;?> руб.</span>
+									Выгода: <br/><span class = "vigodaBlk"><?php echo (float)$pricr_old - (float)$pricr_cur;?> ₽</span>
 								</div>
 							<?php endif;?>
 						</div>
@@ -406,7 +406,7 @@ get_header(); ?>
 						<?php else: ?>
 							<!-- <div class="price-old-title">Цена:</div> -->
 						<?php endif; ?>
-                        <div class="price-old" itemprop="price" content="<?php echo $pricr_cur;?>"><?php echo $pricr_cur;?> <span>руб.</span><meta itemprop="priceCurrency" content="RUB"></div>
+                        <div class="price-old" itemprop="price" content="<?php echo $pricr_cur;?>"><?php echo $pricr_cur;?> <span>₽</span><meta itemprop="priceCurrency" content="RUB"></div>
                     
 					</div>
 					<span class = "nalichir">
@@ -646,7 +646,7 @@ get_header(); ?>
                 <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 					<div class="price-shares" style="margin-top: 22px">
 						<p style="color: #888 !important; margin: 0;  text-indent: 0;">Цена без акции:</p>
-						<p class="price" style="font-size: 34px;color: #888!important; margin-bottom: 10px; margin-top: 0; text-indent: 0;"> <span class = "zPrice"><?php echo $pricr_old;?></span>  <span style="font-size: 26px;"> руб.</span></p>
+						<p class="price" style="font-size: 34px;color: #888!important; margin-bottom: 10px; margin-top: 0; text-indent: 0;"> <span class = "zPrice"><?php echo $pricr_old;?></span>  <span style="font-size: 26px;"> ₽</span></p>
 					</div>
 				<?php endif;?>
                 
@@ -656,7 +656,7 @@ get_header(); ?>
 					<?php else: ?>
 						<p style="color:#111 !important; margin: 0;  text-indent: 0;">Цена:</p>
 					<?php endif; ?>
-                    <p class="price price-old" style="font: bold 50px 'Roboto Slab', Arial, Helvetica, sans-serif; margin: 0;  text-indent: 0;"> <?php echo $pricr_cur;?> <span style="font-size: 40px;"> руб.</span></p>
+                    <p class="price price-old" style="font: bold 50px 'Roboto Slab', Arial, Helvetica, sans-serif; margin: 0;  text-indent: 0;"> <?php echo $pricr_cur;?> <span style="font-size: 40px;"> ₽</span></p>
                 </div>
             </div>
 			

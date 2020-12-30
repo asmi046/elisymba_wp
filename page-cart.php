@@ -175,13 +175,13 @@ get_header();
 										}
 										
 										if((!empty($pricr_old)) && ((int)$pricr_old > (int)$pricr_cur)) {
-											$old_price = '<span class="price-old">'. $pricr_old .' руб.</span></br>';
+											$old_price = '<span class="price-old">'. $pricr_old .' ₽</span></br>';
 										}
 								?>
 									
 								<div class="product-price">
 									<span class="product-price-title__mobile">Цена:</span>
-									<?php echo $old_price." <span class='current-price'>".$pricr_cur . "</span>"; ?> руб.</div>
+									<?php echo $old_price." <span class='current-price'>".$pricr_cur . "</span>"; ?> ₽</div>
 								<div class="product-quantity">
 									<div class="quantity">
 										<!-- <input type="number" id="" class="input-text qty text" step="1" min="0" max="" name="" value="1" title="Кол-во" size="4" pattern="[0-9]*" inputmode="numeric"> -->
@@ -206,7 +206,7 @@ get_header();
 								<td class="product-subtotal">
 									<span class="product-subtotal__title">Сумма:</span>
 									<span class="amount"><?php echo $elems[$pe->ID]*$pricr_cur; ?></span>
-									<span class="currency-cymbol"> руб.</span>
+									<span class="currency-cymbol"> ₽</span>
 								</td>
 							</tr>
 							
@@ -239,7 +239,7 @@ get_header();
 			<div class="cart-subtotal__price-content">
 				<span class="cart-subtotal__price-content-label">Стоимость заказа:</span>
 				<span class="cart-subtotal__price-content-price"><?php echo $summ; ?> </span>
-				<span class="cart-subtotal__price-content-currency">руб</span>
+				<span class="cart-subtotal__price-content-currency">₽</span>
 			</div>
 		</div>
 		<form action="" class="checkout-form" method="post" id="checkout-form">
