@@ -13624,6 +13624,10 @@ a.present-modal {
   background-size: cover;
 }
 
+.work_in_ng {
+  font-size: 12px;
+}
+
 /*=== Cтили Шапки End ===============================================*/
 
 @media (min-width: 525px) {

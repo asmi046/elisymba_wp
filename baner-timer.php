@@ -32,7 +32,10 @@
 
 					
 	<section class="baner-new-img dt-z ">
+			
+			<a href="<?php echo get_permalink(12597);?>">
 			<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/b-ng-dt-1.jpg?v=1.0.16" />
+			</a>
 			<!-- <img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/elisymba-a-1.jpg?v=1.0.16" /> -->
 			<!-- <a href="#" class="baner-new__link baner-new__link-more bg-blue">Подробнее<div class="order-form__coupon-note">Сделайте заказ сегодня и примите участие в Мега розыгрыше с гарантированными призами! Вас ждет 30 000 подарок!</div></a>
 			<a href="<?php echo get_permalink(12597);?>" class="baner-new__link">Смотреть все призы</a> -->
@@ -41,7 +44,9 @@
 	</section>
 
 	<section class="baner-new-img-m mob-z present-modal1">
+		<a href="<?php echo get_permalink(12597);?>">
 			<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/b-ng-mob-1.jpg?v=1.0.11" />
+		</a>
 			<!-- <img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/roz-mob.jpg?v=1.0.11" />
 			<div class="baner-new-img-m-block">
 				<a href="#" class="baner-new__link baner-new__link-more bg-blue">Подробнее<div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div></a>

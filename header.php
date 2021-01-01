@@ -632,6 +632,10 @@
             <a href="<?php echo get_permalink(4)?>" class="header-top-icon header-top__about">О нас</a>
             <a href="<?php echo get_permalink(10)?>" class="header-top-icon header-top__contacts">Контакты</a>
           </div>
+          <div class = "work_in_ng">
+              <span style = "color:red">1,2,3,7 января</span> - выходные дни <br/>
+              <span style = "color:green">4,5,6 января</span> - короткие дни до 17:00
+          </div>
           <!-- Телефон -->
           <a onclick="yaCounter48236084.reachGoal('knopkazvonok');" href="#" class=" noeffect baner-new__link_phone_a">
             <div class = "baner-new__link baner-new__link_phone noeffect btn-pink">Заказать звонок</div>
