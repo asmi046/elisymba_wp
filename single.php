@@ -427,6 +427,7 @@ get_header(); ?>
 					<div class="order-form__coupon-text">Золотой<br> розыгрыш</div>
 					<div class="order-form__coupon-question">?</div>
 					<div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div>
+							
 				</div>
 				
 				<img style = "visibility: hidden; height:0;" id = "flightImg"  width="100" height="100" src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.1.jpg">
@@ -473,6 +474,7 @@ get_header(); ?>
 								<img src = "<?bloginfo("template_url");?>/img/v-kredit.jpg"/>	
 								<div class="order-form__coupon-question">?</div>
 								<div class="order-form__coupon-note">Клиенты сбербанка могут приобрести данный товар в кредит. <a href = "<? echo get_the_permalink(16675);?>">Подробнее.</a></div>	
+								<p class="rashet_kredit">от <? echo round($pricr_cur / 27.66); ?> р/мес.</p>
 							</div>
 						<?}?>
 

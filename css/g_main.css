@@ -628,8 +628,14 @@ hr {
   width: auto;
 }
 
+.rashet_kredit {
+  margin: 0;
+  font-size: 12px;
+  line-height: 35px;
+}
+
 .pok_sber .order-form__coupon-question{
-  margin: auto 0 auto 30px;
+  margin: auto 0 auto 10px;
 }
 
 .pok_sber .order-form__coupon-note { 
