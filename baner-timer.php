@@ -31,28 +31,74 @@
 
 
 					
-	<section class="baner-new-img dt-z ">
+	<!-- <section class="baner-new-img dt-z ">
 			
-			<a href="<?php echo get_permalink(12597);?>">
-			<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/b-ng-dt-1.jpg?v=1.0.16" />
+			<a href="<?php //echo get_permalink(12597);?>">
+			<img class = "lazy" data-src = "<?php //bloginfo("template_url")?>/img/b-ng-dt-1.jpg?v=1.0.16" />
 			</a>
-			<!-- <img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/elisymba-a-1.jpg?v=1.0.16" /> -->
-			<!-- <a href="#" class="baner-new__link baner-new__link-more bg-blue">Подробнее<div class="order-form__coupon-note">Сделайте заказ сегодня и примите участие в Мега розыгрыше с гарантированными призами! Вас ждет 30 000 подарок!</div></a>
-			<a href="<?php echo get_permalink(12597);?>" class="baner-new__link">Смотреть все призы</a> -->
 
-		
 	</section>
 
 	<section class="baner-new-img-m mob-z present-modal1">
-		<a href="<?php echo get_permalink(12597);?>">
-			<img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/b-ng-mob-1.jpg?v=1.0.11" />
+		<a href="<?php // echo get_permalink(12597);?>">
+			<img class = "lazy" data-src = "<?php // bloginfo("template_url")?>/img/b-ng-mob-1.jpg?v=1.0.11" />
 		</a>
-			<!-- <img class = "lazy" data-src = "<?php bloginfo("template_url")?>/img/roz-mob.jpg?v=1.0.11" />
-			<div class="baner-new-img-m-block">
-				<a href="#" class="baner-new__link baner-new__link-more bg-blue">Подробнее<div class="order-form__coupon-note">Оформите заказ сегодня и получите 1 купон на участие в золотом розыгрыше</div></a>
-				<a href="<?php echo get_permalink(12597);?>" class="baner-new__link">Все призы</a>
-			</div> -->
-	</section>
+			
+	</section> -->
+
+	
+		<script>
+			jQuery(document).ready(function () {
+				console.log(jQuery('#main_banner_new'));
+				jQuery('#main_banner_new').owlCarousel({
+					loop:true,
+					nav:false,
+					items:1,
+					autoHeight: true,
+					autoplay: true,
+					autoplayTimeout:30000,
+				});
+				
+			});
+		</script>
+		
+		<section class="baner-new-img_slider">
+			<div id = "main_banner_new" class="owl-carousel owl-theme" >	
+					
+				<? 
+					$b_elements = carbon_get_theme_option("banner_feild");
+					if (!empty($b_elements)) {
+						$i = 0;
+						foreach ($b_elements as $be) {
+				?>
+					<? if( !$detect->isMobile() ){ ?>
+						<a href = "<? echo $be["bf_url"]; ?>">
+							<? if( $i == 0 ){ ?>	
+								<img class = "main_bn_1" src = "<?php echo $be["bf_img_desctop"]?>">
+							<?} else { ?>
+								<img class = "main_bn_1 lazy" data-src = "<?php echo $be["bf_img_desctop"]?>">
+							<?}?>	
+						</a>
+					<?} else { ?>
+						<a href = "<? echo $be["bf_url"]; ?>">
+							<? if( $i == 0 ){ ?>	
+								<img class = "main_bn_1" src = "<?php echo $be["bf_img_mobile"]?>">
+							<?} else { ?>
+								<img class = "main_bn_1 lazy" data-src = "<?php echo $be["bf_img_mobile"]?>">
+							<?}?>
+							
+						</a>
+					<?}?>
+					<?
+					$i++;
+					}?>
+				<?}?>
+					
+					
+					
+			</div>
+		</section>
+
 	
 	<?php endif;?>
 <?php endif;?>

@@ -24,14 +24,17 @@
             <div class="footer-pay">
                 <p class="pay-title">Способы оплаты</p>
                 <ul>
-                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/visa.png" alt="Картинка"></a></li>
-                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/mastercard.png" alt="Картинка"></a>
+                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/visa.png" alt="Оплата картами Visa"></a></li>
+                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/mastercard.png" alt="Оплата картами Мастеркарт"></a></li>
+                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/webmoney.png" alt="Оплата WebMany"></a></li>
+                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/yandexmoney.png" alt="Оплата Яндекс.Деньги"></a>
                     </li>
-                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/webmoney.png" alt="Картинка"></a></li>
-                    <li><a href="#"><img class = "lazy" data-src="<?php  echo get_template_directory_uri(); ?>/img/yandexmoney.png" alt="Картинка"></a>
-                    </li>
-                </ul>
-                <p class="pay-desc">Вы можете оплатить покупки<br>
+				</ul>
+				<ul>
+					<li><a href="<?echo get_the_permalink(16675);?>"><img class = "lazy" height = "30" data-src="<?php  echo get_template_directory_uri(); ?>/img/v-kredit.jpg" alt="Покупка в кредит"></a></li>
+				</ul>	
+				
+				<p class="pay-desc">Вы можете оплатить покупки<br>
                     наличными при получении,<br>
                     либо онлайн.</p>
             </div>

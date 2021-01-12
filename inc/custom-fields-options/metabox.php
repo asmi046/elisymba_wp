@@ -108,6 +108,16 @@ Container::make( 'theme_options', 'Settings', 'Настройки магазин
   ))  
 ->add_tab('Баннер', array(
     Field::make('text', 'banner_v', 'Версия баннера'),
+    Field::make( 'complex', 'banner_feild', "Баннерна главной (элементы)" )
+    ->add_fields( array(
+        Field::make('image', 'bf_img_desctop', 'Фото для десктопа')
+                    ->set_value_type('url')
+                    ->set_width(30),
+        Field::make('image', 'bf_img_mobile', 'Фото для мобилки')
+                    ->set_value_type('url')
+                    ->set_width(30),
+        Field::make('text', 'bf_url', 'url')->set_width(30),
+    ) ),
   ))
   ->add_tab('Акция', array(
     Field::make('rich_text', 'auto_action', 'О розыгрыше в деталях'),

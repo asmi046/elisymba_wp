@@ -9999,6 +9999,12 @@ text-indent: 0!important;
   position: relative;
 }
 
+.baner-new-img_slider {
+  height: 325px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
 .bg-blue {
   background-color: #01befe!important;
 }
@@ -13628,6 +13634,19 @@ a.present-modal {
   font-size: 12px;
 }
 
+.mbn_elem {
+  float: left;
+}
+
+#main_banner_new {
+  display: inline-block;
+}
+
+#main_banner_new .owl-stage-outer .owl-item img{
+  width: 100%;
+  height: auto;
+}
+
 /*=== Cтили Шапки End ===============================================*/
 
 @media (min-width: 525px) {
@@ -14212,6 +14231,7 @@ a.present-modal {
     line-height: 17px;
   }
 
+  .baner-new-img_slider, 
   .baner-new-img {
     height: 220px;
   }
