@@ -216,6 +216,76 @@ get_header(); ?>
 									</picture>
 								</a>				
 							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".11.jpg")):?>
+								<a href = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.11.jpg" class = "fancybox" data-fancybox-group = "gr1">
+									<picture>
+									<? 
+									$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".11.webp";
+									
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".11.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.11.jpg">
+									</picture>
+								</a>				
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".12.jpg")):?>
+								<a href = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.12.jpg" class = "fancybox" data-fancybox-group = "gr1">
+									<picture>
+									<? 
+									$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".12.webp";
+									
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".12.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.12.jpg">
+									</picture>
+								</a>				
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".13.jpg")):?>
+								<a href = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.13.jpg" class = "fancybox" data-fancybox-group = "gr1">
+									<picture>
+									<? 
+									$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".13.webp";
+									
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".13.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.13.jpg">
+									</picture>
+								</a>				
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".14.jpg")):?>
+								<a href = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.14.jpg" class = "fancybox" data-fancybox-group = "gr1">
+									<picture>
+									<? 
+									$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".14.webp";
+									
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".14.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.14.jpg">
+									</picture>
+								</a>				
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".15.jpg")):?>
+								<a href = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.15.jpg" class = "fancybox" data-fancybox-group = "gr1">
+									<picture>
+									<? 
+									$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".15.webp";
+									
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".15.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.15.jpg">
+									</picture>
+								</a>				
+							<?php endif;?>
 							
 						</div>
 						
@@ -340,7 +410,62 @@ get_header(); ?>
 									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.10.jpg">
 									</picture>
 							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".11.jpg")):?>
+									<picture>
+									<? 	$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".11.webp";
+										
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".11.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.11.jpg">
+									</picture>
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".12.jpg")):?>
+									<picture>
+									<? 	$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".12.webp";
+										
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".12.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.12.jpg">
+									</picture>
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".13.jpg")):?>
+									<picture>
+									<? 	$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".13.webp";
+										
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".13.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.13.jpg">
+									</picture>
+							<?php endif;?>
+
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".14.jpg")):?>
+									<picture>
+									<? 	$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".14.webp";
+										
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".14.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.14.jpg">
+									</picture>
+							<?php endif;?>
 							
+							<?php if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".15.jpg")):?>
+									<picture>
+									<? 	$adr = get_bloginfo("url")."/galery/".get_post_meta(get_the_ID(), "_sku", true).".15.webp";
+										
+										if (file_exists($_SERVER['DOCUMENT_ROOT']."/galery/".get_post_meta(get_the_ID(), "_sku", true).".15.webp")) { ?>
+												<source srcset="<? echo $adr ?>" type="image/webp"> 
+										<?}?>
+									<img id = "item-image<?php echo get_the_ID();?>"  width="50" height="50" class = "lazy" data-src = "<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.15.jpg">
+									</picture>
+							<?php endif;?>
+
 						</div>
 		<?}?>
 					</div>
