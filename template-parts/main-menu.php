@@ -235,6 +235,13 @@
           </li>
 
           <li>
+            <a href="<?php echo get_category_link('109');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/dopdsk.jpg" alt=""> 
+              <span>Доп. оборудование для ДСК</span>
+            </a>
+          </li>
+
+          <li>
             <a href="<?php echo get_category_link('111');?>">
               <img src="<?php echo get_template_directory_uri();?>/img/category/rostomer.jpg" alt=""> 
               <span>Ростомер</span>
