@@ -97,6 +97,13 @@
             </a>
           </li>
 
+          <li>
+            <a href="<?php echo get_category_link('110');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/segin.jpg" alt=""> 
+              <span>Методики Сегена</span>
+            </a>
+          </li>
+
           <li class = "last_top_menu_punct">
             <a href="<?php echo get_category_link('84');?>">
                 <span>Все методики развития</span>
@@ -224,6 +231,13 @@
             <a href="<?php echo get_category_link('97');?>">
               <img src="<?php echo get_template_directory_uri();?>/img/category/sam.jpg" alt=""> 
               <span>Самокаты</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="<?php echo get_category_link('111');?>">
+              <img src="<?php echo get_template_directory_uri();?>/img/category/rostomer.jpg" alt=""> 
+              <span>Ростомер</span>
             </a>
           </li>
 

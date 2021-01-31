@@ -13607,9 +13607,24 @@ a.present-modal {
   margin-bottom: 20px;
 }
 
-.clr_box:hover, 
-.clr_box.active{ 
+.clr_box:hover{ 
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.65);
+}
+
+.clr_box.active:hover{
+  box-shadow: none;
+}
+.clr_box.active::before{
+  content: "";
+  width: 29px;
+  height: 29px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  position: absolute;
+  background: transparent;
+  margin-top: -3px;
+  margin-left: -3px;
+
 }
 
 .clr_box{ 

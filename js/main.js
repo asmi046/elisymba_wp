@@ -1346,6 +1346,7 @@ function get_delivery_data(naspunkt, state, province) {
     });
         
     $("#s, #smob").keydown(function() {
+        console.log(111);
         $val_current = $(this).val();
         if ($val_current.length > 3)
         {

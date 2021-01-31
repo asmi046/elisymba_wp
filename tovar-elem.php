@@ -130,7 +130,7 @@
 			if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop"))))
 				echo "Предзаказ";
 			else 
-				echo "Заказать";
+				echo "Заказать сейчас";
 		?>
 		
 		</a>

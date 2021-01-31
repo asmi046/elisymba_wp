@@ -485,12 +485,19 @@ get_header(); ?>
 							<div class = "clr_blk">
 								<span class = "zag_clr">Цвета:</span>
 								<? foreach ($color_set as $celem) {?>
-									<a href = "<? echo $celem["clr_lnk"]; ?>" title = "<? echo $celem["clr_name"]; ?>" >
+									<? if (empty($celem["clr_active"])) {?>
+										<a href = "<? echo $celem["clr_lnk"]; ?>" title = "<? echo $celem["clr_name"]; ?>" >
+											<div class = "clr_box <?echo (!empty($celem["clr_active"]))?"active":"";?>">
+												<div class = "clr_c" style = "background-color: <? echo $celem["clr_c1"]; ?>"></div>
+												<div class = "clr_c <?echo (!empty($celem["clr_raduga"]))?"radugaClr":"";?>" style = "background-color: <? echo $celem["clr_c2"]; ?>"></div>
+											</div>
+										</a>
+									<?} else {?>
 										<div class = "clr_box <?echo (!empty($celem["clr_active"]))?"active":"";?>">
-											<div class = "clr_c" style = "background-color: <? echo $celem["clr_c1"]; ?>"></div>
-											<div class = "clr_c <?echo (!empty($celem["clr_raduga"]))?"radugaClr":"";?>" style = "background-color: <? echo $celem["clr_c2"]; ?>"></div>
+												<div class = "clr_c" style = "background-color: <? echo $celem["clr_c1"]; ?>"></div>
+												<div class = "clr_c <?echo (!empty($celem["clr_raduga"]))?"radugaClr":"";?>" style = "background-color: <? echo $celem["clr_c2"]; ?>"></div>
 										</div>
-									</a>
+									<?}?>
 								<?}?>	
 							</div>
 						<?}?>

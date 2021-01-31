@@ -594,9 +594,9 @@ jQuery(document).ready(function($) {
 		<!-- Форма поиска -->
 		<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ) ?>">
 		  <div class ="searchformWraper">  
-			<input type="text" value="" autocomplete="off" placeholder="Я ищу..." name="s" id="s" />
-			<button type="submit" id="searchsubmit" class="searchsubmit sub-clear" value=""></button>
-			<button type="submit" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
+			<input type="text" tabindex = "1" value="" autocomplete="off" placeholder="Я ищу..." name="s" id="s" />
+			<button type="button" tabindex = "3" id="searchsubmit" class="searchsubmit sub-clear" value=""></button>
+			<button type="submit" tabindex = "2" id="searchsubmit" class="searchsubmit sub-search" value=""></button>
 		  </div>
 		  <div class="preSearchWrap" style="display: none;"></div>
 		</form>
