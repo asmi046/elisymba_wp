@@ -125,12 +125,12 @@
 	
 	<div class="item-actions clearfix">
 		<a class="more" href="<?php echo $linc;?>">Подробнее</a>
-		<a onclick="yaCounter48236084.reachGoal('knopka');" class="order tobascetInCat fancybox-order <?php if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop")))) echo "pre-order-link";?>"  style = "display:block;" href="#order-form"  data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" data-price="<?php echo $pricr_cur;?>" data-price-old = "<?php echo $pricr_old;?>" data-size-price-s="<?php echo $pricr_cur;?>" data-size-price-old-s="<?php echo $pricr_old;?>" data-image="<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.1.jpg" data-title="<?php the_title(); ?>" data-product = "<?php echo get_post_meta(get_the_ID(), "_sku", true)?>" data-postid = "<?php echo get_the_ID();?>">
+		<a onclick="ym(48236084,'reachGoal','zakazv1klik')" class="order tobascetInCat fancybox-order <?php if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop")))) echo "pre-order-link";?>"  style = "display:block;" href="#order-form"  data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" data-price="<?php echo $pricr_cur;?>" data-price-old = "<?php echo $pricr_old;?>" data-size-price-s="<?php echo $pricr_cur;?>" data-size-price-old-s="<?php echo $pricr_old;?>" data-image="<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.1.jpg" data-title="<?php the_title(); ?>" data-product = "<?php echo get_post_meta(get_the_ID(), "_sku", true)?>" data-postid = "<?php echo get_the_ID();?>">
 		<?php
 			if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop"))))
 				echo "Предзаказ";
 			else 
-				echo "Заказать сейчас";
+				echo "Заказать";
 		?>
 		
 		</a>
