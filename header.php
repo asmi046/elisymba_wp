@@ -631,6 +631,7 @@
             <a href="<?php echo get_permalink(18)?>" class="header-top-icon header-top__actions">Акции</a>
             <a href="<?php echo get_permalink(4)?>" class="header-top-icon header-top__about">О нас</a>
             <a href="<?php echo get_permalink(10)?>" class="header-top-icon header-top__contacts">Контакты</a>
+            <a href="https://www.instagram.com/elisyamba/" target="_blank" class="header-top-icon header-top__insta">Наш инстаграмм</a>
           </div>
           
           <!-- <div class = "work_in_ng">
