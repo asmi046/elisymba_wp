@@ -432,13 +432,7 @@
     <!-- КОРЗИНА--->
     <?php //endif; ?>
 
-    <style>
 
-    </style>
-
-    <script>
-
-    </script>
     <?php $options = get_option( 'wpuniq_theme_options' ); ?>
     <div class = "mm_overley"></div>
     <div class="btnClodeMenu">
@@ -606,12 +600,16 @@
           <a href="<?php bloginfo("url");?>"><img src="<?php bloginfo("template_url");?>/img/moblog.svg" /></a>
         </div>
 
+        <div class="newHeadElem instaWraper">
+          <a target="_blank" href="https://www.instagram.com/elisyamba/"><img src="<?php bloginfo("template_url");?>/img/instagram_color.svg" /></a>
+        </div>
+
         <div class="newHeadElem newHeadBtn phoneWraper">
           <a href="tel:<?php echo $options[phoneLnk]; ?>"><img src="<?php bloginfo("template_url");?>/img/phone.svg" /></a>
         </div>
   </div>
 
-  <div class="container">
+  <div class="container">        
     <div class="header__row">
     <!-- Обертка Всей Шапки -->
       <div class="header-top">

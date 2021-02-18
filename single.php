@@ -538,7 +538,7 @@ get_header(); ?>
 						<?php else: ?>
 							<!-- <div class="price-old-title">Цена:</div> -->
 						<?php endif; ?>
-                        <div class="price-old" itemprop="price" content="<?php echo $pricr_cur;?>"><?php echo $pricr_cur;?> <span>₽</span><meta itemprop="priceCurrency" content="RUB"></div>
+                        <div class="price-old <? if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)) echo "price-pinc";?>" itemprop="price" content="<?php echo $pricr_cur;?>"><?php echo $pricr_cur;?> <span>₽</span><meta itemprop="priceCurrency" content="RUB"></div>
                     
 					</div>
 					<span class = "nalichir">
@@ -601,7 +601,18 @@ get_header(); ?>
                     Данный товар купили <b><?php echo get_post_meta(get_the_ID(), "order_count", true);?></b> раз(а).
                 </div>
 
-				<? if ($pricr_cur > 3000) {?>
+						<?
+							$sale_delivery_city = array("Москва","Санкт-Петербург", "Волгоград", "Белгород","Владимир", "Воронеж", "Казань", "Калуга", "Ставрополь", "Тверь", "Тула", "Ярославль", "Краснодар", "Нижний Новгород", "Ростов-на-Дону", "Самара"); 
+							if (in_array($_COOKIE["cityinfo"], $sale_delivery_city) && !in_category( 92, get_the_ID() )) {  
+						?>	
+							<img title = "Бесплатная доставка до пункта выдачи. Доставка курьером 390 руб." class = "free_delivery" src = "<? bloginfo("template_url"); ?>/img/free-delivery.jpg">
+							<p class = "free_delivery_comment"> 
+								Доставка до пункта выдачи при заказе от 3000 руб. БЕСПЛАТНО. <a target="_blank" href = "<?echo get_the_permalink(17137);?>">Подробнее.</a>
+							</p>
+							<p class = "curier_p free_delivery_comment">Возможна доставка курьером. <br/>Стоимость: 390 руб.</p>
+						<? 
+							} else 
+						if ($pricr_cur > 3000) {?>
 							<div class = "pok_sber">
 								<img src = "<?bloginfo("template_url");?>/img/v-kredit.jpg"/>	
 								<div class="order-form__coupon-question">?</div>

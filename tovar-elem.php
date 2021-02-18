@@ -115,7 +115,7 @@
 		<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
 			<span class="price-old"> <span class = "price_formator"><?php echo $pricr_old; ?></span> <span>₽</span></span>
 		<?php endif;?>
-		<span class="price-cur"><span class = "price_formator"><?php echo $pricr_cur; ?></span> <span>₽</span></span>
+		<span  class="price-cur <? if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)) echo "price-cur-sale"; ?>"><span class = "price_formator"><?php echo $pricr_cur; ?></span> <span>₽</span></span>
 		
 		<span onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzina-katalog-new');" class = "tobascetInCatWrap tobascetInCat tobascet" style = "display:inline-block;" title = "Добавить в корзину" data-postid = "<?php echo get_the_ID();?>" data-nsale = "<?php echo $main_sales;?>">В корзину</span>
 	

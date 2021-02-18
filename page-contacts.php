@@ -45,6 +45,9 @@ Template Name: Контакты
 								<p class="contacts-phone-number"><a style = "color: initial; text-decoration: none;" href = "tel:<?php echo $options[phoneLnk]; ?>"><?php echo $options[phoneViev]; ?></a></p>
 							</li>
 							<li><a href="#callback-form" class="btn btn-dark-pink lightbox fancybox-callback" style="width: 162px">Позвонить вам?</a></li>
+							<li>
+								<p>Доставляем по всей России и всему миру!</p>
+							</li>
 						</ul>
 					</div>
 					<ul class="contacts-internet">

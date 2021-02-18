@@ -3251,6 +3251,11 @@ div.mejs-speed-button {
   font-weight: bold;
 }
 
+.price-pinc,
+.catalog-item .price-cur-sale {
+  color: #ed479d!important;
+}
+
 .catalog-item .price-cur span {
   font-size: 18px;
   font-weight: normal;
@@ -4114,7 +4119,7 @@ hr.dotted {
 
 .product-desc ul {
   list-style: none;
-  margin: 0 0 20px 0;
+  margin: 0 0 2px 0;
   padding: 0;
 }
 
@@ -13015,7 +13020,7 @@ a.present-modal {
   align-items: center;
   justify-content: center;
   margin-top: 14px;
-  margin-bottom: 14px;
+  margin-bottom: 1px;
   cursor: pointer;
 }
 
@@ -13671,6 +13676,30 @@ a.present-modal {
 #main_banner_new .owl-stage-outer .owl-item img{
   width: 100%;
   height: auto;
+}
+
+.free_delivery {
+  width:85%;
+  height: auto;
+  margin: 10px 0;;
+}
+
+.free_delivery_comment {
+  font-size: 14px;
+  color:#919191;
+  text-indent: 0em!important;
+}
+
+.curier_p::before {
+  content: "";
+  background-image: url("../img/courier.png");
+  width: 26px;
+  height: 26px;
+  background-position: center;
+  background-repeat: no-repeat;
+  float: left;
+  background-size: cover;
+  margin-right: 20px;
 }
 
 /*=== Cтили Шапки End ===============================================*/
@@ -14366,6 +14395,11 @@ a.present-modal {
   .phoneWraper {
     flex: 1;
     text-align: right;
+  }
+
+  .instaWraper {
+    flex: 1;
+    text-align: left;
   }
 
   .newHeadBtn img {
@@ -15163,6 +15197,11 @@ a.present-modal {
   }
 
   .logoWraper img {
+    height: 30px;
+    margin: auto;
+  }
+
+  .instaWraper img {
     height: 30px;
     margin: auto;
   }
@@ -17523,9 +17562,9 @@ a.present-modal {
   }
 
   .logoWraper {
-    flex: 3;
+    flex: 2;
     justify-content: center;
-    padding-right: 10%;
+    padding-right: 8%;
   }
 
   .bascetWriper .bCorcle .countInCart {
