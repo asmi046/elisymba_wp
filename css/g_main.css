@@ -14457,6 +14457,12 @@ a.present-modal {
   .header-title__text {
     font-size: 17px;
   }
+
+  .instaWraper img {
+    height: 30px;
+    margin: auto;
+  }
+
 }
 
 @media only screen and (max-width:996px) {
@@ -15201,10 +15207,7 @@ a.present-modal {
     margin: auto;
   }
 
-  .instaWraper img {
-    height: 30px;
-    margin: auto;
-  }
+
 
   .newHeadBtn img {
     height: 30px;

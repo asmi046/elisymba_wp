@@ -71,7 +71,15 @@
 						$i = 0;
 						foreach ($b_elements as $be) {
 				?>
-					<? if( !$detect->isMobile() ){ ?>
+					<? if( $detect->isMobile() ){ ?>
+						<a href = "<? echo $be["bf_url"]; ?>">
+							<? if( $i == 0 ){ ?>	
+								<img class = "main_bn_1" src = "<?php echo $be["bf_img_mobile"]?>">
+							<?} else { ?>
+								<img class = "main_bn_1 lazy" data-src = "<?php echo $be["bf_img_mobile"]?>">
+							<?}?>
+					<?} else { ?>
+						
 						<a href = "<? echo $be["bf_url"]; ?>">
 							<? if( $i == 0 ){ ?>	
 								<img class = "main_bn_1" src = "<?php echo $be["bf_img_desctop"]?>">
@@ -79,13 +87,8 @@
 								<img class = "main_bn_1 lazy" data-src = "<?php echo $be["bf_img_desctop"]?>">
 							<?}?>	
 						</a>
-					<?} else { ?>
-						<a href = "<? echo $be["bf_url"]; ?>">
-							<? if( $i == 0 ){ ?>	
-								<img class = "main_bn_1" src = "<?php echo $be["bf_img_mobile"]?>">
-							<?} else { ?>
-								<img class = "main_bn_1 lazy" data-src = "<?php echo $be["bf_img_mobile"]?>">
-							<?}?>
+
+						
 							
 						</a>
 					<?}?>
