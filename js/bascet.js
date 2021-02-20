@@ -349,11 +349,11 @@ jQuery(document).ready(function() {
 	
 	jQuery(".oneClikZal").click(function(){
 		
-		if (jQuery("#order-client_name").val() == "")
-		{
-			jQuery("#order-client_name").css("background", "#f69679");
-			return;
-		}
+		//if (jQuery("#order-client_name").val() == "")
+		//{
+		//		jQuery("#order-client_name").css("background", "#f69679");
+		//		return;
+		//}
 		
 		if ((jQuery("#order-client_tel").val() == "")||(jQuery("#order-client_tel").val().indexOf("_")>0))
 		{
@@ -373,7 +373,7 @@ jQuery(document).ready(function() {
 				order_post_id:jQuery("#order-post_id").val(),
 				order_client_name:jQuery("#order-client_name").val(),
 				order_client_tel:jQuery("#order-client_tel").val(),
-				order_client_comment:jQuery("#order-client_comment").val(),
+				order_client_comment:jQuery("#order-client_comment").val()+" Способ связи: "+jQuery(".recoll_type input[name='Order[recoll_type]']:checked").val(),
 			}
 			
 		);

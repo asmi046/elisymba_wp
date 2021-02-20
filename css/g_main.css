@@ -13702,6 +13702,68 @@ a.present-modal {
   margin-right: 20px;
 }
 
+
+.recoll_type_text {
+  margin: 10px 0;
+
+}
+
+.recoll_type {
+  width: 100%;
+  display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.recoll_type input[type=radio] {
+}
+
+.recoll_type input[type=radio]:checked {
+  background-image: url(../img/zak_win_checed.svg);
+  background-size:cover;
+}
+
+.recoll_type label {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  margin: 0 20px;
+  position: relative;
+}
+
+#rct_phone_label {
+  background-image: url(../img/zak_win_th.png);
+}
+
+
+#rct_whatsapp_label {
+  background-image: url(../img/zak_win_ws.png);
+}
+
+.recoll_type input[type=radio],
+.recoll_type label span{
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  background-color: #f7ede1;
+  bottom: -5px;
+  right:  -5px;
+}
+
+.recoll_type label p{ 
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  width: 146%;
+  position: absolute;
+  bottom: -42px;
+  left: -23%;
+}
+
 /*=== Cтили Шапки End ===============================================*/
 
 @media (min-width: 525px) {

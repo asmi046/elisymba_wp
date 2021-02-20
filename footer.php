@@ -90,33 +90,51 @@
 		<input type="hidden" id="order-product_title" name="Order[product_title]">        
 		<input type="hidden" id="order-product_price" name="Order[product_price]">        
 		<input type="hidden" id="order-post_id" name="Order[post_id]">        
-		<div class="form-group field-order-client_name">
-<label class="control-label" for="order-client_name">Ваше имя:</label>
-<input type="text" id="order-client_name" class="form-control" name="Order[client_name]">
-<div class="hint-block">чтобы мы знали, как к Вам обратиться</div>
-<div class="help-block"></div>
-</div>        <div class="form-group field-order-client_tel required">
-<label class="control-label" for="order-client_tel">Ваш номер телефона:</label>
-<input type="text" id="order-client_tel" class="form-control" name="Order[client_tel]" data-plugin-inputmask="inputmask_96e76a5f">
-<div class="hint-block">
-<?
-	$start = strtotime('today  09:00');
-	$end = strtotime('today  21:00');
-	$find = strtotime('now')+10800;
-	//echo date("Y-m-d H:i:s",$start);
-	//echo date("Y-m-d H:i:s",$end);
-	//echo date("Y-m-d H:i:s",$find);
-	if (($start <= $find)&&($end >= $find)) {
-		echo "Мы свяжемся с Вами в течение 10 мин.";
-	} else {
-		echo "чтобы мы смогли с Вами связаться и уточнить детали заказа";
-	}
-	
-?>
-</div>
-<div class="help-block"></div>
-</div>        
+		
+		<!-- <div class="form-group field-order-client_name">
+			<label class="control-label" for="order-client_name">Ваше имя:</label>
+			<input type="text" id="order-client_name" class="form-control" name="Order[client_name]">
+			<div class="hint-block">чтобы мы знали, как к Вам обратиться</div>
+			<div class="help-block"></div>
+		</div> -->
 
+		<div class="form-group field-order-client_tel required">
+			<label class="control-label" for="order-client_tel">Ваш номер телефона:</label>
+			<input type="text" id="order-client_tel" class="form-control" name="Order[client_tel]" data-plugin-inputmask="inputmask_96e76a5f">
+			<!-- 
+				<div class="hint-block">
+					<?
+						// $start = strtotime('today  09:00');
+						// $end = strtotime('today  21:00');
+						// $find = strtotime('now')+10800;
+						// if (($start <= $find)&&($end >= $find)) {
+						// 	echo "Мы свяжемся с Вами в течение 10 мин.";
+						// } else {
+						// 	echo "чтобы мы смогли с Вами связаться и уточнить детали заказа";
+						// }
+						
+					?>
+				</div> 
+			-->
+			<div class="help-block"></div>
+		</div>        
+		
+		<p class = "recoll_type_text">Выберите удобный способ связи</p>
+		<div class = "recoll_type">
+							
+			<label for = "rct_phone" id = "rct_phone_label">
+				<input checked type = "radio" name = "Order[recoll_type]" value = "Связаться по телефону" id = "rct_phone">
+				
+				<p>звонок <br/>по телефону</p>
+			</label>
+		
+							
+			<label for = "rct_whatsapp" id = "rct_whatsapp_label">
+			<input type = "radio" name = "Order[recoll_type]" value = "Связаться по Whatsapp" id = "rct_whatsapp">
+				
+				<p>сообщение <br/>в WhatsApp</p>
+			</label>			
+		</div>					
  
 <span onclick="yaCounter48236084.reachGoal('zakaz');" class="btn btn-pink oneClikZal" style="margin: 0 auto">Оставить заявку</span>
 
@@ -124,11 +142,11 @@
 
 </form>    
 
-<div class="minicat cat-ani" >
+<!-- <div class="minicat cat-ani" >
     <div class="minicat-text">введите ваше имя</div>
         <div class="cat-lap" style="left: 70px"></div>
     </div>
-</div>
+</div> -->
 
 
     <div id="order-popup2" class="order-form designer">

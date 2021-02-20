@@ -941,43 +941,43 @@ function get_delivery_data(naspunkt, state, province) {
             }
         });
 
-        $('#designer-name').on('change', function () {
+        // $('#designer-name').on('change', function () {
 
-            var $cat = $('.minicat3');
-            $cat.hide();
-            var $catClone = $cat.clone(true);
-            $catClone.css('z-index', '-1').css('top', '120px');
-            $cat.before($catClone);
-            $cat.remove();
-            $('.minicat3 .minicat-text').hide().css('z-index', '-1').css('width', '190px').css('height', '120px').css('left', '-85px').html('Мы свяжемся с Вами и уточним детали, Мяу!3');
-            $('.minicat3').show();
+        //     var $cat = $('.minicat3');
+        //     $cat.hide();
+        //     var $catClone = $cat.clone(true);
+        //     $catClone.css('z-index', '-1').css('top', '120px');
+        //     $cat.before($catClone);
+        //     $cat.remove();
+        //     $('.minicat3 .minicat-text').hide().css('z-index', '-1').css('width', '190px').css('height', '120px').css('left', '-85px').html('Мы свяжемся с Вами и уточним детали, Мяу!3');
+        //     $('.minicat3').show();
 
-            setTimeout(function () {
-                $('.minicat3').css('z-index', '1');
-                $('.minicat3 .minicat-text').fadeIn();
-            }, 1300);
-
-
-            $('#designer-phone').on('change', function () {
-
-                var $cat = $('.minicat3');
-                $cat.hide();
-                var $catClone = $cat.clone(true);
-                $catClone.css('z-index', '-1').css('top', '190px');
-                $cat.before($catClone);
-                $cat.remove();
-                $('.minicat3 .minicat-text').hide().css('z-index', '-1').css('width', '190px').css('left', '-85px').html('ВВЕДИТЕ ВАШ АДРЕС');
-                $('.minicat3').show();
-
-                setTimeout(function () {
-                    $('.minicat3').css('z-index', '1');
-                    $('.minicat3 .minicat-text').fadeIn();
-                }, 1300);
-
-            });
+        //     setTimeout(function () {
+        //         $('.minicat3').css('z-index', '1');
+        //         $('.minicat3 .minicat-text').fadeIn();
+        //     }, 1300);
 
 
-        });
+        //     $('#designer-phone').on('change', function () {
+
+        //         var $cat = $('.minicat3');
+        //         $cat.hide();
+        //         var $catClone = $cat.clone(true);
+        //         $catClone.css('z-index', '-1').css('top', '190px');
+        //         $cat.before($catClone);
+        //         $cat.remove();
+        //         $('.minicat3 .minicat-text').hide().css('z-index', '-1').css('width', '190px').css('left', '-85px').html('ВВЕДИТЕ ВАШ АДРЕС');
+        //         $('.minicat3').show();
+
+        //         setTimeout(function () {
+        //             $('.minicat3').css('z-index', '1');
+        //             $('.minicat3 .minicat-text').fadeIn();
+        //         }, 1300);
+
+        //     });
+
+
+        // });
 
         $('.b-video a, .fancyvideo, .fancybox-video').fancybox({
             openEffect: 'none',
