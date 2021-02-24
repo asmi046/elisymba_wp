@@ -688,11 +688,7 @@ get_header(); ?>
 							<?php echo apply_filters('the_content', carbon_get_the_post_meta('product_specifications_cerecter'));?>
 						</div>
 					<?php endif;?>
-
-			
-	
-
-	</div>
+				</div>
 				
 					
 				<?php if(carbon_get_the_post_meta('product_specifications_video')):?>
@@ -714,7 +710,75 @@ get_header(); ?>
 			<?php the_content(); ?>
 		</div>
 	<?php } ?>
-			
+
+	<div class="product-specifications product-specifications_dop_price_blk">	
+		<div class="product-desc product-desc-after-cherecter">
+                <div class="f_all_blk left_blk">
+
+					<div class="price" style = "position:relative;" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                        <?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
+							<!-- <div class="price-current-title">Цена без акции:</div> -->
+							<div class="price-current"><span class = "zPrice"><?php echo $pricr_old;?></span> <span>₽</span></div>
+                        <?php endif; ?>
+						<hr class="dotted">
+						
+						<div class = "informerInPage">
+							<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
+								<div class = "informerElem">
+									Выгода: <br/><span class = "vigodaBlk"><?php echo (float)$pricr_old - (float)$pricr_cur;?> ₽</span>
+								</div>
+							<?php endif;?>
+						</div>
+						
+						<?php if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)):?>
+							<div class="price-old-title">Цена по акции:</div>
+						<?php else: ?>
+							<!-- <div class="price-old-title">Цена:</div> -->
+						<?php endif; ?>
+                        <div class="price-old <? if ((!empty($pricr_old))&&((int)$pricr_old > (int)$pricr_cur)) echo "price-pinc";?>" itemprop="price" content="<?php echo $pricr_cur;?>"><?php echo $pricr_cur;?> <span>₽</span><meta itemprop="priceCurrency" content="RUB"></div>
+                    
+					</div>
+				
+				</div>
+
+				
+				<div class="f_all_blk right_blk">			
+					<div class="order-button-wrapper">
+                   
+					
+							 <a onclick="yaCounter48236084.reachGoal('knopka');" class="btn btn-pink inSingleBtn tobascetInCat fancybox-order <?php echo $pre_order_link;?>" style = "display:inline-bloc;" href="#order-form" 
+							data-sale="-<?php echo 100 - round(((float)$pricr_cur / (float)$pricr_old) * 100);?><span>%</span>" 
+							data-price="<?php echo $pricr_cur;?>" 
+							data-price-old = "<?php echo $pricr_old;?>" 
+							data-size-price-s="<?php echo $pricr_cur;?>" 
+							data-size-price-old-s="<?php echo $pricr_old;?>" 
+							data-image="<?php bloginfo("url")?>/galery/<?php echo get_post_meta(get_the_ID(), "_sku", true)?>.1.jpg" 
+							data-title="<?php the_title(); ?>" 
+							data-product = "<?php echo get_post_meta(get_the_ID(), "_sku", true)?>" 
+							data-postid = "<?php echo get_the_ID();?>"
+							>
+								<?php
+									if (empty(carbon_get_post_meta(get_the_ID(), "sclad_count")) && (empty(carbon_get_post_meta(get_the_ID(), "tovar_sklad_drop"))))
+										echo "Предзаказ";
+									else 
+										echo "Заказать";
+								?>
+							</a>
+					</div>
+                
+				
+				<!--КОРЗИНА-->
+				
+				<div class="order-button-wrapper">			
+					<span class = "btn grnbtn inSingleBtn btn-pink tobascetInCat tobascet" style = "display:inline-block;" onclick="toBascetFnk(this); yaCounter48236084.reachGoal('korzinastrtovar-verh-new');" data-postid = "<?php echo get_the_ID();?>"  data-nsale = "<?php echo $main_sales;?>"><i class="fas fa-shopping-basket "></i> В корзину</span>
+				</div>
+
+                
+            	</div>
+            </div>
+        </div>
+    </div>
+
   			
 	<h2 id="reviews-title" class = "pink tac">Реальные отзывы из VK</h2>
 			

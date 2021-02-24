@@ -100,7 +100,7 @@
 
 		<div class="form-group field-order-client_tel required">
 			<label class="control-label" for="order-client_tel">Ваш номер телефона:</label>
-			<input type="text" id="order-client_tel" class="form-control" name="Order[client_tel]" data-plugin-inputmask="inputmask_96e76a5f">
+			<input type="text" id="order-client_tel" class="form-control" name="Order[client_tel]" data-plugin-inputmask="inputmask_96e76a5f" placeholder = "+7(___)___-__-__" >
 			<!-- 
 				<div class="hint-block">
 					<?
@@ -137,7 +137,7 @@
 		</div>					
  
 <span onclick="yaCounter48236084.reachGoal('zakaz');" class="btn btn-pink oneClikZal" style="margin: 0 auto">Оставить заявку</span>
-
+	<p class = "recoll_offer_text">Свяжемся с Вами за 4 минуты или <br/> подарим скидку 100 рублей</p>
 </div>
 
 </form>    

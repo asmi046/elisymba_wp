@@ -62,6 +62,7 @@
 			});
 		</script>
 		
+		<? if (is_home()) {?>
 		<section class="baner-new-img_slider">
 			<div id = "main_banner_new" class="owl-carousel owl-theme" >	
 					
@@ -101,7 +102,7 @@
 					
 			</div>
 		</section>
-
+		<?}?>	
 	
 	<?php endif;?>
 <?php endif;?>
