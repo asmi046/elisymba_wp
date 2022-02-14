@@ -56,7 +56,7 @@ var allTovar = [
   {picture:"page_B535.1.jpg", name:"Бизидом «я умею» 30х30х40 см", count:10, comment:""},
   {picture:"mpuzl.jpg", name:"Конструктор Магникон МК-68 «Электропоезд»", count:15, comment:""},
   {picture:"page_Kd60.1.jpg", name:"Вундеркинд с пеленок Мегачемодан", count:20, comment:""},
-  {picture:"page_MI10.1.jpg", name:"Детское пианино с микрофоном и стульчиком", count:25, comment:""},
+  {picture:"page_MI10.1.jpg", name:"Игровой спортивный комплекс «Фиксики»", count:25, comment:""},
   {picture:"page_KOV32.1.jpg", name:"Коврик-пазл ортопедический Микс Универсальный", count:30, comment:""},
   {picture:"page_Sor06.1.jpg", name:"Деревянный сортер Веселые фигурки", count:50, comment:""},
   {picture:"page_Kk01.1.jpg", name:"Конструктор - каталка 'Паровозик' 7 деталей", count:75, comment:""},

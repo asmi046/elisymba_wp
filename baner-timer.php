@@ -79,7 +79,8 @@
 							<?} else { ?>
 								<img class = "main_bn_1 lazy" data-src = "<?php echo $be["bf_img_mobile"]?>">
 							<?}?>
-					<?} else { ?>
+						</a>
+						<?} else { ?>
 						
 						<a href = "<? echo $be["bf_url"]; ?>">
 							<? if( $i == 0 ){ ?>	
@@ -91,7 +92,7 @@
 
 						
 							
-						</a>
+						
 					<?}?>
 					<?
 					$i++;
